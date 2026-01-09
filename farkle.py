@@ -21,6 +21,66 @@ class Player(ABC):
   def __init__(self):
     self.score: int = 0
 
+  def score_set(self, set: list[int]) -> int:
+    '''
+    Return the score of a dice set, or 0 if invalid
+    '''
+
+    def count_of_kind(value: int):
+      return set.count(value)
+
+    def is_run(start: int, end: int):
+      for i in range(start, end + 1):
+        if set.count(i) == 0:
+          return False
+      return True
+    def remove_range(start: int, end: int):
+      for i in range(start, end + 1):
+        assert set.count(i) > 0
+        set.remove(i)
+    print(set)
+
+    score = 0
+    # Runs of 1..5, 2..6, or 1..6
+    if is_run(1, 6):
+      remove_range(1, 6)
+      score += 1500
+    elif is_run(1, 5):
+      remove_range(1, 5)
+      score += 500
+    elif is_run(2, 6):
+      remove_range(2, 6)
+      score += 750
+
+    def kind_score(face: int, count: int) -> int:
+      base = 1000 if face == 1 else 100 * face
+      mult = pow(2, count - 3)
+      return base * mult
+
+    for face in range(1, 6):
+      count = count_of_kind(face)
+      print(face, count)
+      # 3 or more of a kind
+      # face * 100, *2 for 4, *4 for 5, *8 for 6
+      # 3 ones are worth 1000
+      if count >= 3:
+        base = 1000 if face == 1 else 100 * face
+        mult = pow(2, count - 3)
+        score += base * mult
+      # Lone ones/fives
+      # 100 points per one, 50 per five
+      elif count > 0:
+        if face == 1:
+          score += 100 * count
+        elif face == 5:
+          score += 50 * count
+        else:
+          # Invalid combination
+          return 0
+
+
+    return score
+
   @property
   @abstractmethod
   def name(self) -> str:
@@ -52,7 +112,9 @@ class AiPlayer(Player):
     return self._name
 
   def play(self) -> int:
-    self.roll_dice(6)
+    rolls = self.roll_dice(6)
+    score = self.score_set(rolls)
+    print(score)
     raise NotImplemented()
 
 @final
