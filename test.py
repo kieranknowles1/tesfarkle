@@ -9,7 +9,7 @@ import farkle
 class FarkleTestMethods(unittest.TestCase):
   player = farkle.AiPlayer("Testy McTestFace")
   def score_check(self, dice: list[int], expected: int):
-    self.assertEqual(self.player.score_set(dice), expected)
+    self.assertEqual(self.player.score_selection(dice), expected)
 
   def test_run_15(self):
     self.score_check([1, 2, 3, 4, 5], 500)
@@ -36,7 +36,16 @@ class FarkleTestMethods(unittest.TestCase):
   def test_score_full(self):
     self.score_check([3, 3, 3, 1, 5], 450)
   def test_score_invalid(self):
+    # The lone two makes this an invalid combination
+    # Players would have to leave it unselected
     self.score_check([1, 2, 3, 3, 3, 5], 0)
+
+  def test_three_ones(self):
+    self.score_check([1, 1, 1], 1000)
+  def test_four_ones(self):
+    self.score_check([1, 1, 1, 1], 2000)
+  def test_five_fives(self):
+    self.score_check([5, 5, 5, 5, 5], 2000)
 
 if __name__ == "__main__":
   _ = unittest.main()

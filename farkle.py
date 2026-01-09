@@ -21,7 +21,7 @@ class Player(ABC):
   def __init__(self):
     self.score: int = 0
 
-  def score_set(self, set: list[int]) -> int:
+  def score_selection(self, set: list[int]) -> int:
     '''
     Return the score of a dice set, or 0 if invalid
     '''
@@ -111,7 +111,7 @@ class AiPlayer(Player):
 
   def play(self) -> int:
     rolls = self.roll_dice(6)
-    score = self.score_set(rolls)
+    score = self.score_selection(rolls)
     print(score)
     raise NotImplemented()
 
