@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+from typing import final
+import unittest
+
+import farkle
+
+
+@final
+class FarkleTestMethods(unittest.TestCase):
+  player = farkle.AiPlayer("Testy McTestFace")
+  def score_check(self, dice: list[int], expected: int):
+    self.assertEqual(self.player.score_set(dice), expected)
+
+  def test_run_15(self):
+    self.score_check([1, 2, 3, 4, 5], 500)
+  def test_run_and_one(self):
+    self.score_check([1, 2, 3, 4, 5, 1], 600)
+  def test_run_16(self):
+    self.score_check([1, 2, 3, 4, 5, 6], 1500)
+  def test_run_26(self):
+    self.score_check([2, 3, 4, 5, 6], 750)
+
+  # Scoring example from Wikipedia
+  # For example, if a player throws a combination of one, two, three, three,
+  # three, and five, they could do any of the following:
+  #     score three threes as 300 and then throw the remaining three dice
+  def test_three_threes(self):
+    self.score_check([3, 3, 3], 300)
+  #     score the single one as 100 and then throw the remaining five dice
+  def test_one_one(self):
+    self.score_check([1], 100)
+  #     score the single five as 50 and then throw the remaining five dice
+  def test_one_five(self):
+    self.score_check([5], 50)
+  #     score three threes, the single one, and the single five for a total of 450 and stop, banking 450 points in that turn
+  def test_score_full(self):
+    self.score_check([3, 3, 3, 1, 5], 450)
+  def test_score_invalid(self):
+    self.score_check([1, 2, 3, 3, 3, 5], 0)
+
+if __name__ == "__main__":
+  _ = unittest.main()

@@ -38,7 +38,6 @@ class Player(ABC):
       for i in range(start, end + 1):
         assert set.count(i) > 0
         set.remove(i)
-    print(set)
 
     score = 0
     # Runs of 1..5, 2..6, or 1..6
@@ -59,7 +58,6 @@ class Player(ABC):
 
     for face in range(1, 6):
       count = count_of_kind(face)
-      print(face, count)
       # 3 or more of a kind
       # face * 100, *2 for 4, *4 for 5, *8 for 6
       # 3 ones are worth 1000
