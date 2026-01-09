@@ -9,10 +9,15 @@ from typing import final
 
 def flip_coin():
   return "Heads" if randint(0, 1) == 0 else "Tails"
-def roll_dice():
+def roll_die():
   return randint(1, 6)
 
 class Player(ABC):
+  def roll_dice(self, count: int):
+    rolls = [roll_die() for _ in range(0, count)]
+    print(rolls)
+    return rolls
+
   def __init__(self):
     self.score: int = 0
 
@@ -47,6 +52,7 @@ class AiPlayer(Player):
     return self._name
 
   def play(self) -> int:
+    self.roll_dice(6)
     raise NotImplemented()
 
 @final
