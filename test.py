@@ -54,5 +54,12 @@ class FarkleTestMethods(unittest.TestCase):
   def test_five_fives(self):
     self.score_check([5, 5, 5, 5, 5], 2000)
 
+  def test_full_house(self):
+    # three sizes, two ones, and a five
+    self.score_check([6, 6, 1, 6, 1, 5], 850)
+
+  def test_three_sizes(self):
+    self.score_check([6, 6, 6], 600)
+
 if __name__ == "__main__":
   _ = unittest.main()

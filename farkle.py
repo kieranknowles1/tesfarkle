@@ -92,7 +92,14 @@ class ScoreSystem(ABC):
 
 class KcdScoreSystem(ScoreSystem):
   def bust_chance(self, i) -> float:
-    return [2.0/3.0, 4.0/9.0, 0.282, 0.167, 0.091, 0.044][i - 1]
+    return [
+      2 / 3,
+      4 / 9,
+      1 / 3.6,
+      1 / 6.35,
+      1 / 13,
+      1 / 32
+    ][i - 1]
 
   def score_selection(self, rolls: list[int]) -> int:
     def count_of_kind(value: int):
@@ -120,7 +127,7 @@ class KcdScoreSystem(ScoreSystem):
       remove_range(2, 6)
       score += 750
 
-    for face in range(1, 6):
+    for face in range(1, 7):
       count = count_of_kind(face)
       # 3 or more of a kind
       # face * 100, *2 for 4, *4 for 5, *8 for 6
@@ -223,8 +230,6 @@ class Game:
 
 def main():
   scoring = KcdScoreSystem()
-  print(scoring.exact_bust_risk())
-  return
   a = AiPlayer("Alan")
   b = AiPlayer("Bob")
   g = Game(scoring, a, b)
