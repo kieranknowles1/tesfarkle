@@ -54,6 +54,8 @@ class FarkleTestMethods(unittest.TestCase):
   def test_five_fives(self):
     self.score_check([5, 5, 5, 5, 5], 2000)
 
+  # Commit 71d36ecf52f40c516c14f9324404996e4b26c1fb
+  # Scoring three sixes would not be recognised as face iteration stopped at 5
   def test_full_house(self):
     # three sizes, two ones, and a five
     self.score_check([6, 6, 1, 6, 1, 5], 850)

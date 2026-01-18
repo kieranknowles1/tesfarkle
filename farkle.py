@@ -127,7 +127,7 @@ class KcdScoreSystem(ScoreSystem):
       remove_range(2, 6)
       score += 750
 
-    for face in range(1, 7):
+    for face in range(1, 6 + 1):
       count = count_of_kind(face)
       # 3 or more of a kind
       # face * 100, *2 for 4, *4 for 5, *8 for 6
