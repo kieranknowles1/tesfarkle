@@ -7,9 +7,9 @@ import farkle
 
 @final
 class FarkleTestMethods(unittest.TestCase):
-  player = farkle.AiPlayer("Testy McTestFace")
   def score_check(self, dice: list[int], expected: int):
-    self.assertEqual(self.player.score_selection(dice), expected)
+    score = farkle.KcdScoreSystem()
+    self.assertEqual(score.score_selection(dice), expected)
 
   def test_run_15(self):
     self.score_check([1, 2, 3, 4, 5], 500)

@@ -12,15 +12,12 @@ def flip_coin():
 def roll_die():
   return randint(1, 6)
 
-class Player(ABC):
-  def roll_dice(self, count: int):
-    rolls = [roll_die() for _ in range(0, count)]
-    print(rolls)
-    return rolls
+class ScoreSystem(ABC):
+  @abstractmethod
+  def score_selection(self, set: list[int]) -> int:
+    ...
 
-  def __init__(self):
-    self.score: int = 0
-
+class KcdScoreSystem(ScoreSystem):
   def score_selection(self, set: list[int]) -> int:
     '''
     Return the score of a dice set, or 0 if invalid
@@ -51,11 +48,6 @@ class Player(ABC):
       remove_range(2, 6)
       score += 750
 
-    def kind_score(face: int, count: int) -> int:
-      base = 1000 if face == 1 else 100 * face
-      mult = pow(2, count - 3)
-      return base * mult
-
     for face in range(1, 6):
       count = count_of_kind(face)
       # 3 or more of a kind
@@ -79,13 +71,22 @@ class Player(ABC):
 
     return score
 
+class Player(ABC):
+  def roll_dice(self, count: int):
+    rolls = [roll_die() for _ in range(0, count)]
+    print(rolls)
+    return rolls
+
+  def __init__(self):
+    self.score: int = 0
+
   @property
   @abstractmethod
   def name(self) -> str:
     ...
 
   @abstractmethod
-  def play(self) -> int:
+  def play(self, scoring: ScoreSystem) -> int:
     '''
     Play a round, returning the player's score this round
     '''
@@ -96,8 +97,8 @@ class HumanPlayer(Player):
   def name(self) -> str:
     return "Human"
 
-  def play(self) -> int:
-    raise NotImplemented()
+  def play(self, scoring: ScoreSystem) -> int:
+    raise NotImplementedError()
 
 @final
 class AiPlayer(Player):
@@ -109,15 +110,16 @@ class AiPlayer(Player):
   def name(self) -> str:
     return self._name
 
-  def play(self) -> int:
+  def play(self, scoring: ScoreSystem) -> int:
     rolls = self.roll_dice(6)
-    score = self.score_selection(rolls)
+    score = scoring.score_selection(rolls)
     print(score)
-    raise NotImplemented()
+    raise NotImplementedError()
 
 @final
 class Game:
-  def __init__(self, player1: Player, player2: Player):
+  def __init__(self, scoring: ScoreSystem, player1: Player, player2: Player):
+    self.scoring = scoring
     self.target_score = 2000
     self.players = [player1, player2]
 
@@ -142,15 +144,16 @@ class Game:
     '''
     for player in self.players:
       print(f"{player.name}'s turn")
-      player.score += player.play()
+      player.score += player.play(self.scoring)
       if player.score >= self.target_score:
         return player
     return None
 
 def main():
+  scoring = KcdScoreSystem()
   a = AiPlayer("Alan")
   b = AiPlayer("Bob")
-  g = Game(a, b)
+  g = Game(scoring, a, b)
   g.play_game()
 
 if __name__ == "__main__":
