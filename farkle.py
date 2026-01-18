@@ -6,35 +6,107 @@
 from abc import ABC, abstractmethod
 from random import randint
 from typing import final
+from itertools import permutations
+
+DICE_COUNT = 6
 
 def flip_coin():
   return "Heads" if randint(0, 1) == 0 else "Tails"
 def roll_die():
   return randint(1, 6)
+def total_combinations(numdice: int):
+  '''
+  Total combinations from rolling N dice
+  '''
+  return pow(6, numdice)
+
+class DiceIterator:
+  '''
+  Iterate all possible combinations from rolling N dice
+  '''
+  def __init__(self, numdice: int):
+    self.numdice = numdice
+    self.current = 0
+    self.max = total_combinations(numdice)
+    self.powers = [total_combinations(i - 1) for i in range(1, numdice + 1)]
+
+  def __iter__(self):
+    return self
+
+  def __next__(self):
+    if self.current >= self.max:
+      raise StopIteration()
+
+    value = [
+      (self.current // self.powers[i]) % 6 + 1
+      for i in range(self.numdice)
+    ]
+    self.current += 1
+
+    return value
 
 class ScoreSystem(ABC):
   @abstractmethod
-  def score_selection(self, set: list[int]) -> int:
-    ...
+  def bust_chance(self, i: int) -> float:
+    '''
+    Approximate bust chance for N dice as a fraction. See test_bust_chances for
+    validation against ground truth. Correct to within 3 decimal places (0.1%)
+    '''
 
-class KcdScoreSystem(ScoreSystem):
-  def score_selection(self, set: list[int]) -> int:
+  def exact_bust_risk(self) -> list[float]:
+    '''
+    Calculate the risk of going bust based on number of dice rolled using
+    full enumeration.
+    VERY SLOW: Precompute results if at all possible. Runs in O(n^6 & 2^n)
+    as we check if every possible combination (n^6) is bust (2^n)
+    '''
+    out = []
+
+    for dice in range(1, DICE_COUNT + 1):
+      total = total_combinations(dice)
+      bust = 0
+      for combination in DiceIterator(dice):
+        if self.is_bust(combination):
+          bust += 1
+      out.append(bust / total)
+    return out
+
+  def is_bust(self, rolls: list[int]):
+    '''
+    Is the player bust with the given rolls?
+    Not the fastest, runs in O(2^n) so use only for small sets.
+    '''
+    n = len(rolls)
+    for mask in range(1, 1 << n):
+      selection = [rolls[i] for i in range(n) if mask & (1 << i)]
+      if self.score_selection(list(selection)) != 0:
+        return False
+
+    return True
+
+  @abstractmethod
+  def score_selection(self, rolls: list[int]) -> int:
     '''
     Return the score of a dice set, or 0 if invalid
     '''
 
+class KcdScoreSystem(ScoreSystem):
+  def bust_chance(self, i) -> float:
+    return [2.0/3.0, 4.0/9.0, 0.282, 0.167, 0.091, 0.044][i - 1]
+
+  def score_selection(self, rolls: list[int]) -> int:
     def count_of_kind(value: int):
-      return set.count(value)
+      return rolls.count(value)
 
     def is_run(start: int, end: int):
       for i in range(start, end + 1):
-        if set.count(i) == 0:
+        if rolls.count(i) == 0:
           return False
       return True
     def remove_range(start: int, end: int):
       for i in range(start, end + 1):
-        assert set.count(i) > 0
-        set.remove(i)
+        assert rolls.count(i) > 0
+        rolls.remove(i)
 
     score = 0
     # Runs of 1..5, 2..6, or 1..6
@@ -111,7 +183,7 @@ class AiPlayer(Player):
     return self._name
 
   def play(self, scoring: ScoreSystem) -> int:
-    rolls = self.roll_dice(6)
+    rolls = self.roll_dice(DICE_COUNT)
     score = scoring.score_selection(rolls)
     print(score)
     raise NotImplementedError()
@@ -151,6 +223,8 @@ class Game:
 
 def main():
   scoring = KcdScoreSystem()
+  print(scoring.exact_bust_risk())
+  return
   a = AiPlayer("Alan")
   b = AiPlayer("Bob")
   g = Game(scoring, a, b)

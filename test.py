@@ -11,6 +11,13 @@ class FarkleTestMethods(unittest.TestCase):
     score = farkle.KcdScoreSystem()
     self.assertEqual(score.score_selection(dice), expected)
 
+  def test_bust_changes(self):
+    score = farkle.KcdScoreSystem()
+    actual = score.exact_bust_risk()
+    for i in range(1, len(actual) + 1):
+      given = score.bust_chance(i)
+      self.assertAlmostEqual(given, actual[i - 1], places=3)
+
   def test_run_15(self):
     self.score_check([1, 2, 3, 4, 5], 500)
   def test_run_and_one(self):
