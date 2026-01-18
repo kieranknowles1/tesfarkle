@@ -6,7 +6,6 @@
 from abc import ABC, abstractmethod
 from random import randint
 from typing import final
-from itertools import permutations
 
 DICE_COUNT = 6
 
