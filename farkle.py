@@ -157,7 +157,7 @@ class Player(ABC):
     ...
 
   @abstractmethod
-  def play(self, scoring: ScoreSystem) -> int:
+  def play(self, game: Game) -> int:
     '''
     Play a round, returning the player's score this round
     '''
@@ -168,7 +168,7 @@ class HumanPlayer(Player):
   def name(self) -> str:
     return "Human"
 
-  def play(self, scoring: ScoreSystem) -> int:
+  def play(self, game: Game) -> int:
     raise NotImplementedError()
 
 @final
@@ -181,9 +181,9 @@ class AiPlayer(Player):
   def name(self) -> str:
     return self._name
 
-  def play(self, scoring: ScoreSystem) -> int:
+  def play(self, game: Game) -> int:
     rolls = roll_dice(DICE_COUNT)
-    score = scoring.score_stats(rolls)
+    score = game.scoring.score_stats(rolls)
     print(score)
     raise NotImplementedError()
 
@@ -215,7 +215,7 @@ class Game:
     '''
     for player in self.players:
       print(f"{player.name}'s turn")
-      player.score += player.play(self.scoring)
+      player.score += player.play(self)
       if player.score >= self.target_score:
         return player
     return None
