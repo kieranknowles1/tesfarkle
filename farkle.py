@@ -6,6 +6,7 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from random import randint
+import random
 from typing import final, override
 
 DICE_COUNT = 6
@@ -18,6 +19,14 @@ def roll_dice(count: int):
   rolls = [roll_die() for _ in range(0, count)]
   print(rolls)
   return rolls
+def percentile_roll(chance: float):
+  '''
+  Return true in 1/chance cases
+  '''
+  return random.uniform(0, 1) < chance
+
+def print_status(player: Player, round: int, selection: int):
+  print(f"{player.name}: {player.score}/{round}/{selection}")
 
 @dataclass
 class ScoreStats:
@@ -149,7 +158,8 @@ class KcdScoreSystem(ScoreSystem):
 
 class Player(ABC):
   def __init__(self):
-    self.score: int = 0
+    self.score = 0
+    self.times_busted = 0
 
   @property
   @abstractmethod
@@ -181,33 +191,102 @@ class AiPlayer(Player):
   def name(self) -> str:
     return self._name
 
+  def will_roll(self, game: Game, active_dice: int, round_score: int, roll_score: ScoreStats) -> bool:
+    # Always roll at least once
+    if round_score == 0:
+      print("Haven't rolled yet")
+      return True
+    # If we've won, then stop rolling
+    if round_score + self.score >= game.target_score:
+      print("I won!")
+      return False
+
+    potential = round_score + roll_score.fewest_score
+    risk_mult = potential / 500
+
+    next_roll_dice = active_dice - roll_score.fewest_dice
+    next_roll_dice = DICE_COUNT if next_roll_dice == 0 else next_roll_dice
+
+    risk = game.scoring.bust_chance(next_roll_dice)
+    chance = (1 - (risk_mult * risk)) ** 3/4
+    print(f"Thinking about reroll {chance}")
+    return percentile_roll(chance)
+
+  def take_all(self, game: Game, round_score: int, roll_score: ScoreStats):
+    score_if_taken = self.score + round_score + roll_score.best_score
+
+    # If we'd win, take it
+    if score_if_taken >= game.target_score:
+      return True
+    # Otherwise, randomise decision
+    return percentile_roll(roll_score.best_score / 500 ** 2)
+
   def play(self, game: Game) -> int:
-    rolls = roll_dice(DICE_COUNT)
-    score = game.scoring.score_stats(rolls)
-    print(score)
-    raise NotImplementedError()
+    active_dice = DICE_COUNT
+    round_score = 0
+
+    while True:
+      if active_dice == 0: # Start again with a full hand after a full house
+        active_dice = DICE_COUNT
+      rolls = roll_dice(active_dice)
+      if game.scoring.is_bust(rolls):
+        self.times_busted += 1
+        print("Bust!")
+        return 0
+
+      # Do we want to reroll?
+      roll_score = game.scoring.score_stats(rolls)
+      wants_reroll = self.will_roll(game, active_dice, round_score, roll_score)
+
+      # If we have a full house, are going to stop rolling, or "choose to", take
+      # everything we can
+      hand_score: int
+      if not wants_reroll or roll_score.best_dice == active_dice or self.take_all(game, round_score, roll_score):
+        hand_score = roll_score.best_score
+        active_dice -= roll_score.best_dice
+        print(f"Take it all {round_score}")
+      else:
+        hand_score = roll_score.fewest_score
+        active_dice -= roll_score.fewest_dice
+        print(f"Take as little as possible {round_score}")
+      print_status(self, round_score, hand_score)
+      round_score += hand_score
+
+      if not wants_reroll:
+        break
+
+    print("Bank")
+    return round_score
 
 @final
 class Game:
-  def __init__(self, scoring: ScoreSystem, player1: Player, player2: Player):
+  def __init__(self, scoring: ScoreSystem, player1: Player, player2: Player, random_start: bool = True, target_score: int = 2000):
+    self.random_start = random_start
     self.scoring = scoring
-    self.target_score = 2000
+    self.target_score = target_score
     self.players = [player1, player2]
 
     pass
 
   def play_game(self):
     # Randomise who goes first
-    flip = flip_coin()
-    assert len(self.players) == 2 # Only support exactly 2 players
-    if flip == "Heads":
-      self.players.reverse()
-    print(f"{flip} - {self.players[0].name} goes first.")
+    if self.random_start:
+      flip = flip_coin()
+      assert len(self.players) == 2 # Only support exactly 2 players
+      if flip == "Heads":
+        self.players.reverse()
+      print(f"{flip} - {self.players[0].name} goes first.")
+
+    # Reset everyone's score
+    for p in self.players:
+      p.score = 0
 
     winner = None
     while winner == None:
       winner = self.play_round()
     print(f"{winner.name} wins!")
+
+    return winner
 
   def play_round(self):
     '''
@@ -215,7 +294,13 @@ class Game:
     '''
     for player in self.players:
       print(f"{player.name}'s turn")
-      player.score += player.play(self)
+
+      score = player.play(self)
+      if score == 0:
+        print(f"{player.name} went bust")
+      else:
+        print(f"{player.name} scored {score}")
+        player.score += score
       if player.score >= self.target_score:
         return player
     return None
