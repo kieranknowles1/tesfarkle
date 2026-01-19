@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from farkle import DICE_COUNT, KcdScoreSystem, ScoreSystem
+from farkle import DICE_COUNT, AiPlayer, Game, KcdScoreSystem, ScoreSystem
 
 
 def total_combinations(numdice: int):
@@ -55,6 +55,21 @@ def exact_bust_risk(scoring: ScoreSystem) -> list[float]:
 def main():
   scoring = KcdScoreSystem()
   print(exact_bust_risk(scoring))
+
+  a = AiPlayer("Alan")
+  b = AiPlayer("Bob")
+  game = Game(scoring, a, b, random_start=False)
+
+  a_wins = 0
+  b_wins = 0
+  MONTE_CARLO_ITERATIONS = 1000
+  for i in range(MONTE_CARLO_ITERATIONS):
+    if game.play_game().name == a.name:
+      a_wins += 1
+    else:
+      b_wins += 1
+  print(f"In {MONTE_CARLO_ITERATIONS} samples, A won {a_wins} times, B won {b_wins} times")
+  print(f"A busted {a.times_busted} times, B {b.times_busted}")
 
 if __name__ == "__main__":
   main()
