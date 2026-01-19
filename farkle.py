@@ -56,8 +56,8 @@ class ScoreSystem(ABC):
     '''
     Calculate the risk of going bust based on number of dice rolled using
     full enumeration.
-    VERY SLOW: Precompute results if at all possible. Runs in O(n^6 & 2^n)
-    as we check if every possible combination (n^6) is bust (2^n)
+    VERY SLOW: Precompute results if at all possible. Runs in O(n^6)
+    as we check if every possible combination.
     '''
     out = []
 
@@ -73,21 +73,22 @@ class ScoreSystem(ABC):
   def is_bust(self, rolls: list[int]):
     '''
     Is the player bust with the given rolls?
-    Not the fastest, runs in O(2^n) so use only for small sets.
     '''
-    n = len(rolls)
-    for mask in range(1, 1 << n):
-      selection = [rolls[i] for i in range(n) if mask & (1 << i)]
-      if self.score_selection(list(selection)) != 0:
-        return False
-
-    return True
+    best, _full = self.best_score(rolls)
+    return best == 0
 
   @abstractmethod
+  def best_score(self, rolls: list[int]) -> tuple[int, bool]:
+    '''
+    Return the best possible score of a selection, and whether all dice are used
+    '''
+
   def score_selection(self, rolls: list[int]) -> int:
     '''
-    Return the score of a dice set, or 0 if invalid
+    Return the score of a dice set, or 0 if one or more dice are unused
     '''
+    result, full = self.best_score(rolls)
+    return result if full else 0
 
 class KcdScoreSystem(ScoreSystem):
   def bust_chance(self, i) -> float:
@@ -100,19 +101,22 @@ class KcdScoreSystem(ScoreSystem):
       1 / 32
     ][i - 1]
 
-  def score_selection(self, rolls: list[int]) -> int:
+  def best_score(self, rolls: list[int]) -> tuple[int, bool]:
+    unused = rolls
     def count_of_kind(value: int):
-      return rolls.count(value)
+      return unused.count(value)
 
     def is_run(start: int, end: int):
       for i in range(start, end + 1):
-        if rolls.count(i) == 0:
+        if unused.count(i) == 0:
           return False
       return True
     def remove_range(start: int, end: int):
       for i in range(start, end + 1):
-        assert rolls.count(i) > 0
-        rolls.remove(i)
+        assert unused.count(i) > 0
+        unused.remove(i)
+    def remove_face(face: int):
+      return list(filter(face.__ne__, unused))
 
     score = 0
     # Runs of 1..5, 2..6, or 1..6
@@ -135,19 +139,22 @@ class KcdScoreSystem(ScoreSystem):
         base = 1000 if face == 1 else 100 * face
         mult = pow(2, count - 3)
         score += base * mult
+        unused = remove_face(face)
       # Lone ones/fives
       # 100 points per one, 50 per five
       elif count > 0:
         if face == 1:
           score += 100 * count
+          unused = remove_face(face)
         elif face == 5:
           score += 50 * count
+          unused = remove_face(face)
         else:
           # Invalid combination
-          return 0
+          pass
 
 
-    return score
+    return (score,unused == [])
 
 class Player(ABC):
   def roll_dice(self, count: int):

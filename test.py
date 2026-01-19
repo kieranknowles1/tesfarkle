@@ -26,6 +26,9 @@ class FarkleTestMethods(unittest.TestCase):
     self.score_check([1, 2, 3, 4, 5, 6], 1500)
   def test_run_26(self):
     self.score_check([2, 3, 4, 5, 6], 750)
+  def test_run_alone(self):
+    self.score_check([1, 2, 3, 4, 5, 5], 550)
+    self.score_check([1, 2, 3, 4, 5, 1], 600)
 
   # Scoring example from Wikipedia
   # For example, if a player throws a combination of one, two, three, three,
@@ -62,6 +65,15 @@ class FarkleTestMethods(unittest.TestCase):
 
   def test_three_sizes(self):
     self.score_check([6, 6, 6], 600)
+
+  def test_unused_dice(self):
+    rolls = [1, 1, 1, 2, 3, 4]
+    scoring = farkle.KcdScoreSystem()
+    # We're not bust
+    self.assertEqual(scoring.best_score(rolls), (1000, False))
+    self.assertEqual(scoring.is_bust(rolls), False)
+    # But we also don't have a full house
+    self.assertEqual(scoring.score_selection(rolls), 0)
 
 if __name__ == "__main__":
   _ = unittest.main()
