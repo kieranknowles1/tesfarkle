@@ -1,0 +1,1 @@
+Spriggit.CLI serialize -i farkle.esp -o plugindata
