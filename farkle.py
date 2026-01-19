@@ -178,8 +178,49 @@ class HumanPlayer(Player):
   def name(self) -> str:
     return "Human"
 
+  def select_dice(self, scoring: ScoreSystem, rolls: list[int]) -> list[int]:
+    while True:
+      prompt = ", ".join([
+        f"{chr(i + ord('a'))}: {rolls[i]}"
+        for i in range(len(rolls))
+      ])
+      print(f"Rolls: {prompt}")
+      choice = input("Which dice will you score: ")
+
+      selection = [rolls[ord(i) - ord('a')] for i in choice]
+      if scoring.score_selection(selection) > 0:
+        return selection
+      else:
+        print("Invalid combination")
+
+
   def play(self, game: Game) -> int:
-    raise NotImplementedError()
+    active_dice = DICE_COUNT
+    round_score = 0
+
+    while True:
+      if active_dice == 0: # Start again with a full hand after a full house
+        active_dice = DICE_COUNT
+      rolls = roll_dice(active_dice)
+      if game.scoring.is_bust(rolls):
+        self.times_busted += 1
+        print("Bust!")
+        return 0
+
+      selection = self.select_dice(game.scoring, rolls)
+      selection_score = game.scoring.score_selection(selection)
+
+      print_status(self, round_score, selection_score)
+      round_score += selection_score
+      active_dice -= len(selection)
+
+      reroll = input("Do you want to roll again? (y/n) ") == 'y'
+
+      if not reroll:
+        break
+
+    print("Bank")
+    return round_score
 
 @final
 class AiPlayer(Player):
@@ -260,7 +301,14 @@ class AiPlayer(Player):
 
 @final
 class Game:
-  def __init__(self, scoring: ScoreSystem, player1: Player, player2: Player, random_start: bool = True, target_score: int = 2000):
+  def __init__(
+    self,
+    scoring: ScoreSystem,
+    player1: Player,
+    player2: Player,
+    random_start: bool = True,
+    target_score: int = 2000
+  ):
     self.random_start = random_start
     self.scoring = scoring
     self.target_score = target_score
@@ -303,11 +351,15 @@ class Game:
         player.score += score
       if player.score >= self.target_score:
         return player
+
+    print("End of round scores:")
+    for player in self.players:
+      print(f"\t{player.name}: {player.score}")
     return None
 
 def main():
   scoring = KcdScoreSystem()
-  a = AiPlayer("Alan")
+  a = HumanPlayer()
   b = AiPlayer("Bob")
   g = Game(scoring, a, b)
   g.play_game()
