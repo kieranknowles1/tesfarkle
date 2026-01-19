@@ -93,12 +93,12 @@ class ScoreSystem(ABC):
 class KcdScoreSystem(ScoreSystem):
   def bust_chance(self, i) -> float:
     return [
-      2 / 3,
-      4 / 9,
-      1 / 3.6,
-      1 / 6.35,
-      1 / 13,
-      1 / 32
+      0.667,
+      0.444,
+      0.278,
+      0.157,
+      0.077,
+      0.031,
     ][i - 1]
 
   def best_score(self, rolls: list[int]) -> tuple[int, bool]:
