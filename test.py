@@ -12,7 +12,7 @@ class FarkleTestMethods(unittest.TestCase):
     score = farkle.KcdScoreSystem()
     self.assertEqual(score.score_selection(dice), expected)
 
-  def test_bust_changes(self):
+  def test_bust_chances(self):
     score = farkle.KcdScoreSystem()
     actual = analysis.exact_bust_risk(score)
     for i in range(1, len(actual) + 1):
@@ -71,7 +71,12 @@ class FarkleTestMethods(unittest.TestCase):
     rolls = [1, 1, 1, 2, 3, 4]
     scoring = farkle.KcdScoreSystem()
     # We're not bust
-    self.assertEqual(scoring.best_score(rolls), (1000, False))
+    self.assertEqual(scoring.score_stats(rolls), farkle.ScoreStats(
+      best_score=1000,
+      best_dice=3,
+      fewest_score=100,
+      fewest_dice=1
+    ))
     self.assertEqual(scoring.is_bust(rolls), False)
     # But we also don't have a full house
     self.assertEqual(scoring.score_selection(rolls), 0)
