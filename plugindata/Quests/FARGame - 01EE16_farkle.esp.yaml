@@ -1,0 +1,59 @@
+FormKey: 01EE16:farkle.esp
+EditorID: FARGame
+Name:
+  TargetLanguage: English
+  Value: Farkle
+Event: SCPT
+EventConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetEventDataConditionData
+    Member: Keyword
+    Record: 014C12:farkle.esp
+  ComparisonValue: 1
+Stages:
+- Flags:
+  - StartUpStage
+- Index: 255
+  Flags:
+  - ShutDownStage
+NextAliasID: 5
+Aliases:
+- Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 1
+  Name: Opponent
+  Flags: []
+  FindMatchingRefFromEvent:
+    FromEvent: SCPT
+    EventData: 0x52310000
+  VoiceTypes: Null
+- ID: 2
+  Name: Table
+  Flags:
+  - ReservesLocationOrReference
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsIDConditionData
+      Object: 01EE14:farkle.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 3
+  Name: PlayerChair
+  Flags: []
+  FindMatchingRefNearAlias:
+    AliasID: 2
+    Type: LinkedRefChild
+  VoiceTypes: Null
+- ID: 4
+  Name: OpponentChair
+  Flags: []
+  FindMatchingRefNearAlias:
+    AliasID: 2
+    Type: LinkedRefChild
+  VoiceTypes: Null

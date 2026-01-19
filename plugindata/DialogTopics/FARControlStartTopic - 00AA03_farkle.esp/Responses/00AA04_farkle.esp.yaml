@@ -1,0 +1,7 @@
+FormKey: 00AA04:farkle.esp
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+LinkTo:
+- 00AA05:farkle.esp
+ResponseData: 0DBA23:Skyrim.esm

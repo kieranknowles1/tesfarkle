@@ -1,0 +1,15 @@
+FormKey: 01EE14:farkle.esp
+MajorRecordFlagsRaw: 8388608
+EditorID: FARTable
+SkyrimMajorRecordFlags:
+- 0x800000
+ObjectBounds:
+  First: -18, -20, 0
+  Second: 18, 18, 16
+Model:
+  File: MarkerX.nif
+  Data: 0x020000000000000000000000
+MarkerColor: '#00CC4C33'
+Flags: []
+MajorFlags:
+- IsMarker
