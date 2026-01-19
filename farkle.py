@@ -72,7 +72,7 @@ class KcdScoreSystem(ScoreSystem):
 
   @override
   def score_stats(self, rolls: list[int]) -> ScoreStats:
-    unused = rolls
+    unused = list(rolls)
     best_score = 0
     fewest_score = 0
     fewest_dice = 9999

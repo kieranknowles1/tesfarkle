@@ -81,5 +81,13 @@ class FarkleTestMethods(unittest.TestCase):
     # But we also don't have a full house
     self.assertEqual(scoring.score_selection(rolls), 0)
 
+    rolls = [1, 3, 5, 2, 4, 4]
+    self.assertEqual(scoring.score_stats(rolls), farkle.ScoreStats(
+      best_score=500, # Run 1..5
+      best_dice=5,
+      fewest_score=100,
+      fewest_dice=1
+    ))
+
 if __name__ == "__main__":
   _ = unittest.main()
