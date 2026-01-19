@@ -62,7 +62,8 @@ def main():
 
   a_wins = 0
   b_wins = 0
-  MONTE_CARLO_ITERATIONS = 1000
+  MONTE_CARLO_ITERATIONS = 10000
+
   for i in range(MONTE_CARLO_ITERATIONS):
     if game.play_game().name == a.name:
       a_wins += 1
