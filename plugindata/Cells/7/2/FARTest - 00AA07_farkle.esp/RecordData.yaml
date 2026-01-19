@@ -265,7 +265,7 @@ Temporary:
   LinkedReferences:
   - Reference: 01EE15:farkle.esp
   Placement:
-    Position: -208.10287, -157.89096, 0
+    Position: -194.90646, -158.66454, 0
     Rotation: 0, -0, 4.712389
 - MutagenObjectType: PlacedObject
   FormKey: 00AA24:farkle.esp
@@ -273,7 +273,7 @@ Temporary:
   LinkedReferences:
   - Reference: 01EE15:farkle.esp
   Placement:
-    Position: -336.10287, -157.89096, 0
+    Position: -348.6924, -158.92047, 0
     Rotation: 0, -0, 1.5707964
 - MutagenObjectType: PlacedNpc
   FormKey: 00AA25:farkle.esp

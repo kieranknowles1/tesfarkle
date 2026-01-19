@@ -5,3 +5,8 @@ FavorLevel: None
 LinkTo:
 - 00AA05:farkle.esp
 ResponseData: 0DBA23:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetQuestRunningConditionData
+    Quest: 01EE16:farkle.esp
