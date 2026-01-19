@@ -3,6 +3,7 @@ from typing import final
 import unittest
 
 import farkle
+import analysis
 
 
 @final
@@ -13,7 +14,7 @@ class FarkleTestMethods(unittest.TestCase):
 
   def test_bust_changes(self):
     score = farkle.KcdScoreSystem()
-    actual = score.exact_bust_risk()
+    actual = analysis.exact_bust_risk(score)
     for i in range(1, len(actual) + 1):
       given = score.bust_chance(i)
       self.assertAlmostEqual(given, actual[i - 1], places=3)
