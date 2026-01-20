@@ -5,8 +5,18 @@ VirtualMachineAdapter:
   - Name: FARGameScript
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: FARHeadsPlayerFirst
+      Object: 051828:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARTailsOpponentFirst
+      Object: 051829:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: Gold001
       Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Table
+      Object: 01EE16:farkle.esp
+      Alias: 2
   FileName: ''
   Aliases:
   - Property:
@@ -53,7 +63,8 @@ Aliases:
   VoiceTypes: Null
 - ID: 1
   Name: Opponent
-  Flags: []
+  Flags:
+  - StoresText
   FindMatchingRefFromEvent:
     FromEvent: SCPT
     EventData: 0x52310000
