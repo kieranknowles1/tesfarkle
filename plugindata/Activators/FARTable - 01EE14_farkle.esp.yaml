@@ -3,6 +3,31 @@ MajorRecordFlagsRaw: 8388608
 EditorID: FARTable
 SkyrimMajorRecordFlags:
 - 0x800000
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARTableScript
+    Properties:
+    - MutagenObjectType: ScriptObjectListProperty
+      Name: DiceBases
+      Objects:
+      - Name: ''
+        Object: 033218:farkle.esp
+      - Name: ''
+        Object: 04C71F:farkle.esp
+      - Name: ''
+        Object: 04C720:farkle.esp
+      - Name: ''
+        Object: 04C721:farkle.esp
+      - Name: ''
+        Object: 04C723:farkle.esp
+      - Name: ''
+        Object: 04C724:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARBet
+      Object: 04251C:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARCoin
+      Object: 04251B:farkle.esp
 ObjectBounds:
   First: -28, -41, -4
   Second: 4, 43, 4

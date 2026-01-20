@@ -1,0 +1,7 @@
+FormKey: 04251B:farkle.esp
+EditorID: FARCoin
+Model:
+  File: Clutter\Coin01.nif
+  Data: 0x020000000000000000000000
+MaxAngle: 90
+Unused: 0x000000
