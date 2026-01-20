@@ -231,7 +231,7 @@ Persistent:
   - 0x400
   Base: 01EE14:farkle.esp
   Placement:
-    Position: -255.00014, -158.41948, 66.40052
+    Position: -258.0636, -157.54669, 63.76344
 Temporary:
 - MutagenObjectType: PlacedObject
   FormKey: 00AA17:farkle.esp

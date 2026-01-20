@@ -29,8 +29,8 @@ VirtualMachineAdapter:
       Name: FARCoin
       Object: 04251B:farkle.esp
 ObjectBounds:
-  First: -28, -41, -4
-  Second: 4, 43, 4
+  First: -15, -41, -3
+  Second: 0, 43, 1
 Model:
   File: farkle\table.nif
   Data: 0x020000000000000000000000
