@@ -1,0 +1,35 @@
+FormKey: 05183A:farkle.esp
+VersionControl: 13364
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FAR_TIF__0505183A
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Player
+      Object: 01EE16:farkle.esp
+      Alias: 0
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: FAR_TIF__0505183A
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: FAR_TIF__0505183A
+      FragmentName: Fragment_0
+Flags:
+  Flags:
+  - Goodbye
+PreviousDialog: Null
+FavorLevel: None
+ResponseData: 0DBA22:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 01EE16:farkle.esp
+    VariableName: ::PlayerTurnActive_var
+  ComparisonValue: 1

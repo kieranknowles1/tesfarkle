@@ -1,5 +1,6 @@
 Scriptname FARHumanPlayer extends FARPlayer  
 
+Message Property FARSelectionInvalid Auto
 ReferenceAlias Property PlayerChair Auto
 
 Event OnSit(ObjectReference akFurniture)
@@ -13,10 +14,37 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
 EndEvent
 
 int activeDice
+int roundScore
 Function OnTurnBegin()
-    Debug.Trace("Player turn begin")
     activeDice = 6
+    roundScore = 0
+    Debug.Trace("Player turn begin")
     NextRoll()
+EndFunction
+
+; Score current selection, then reroll
+Function ScoreAndReroll()
+    FARGameScript gameControl = GetOwningQuest() as FARGameScript
+    int score = gameControl.ScoreDice(none)
+    if score > 0
+        roundScore += score
+        NextRoll()
+    else
+        FARSelectionInvalid.Show()
+    endif
+
+EndFunction
+
+; Score current selection, then pass
+Function ScoreAndPass()
+    FARGameScript gameControl = GetOwningQuest() as FARGameScript
+    int score = gameControl.ScoreDice(none)
+    if score > 0
+        roundScore += score
+        EndTurn(roundScore)
+    else
+        FARSelectionInvalid.Show()
+    endif
 EndFunction
 
 Function NextRoll()

@@ -10,7 +10,9 @@ VirtualMachineAdapter:
       ExtraBindDataVersion: 1
       ScriptName: FAR_TIF__0505182E
       FragmentName: Fragment_0
-Flags: {}
+Flags:
+  Flags:
+  - Goodbye
 PreviousDialog: Null
 FavorLevel: None
 ResponseData: 0E0CBB:Skyrim.esm

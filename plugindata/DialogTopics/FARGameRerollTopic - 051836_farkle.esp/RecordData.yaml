@@ -1,0 +1,10 @@
+FormKey: 051836:farkle.esp
+VersionControl: 13364
+EditorID: FARGameRerollTopic
+Name:
+  TargetLanguage: English
+  Value: Reroll
+Priority: 60
+Branch: 051835:farkle.esp
+Quest: 01EE16:farkle.esp
+SubtypeName: CUST

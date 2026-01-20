@@ -1,0 +1,10 @@
+FormKey: 051839:farkle.esp
+VersionControl: 13364
+EditorID: FARGameBankTopic
+Name:
+  TargetLanguage: English
+  Value: Bank
+Priority: 55
+Branch: 051838:farkle.esp
+Quest: 01EE16:farkle.esp
+SubtypeName: CUST

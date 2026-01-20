@@ -1,4 +1,4 @@
-Scriptname FARGameScript extends Quest  
+Scriptname FARGameScript extends Quest Conditional
 
 int Property Bet Auto
 MiscObject Property Gold001 Auto
@@ -14,6 +14,8 @@ Message Property FARGameWon Auto
 
 Message Property FARPlayerBust Auto
 Message Property FARPlayerScored Auto
+
+bool Property PlayerTurnActive = false Auto Conditional
 
 ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
 FARPlayer currentPlayer ; Tracking who's turn it is
@@ -77,6 +79,7 @@ Function BeginRound()
     currentPlayerAlias.ForceRefTo(currentPlayer.GetReference())
     FARTurnStart.Show()
     Debug.Trace("Begin round for " + currentPlayer)
+    PlayerTurnActive = currentPlayer as FARHumanPlayer != none
     currentPlayer.OnTurnBegin()
 EndFunction
 

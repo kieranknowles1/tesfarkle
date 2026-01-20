@@ -1,0 +1,8 @@
+FormKey: 051835:farkle.esp
+VersionControl: 13364
+EditorID: FARGameReroll
+Quest: 01EE16:farkle.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 051836:farkle.esp
