@@ -1,6 +1,19 @@
 Scriptname FARDieScript extends ObjectReference  
 
 int Property Value Auto
+FARTableScript Property Table Auto
+bool Property Selected = false Auto
+
+float Property RaiseAmount = 1.5 AutoReadOnly Hidden
+
+Event OnActivate(ObjectReference akActionRef)
+    Selected = !Selected
+    float adjust = RaiseAmount
+    if !Selected
+        adjust = -adjust
+    endif
+    SetPosition(GetPositionX(), GetPositionY(), GetPositionZ() + adjust)
+EndEvent
 
 Function Align()
     float yaw = Utility.RandomFloat(0, 360)
