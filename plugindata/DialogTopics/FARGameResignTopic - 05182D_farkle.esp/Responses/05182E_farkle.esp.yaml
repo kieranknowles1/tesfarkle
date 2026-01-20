@@ -1,0 +1,22 @@
+FormKey: 05182E:farkle.esp
+VersionControl: 13364
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FAR_TIF__0505182E
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: FAR_TIF__0505182E
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: FAR_TIF__0505182E
+      FragmentName: Fragment_0
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+ResponseData: 0E0CBB:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
+  ComparisonValue: 1

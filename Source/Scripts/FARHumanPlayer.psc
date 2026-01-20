@@ -1,4 +1,4 @@
-Scriptname FARGamePlayer extends ReferenceAlias  
+Scriptname FARHumanPlayer extends FARPlayer  
 
 ReferenceAlias Property PlayerChair Auto
 

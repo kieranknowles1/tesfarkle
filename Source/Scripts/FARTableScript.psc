@@ -14,19 +14,6 @@ FARDieScript[] diceRefs
 ObjectReference coinRef
 ObjectReference betRef
 
-; TODO: Don't spawn anything until a game begins
-Event OnCellAttach()
-    SpawnDecor(Utility.RandomInt(0, 1) == 1)
-
-    int[] rolls = new int[6]
-    int i = 0
-    while i < rolls.Length
-        rolls[i] = Utility.RandomInt(1, 6)
-        i += 1
-    endwhile
-    SpawnDice(rolls)
-EndEvent
-
 Event OnCellDetach()
     Cleanup()
 EndEvent

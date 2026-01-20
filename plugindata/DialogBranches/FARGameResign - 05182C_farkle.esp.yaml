@@ -1,0 +1,8 @@
+FormKey: 05182C:farkle.esp
+VersionControl: 13364
+EditorID: FARGameResign
+Quest: 01EE16:farkle.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 05182D:farkle.esp

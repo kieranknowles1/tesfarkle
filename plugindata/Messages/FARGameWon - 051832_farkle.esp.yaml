@@ -1,0 +1,9 @@
+FormKey: 051832:farkle.esp
+VersionControl: 13364
+EditorID: FARGameWon
+Description:
+  TargetLanguage: English
+  Value: <Alias=CurrentPlayer> wins!
+INAM: 0x00000000
+Quest: 01EE16:farkle.esp
+DisplayTime: 2
