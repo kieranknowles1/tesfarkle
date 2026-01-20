@@ -29,14 +29,17 @@ Function SpawnDecor(bool flipHeads)
     endIf
 EndFunction
 
-Function SpawnDice(int[] rolls)
+; Show rolled dice, anything <= 0 is considered unused
+Function ShowDice(int[] rolls)
     ClearRolls()
 
     diceRefs = new FARDieScript[6]
     int i = 0
     while i < diceRefs.Length
-        diceRefs[i] = SpawnAtNode(DiceBases[rolls[i]], "Dice" + i) as FARDieScript
-        diceRefs[i].Align()
+        if rolls[i] > 0
+            diceRefs[i] = SpawnAtNode(DiceBases[rolls[i]], "Dice" + i) as FARDieScript
+            diceRefs[i].Align()
+        endif
         i += 1
     endwhile
 
