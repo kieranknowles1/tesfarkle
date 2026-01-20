@@ -231,7 +231,7 @@ Persistent:
   - 0x400
   Base: 01EE14:farkle.esp
   Placement:
-    Position: -271.02246, -147.07283, 64
+    Position: -255.00014, -158.41948, 66.40052
 Temporary:
 - MutagenObjectType: PlacedObject
   FormKey: 00AA17:farkle.esp
@@ -280,15 +280,5 @@ Temporary:
   Base: 1034E4:Skyrim.esm
   Placement:
     Position: -70.81226, 61.0218, 0
-- MutagenObjectType: PlacedObject
-  FormKey: 033219:farkle.esp
-  Base: 033218:farkle.esp
-  Placement:
-    Position: -251.63438, -130.39813, 75.09002
-- MutagenObjectType: PlacedObject
-  FormKey: 03321A:farkle.esp
-  Base: 033218:farkle.esp
-  Placement:
-    Position: -253.53323, -181.26027, 62.00657
 MajorFlags:
 - 0x40000

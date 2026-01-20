@@ -4,10 +4,10 @@ EditorID: FARTable
 SkyrimMajorRecordFlags:
 - 0x800000
 ObjectBounds:
-  First: -18, -20, 0
-  Second: 18, 18, 16
+  First: -28, -41, -4
+  Second: 4, 43, 4
 Model:
-  File: MarkerX.nif
+  File: farkle\table.nif
   Data: 0x020000000000000000000000
 MarkerColor: '#00CC4C33'
 Flags: []
