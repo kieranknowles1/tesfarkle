@@ -1,0 +1,16 @@
+FormKey: 033218:farkle.esp
+EditorID: FARDice
+ObjectBounds:
+  First: -4, -4, -4
+  Second: 4, 4, 4
+Name:
+  TargetLanguage: English
+  Value: Die
+Model:
+  File: farkle\dice.nif
+  Data: 0x020000000000000000000000
+MarkerColor: '#00CC4C33'
+ActivateTextOverride:
+  TargetLanguage: English
+  Value: Select
+Flags: []
