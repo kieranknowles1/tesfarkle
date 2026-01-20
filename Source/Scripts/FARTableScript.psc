@@ -37,7 +37,8 @@ Function ShowDice(int[] rolls)
     int i = 0
     while i < diceRefs.Length
         if rolls[i] > 0
-            diceRefs[i] = SpawnAtNode(DiceBases[rolls[i]], "Dice" + i) as FARDieScript
+            diceRefs[i] = SpawnAtNode(DiceBases[rolls[i] - 1], "Dice" + i) as FARDieScript
+            diceRefs[i].Table = self
             diceRefs[i].Align()
         endif
         i += 1

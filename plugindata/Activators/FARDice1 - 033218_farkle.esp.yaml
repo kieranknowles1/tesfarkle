@@ -8,8 +8,8 @@ VirtualMachineAdapter:
       Name: value
       Data: 1
 ObjectBounds:
-  First: -4, -4, -4
-  Second: 4, 4, 4
+  First: -1, -1, -1
+  Second: 1, 1, 1
 Name:
   TargetLanguage: English
   Value: Die (1)
