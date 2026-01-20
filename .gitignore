@@ -8,3 +8,13 @@ NavigationMeshInfoMaps
 
 # Compiler output
 *.pex
+
+# Built assets
+*.nif
+*.DDS
+
+# Intermediate meshes
+*.fbx
+
+# Blender backups
+*.blend1
