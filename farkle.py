@@ -137,7 +137,7 @@ class KcdScoreSystem(ScoreSystem):
       value = face_value(face, count)
 
       if value > 0:
-        needed = 1 if face in [1, 5] else count
+        needed = 1 if face in [1, 5] else 3
         if needed < fewest_dice:
           fewest_dice = needed
           # If we rolled a one or five, use that

@@ -89,5 +89,15 @@ class FarkleTestMethods(unittest.TestCase):
       fewest_dice=1
     ))
 
+  def test_ai_four_of_kind(self):
+    rolls = [2, 2, 2, 2]
+    scoring = farkle.KcdScoreSystem()
+    self.assertEqual(scoring.score_stats(rolls), farkle.ScoreStats(
+      best_score=400,
+      best_dice=4,
+      fewest_score=200,
+      fewest_dice=3
+    ))
+
 if __name__ == "__main__":
   _ = unittest.main()
