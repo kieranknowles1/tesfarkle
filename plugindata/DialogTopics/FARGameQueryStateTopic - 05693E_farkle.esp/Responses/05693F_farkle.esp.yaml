@@ -1,5 +1,4 @@
 FormKey: 05693F:farkle.esp
-VersionControl: 13365
 VirtualMachineAdapter:
   Scripts:
   - Name: FAR_TIF__0505693F
@@ -14,3 +13,9 @@ Flags: {}
 PreviousDialog: Null
 FavorLevel: None
 ResponseData: 0DBA27:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
+  ComparisonValue: 1

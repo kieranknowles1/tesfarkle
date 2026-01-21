@@ -1,8 +1,0 @@
-FormKey: 05693D:farkle.esp
-VersionControl: 13365
-EditorID: FARGameQueryState
-Quest: 01EE16:farkle.esp
-Category: Player
-Flags:
-- TopLevel
-StartingTopic: 05693E:farkle.esp

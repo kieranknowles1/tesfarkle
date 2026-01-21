@@ -3,7 +3,6 @@ EditorID: FARGameRerollTopic
 Name:
   TargetLanguage: English
   Value: Reroll
-Priority: 60
-Branch: 051835:farkle.esp
+Branch: 05BA40:farkle.esp
 Quest: 01EE16:farkle.esp
 SubtypeName: CUST

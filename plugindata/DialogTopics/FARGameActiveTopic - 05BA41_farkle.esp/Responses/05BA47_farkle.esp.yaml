@@ -1,0 +1,28 @@
+FormKey: 05BA47:farkle.esp
+VersionControl: 13365
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+LinkTo:
+- 051836:farkle.esp
+- 051839:farkle.esp
+- 05693E:farkle.esp
+- 05182D:farkle.esp
+Responses:
+- EmotionValue: 50
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: ' '
+  ScriptNotes: silent line
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
+  ComparisonValue: 1
