@@ -141,11 +141,7 @@ class KcdScoreSystem(ScoreSystem):
         # Score as few as possible, unless we could get more points with the same number of dice
         if needed < fewest_dice or (needed == fewest_dice and face_value(face, needed) > fewest_score):
           fewest_dice = needed
-          # If we rolled a one or five, use that
-          # otherwise, score three twos etc.
-          lone_value = face_value(face, 1)
-          fewest_score = lone_value if lone_value > 0 else face_value(face, needed)
-
+          fewest_score = face_value(face, needed)
 
         unused = remove_face(face)
       best_score += value
