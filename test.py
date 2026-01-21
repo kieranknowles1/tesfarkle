@@ -109,5 +109,15 @@ class FarkleTestMethods(unittest.TestCase):
       fewest_dice=1
     ))
 
+  def test_ai_two_triples(self):
+    rolls = [2, 2, 2, 6, 6, 6]
+    scoring = farkle.KcdScoreSystem()
+    self.assertEqual(scoring.score_stats(rolls), farkle.ScoreStats(
+      best_score=800,
+      best_dice=6,
+      fewest_score=600, # Prefer scoring the sixes, as it gives more points for the same dice
+      fewest_dice=3
+    ))
+
 if __name__ == "__main__":
   _ = unittest.main()
