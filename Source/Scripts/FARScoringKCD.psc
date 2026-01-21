@@ -50,7 +50,7 @@ int Function ScoreSelection(int[] selected)
     ScoreStats(selected)
     ; Array lengths are compile time!!!
     int selectedDice = FARArrayUtil.CountGreaterThan(selected, 0)
-    Debug.Trace(selectedDice + " of " + BestDice + " used")
+    ; Debug.Trace(selectedDice + " of " + BestDice + " used")
 
     if BestDice == selectedDice
         return BestScore
@@ -76,9 +76,9 @@ Function ScoreStats(int[] rolls)
     while face <= 6
         int count = FARArrayUtil.Count(rolls, face)
         int value = FaceValue(face, count)
-        Debug.Trace("Check face " + face + " " + count + " worth " + value)
+        ; Debug.Trace("Check face " + face + " " + count + " worth " + value)
         if value > 0
-            Debug.Trace("Score face " + face)
+            ; Debug.Trace("Score face " + face)
             int needed
             if face == 1 || face == 5
                 needed = 1
@@ -99,8 +99,7 @@ Function ScoreStats(int[] rolls)
         face += 1
     endwhile
 
-    Debug.Trace(BestScore + " " + BestDice + " " + FewestScore + " " + FewestDice)
-    Debug.Notification(BestScore + " " + BestDice + " " + FewestScore + " " + FewestDice)
+    ; Debug.Trace("scores " + BestScore + " " + BestDice + " " + FewestScore + " " + FewestDice)
 EndFunction
 
 ; Convention - `used` dice are replaced with their negative to track their values
@@ -144,7 +143,7 @@ bool Function ScoreRun(int[] rolls, int start, int end, int value, int loneValue
     while i <= end
         if FARArrayUtil.Count(rolls, i) == 0
             ; We don't have a run
-            Debug.Trace("No run " + start + " " + end)
+            ; Debug.Trace("No run " + start + " " + end)
             return false
         endif
         i += 1
