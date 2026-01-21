@@ -1,0 +1,31 @@
+FormKey: 05693C:farkle.esp
+VersionControl: 13365
+EditorID: FARGameState
+Description:
+  TargetLanguage: English
+  Value: >-
+    Bet: %.0f
+
+    Target score: %.0f
+
+
+    <Alias=Player>
+
+    Round: %.0f
+
+    Selection: %.0f
+
+    Banked: %.0f
+
+
+    <Alias=Opponent>
+
+    Round: %.0f
+
+    Selection: %.0f
+
+    Banked: %.0f
+INAM: 0x00000000
+Quest: 01EE16:farkle.esp
+Flags:
+- MessageBox

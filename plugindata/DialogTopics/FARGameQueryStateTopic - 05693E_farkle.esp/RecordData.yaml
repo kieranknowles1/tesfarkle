@@ -1,0 +1,10 @@
+FormKey: 05693E:farkle.esp
+VersionControl: 13365
+EditorID: FARGameQueryStateTopic
+Name:
+  TargetLanguage: English
+  Value: What are our scores?
+Priority: 51
+Branch: 05693D:farkle.esp
+Quest: 01EE16:farkle.esp
+SubtypeName: CUST

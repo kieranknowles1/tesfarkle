@@ -1,6 +1,7 @@
 Scriptname FARGameScript extends Quest Conditional
 
 int Property Bet Auto
+int Property TargetScore Auto
 MiscObject Property Gold001 Auto
 
 ReferenceAlias Property Table Auto
@@ -14,7 +15,9 @@ Message Property FARGameWon Auto
 
 Message Property FARPlayerBust Auto
 Message Property FARPlayerScored Auto
+Message Property FARGameState Auto
 
+; Used to condition dialogue based on whos turn it is
 bool Property PlayerTurnActive = false Auto Conditional
 
 ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
@@ -50,6 +53,9 @@ Function StartGame()
     Player.GetReference().RemoveItem(Gold001, bet)
     
     FARTableScript tableRef = Table.GetReference() as FARTableScript
+
+    Player.TotalScore = 0
+    Opponent.TotalScore = 0
     
     bool heads = Utility.RandomInt(0, 1) == 1
     if heads
@@ -86,6 +92,7 @@ Function BeginRound()
     FARTurnStart.Show()
     Debug.Trace("Begin round for " + currentPlayer)
     PlayerTurnActive = currentPlayer as FARHumanPlayer != none
+    currentPlayer.RoundScore = 0
     currentPlayer.OnTurnBegin()
 EndFunction
 
@@ -96,6 +103,26 @@ Function EndGame(FARPlayer winner)
 
     (Table.GetReference() as FARTableScript).Cleanup()
     gameActive = false
+EndFunction
+
+Function DisplayScores()
+    ; Bet: %.0f
+    ; Target score: %.0f
+
+    ; <Alias=Player>
+    ; Round: %.0f
+    ; Selection: %.0f
+    ; Banked: %.0f
+
+    ; <Alias=Opponent>
+    ; Round: %.0f
+    ; Selection: %.0f
+    ; Banked: %.0f
+    FARScoringKCD scoring = (self as form) as FARScoringKCD
+    FARTableScript tableRef = Table.GetReference() as FARTableScript
+    FARGameState.Show(Bet, TargetScore, \
+        Player.RoundScore, scoring.ScoreSelection(tableRef.GetSelection()), Player.TotalScore,\
+        Opponent.RoundScore, 0, Opponent.TotalScore)
 EndFunction
 
 Function Resign()

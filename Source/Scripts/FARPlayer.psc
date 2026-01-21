@@ -3,6 +3,9 @@ Scriptname FARPlayer extends ReferenceAlias
 ; Interface for both human and AI players
 ; See FARHumanPlayer and FARAiPlayer for implementation
 
+int Property RoundScore Auto
+int Property TotalScore Auto
+
 Function OnTurnBegin()
     Debug.Trace("Abstract function called")
 EndFunction

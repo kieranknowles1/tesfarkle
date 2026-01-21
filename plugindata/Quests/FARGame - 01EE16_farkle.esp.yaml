@@ -9,6 +9,9 @@ VirtualMachineAdapter:
       Object: 01EE16:farkle.esp
       Alias: 5
     - MutagenObjectType: ScriptObjectProperty
+      Name: FARGameState
+      Object: 05693C:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: FARGameWon
       Object: 051832:farkle.esp
     - MutagenObjectType: ScriptObjectProperty
@@ -41,6 +44,9 @@ VirtualMachineAdapter:
       Name: Table
       Object: 01EE16:farkle.esp
       Alias: 2
+    - MutagenObjectType: ScriptIntProperty
+      Name: TargetScore
+      Data: 2000
   - Name: FARScoringKCD
   FileName: ''
   Aliases:

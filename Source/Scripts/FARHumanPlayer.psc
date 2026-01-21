@@ -14,7 +14,6 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
 EndEvent
 
 int activeDice
-int roundScore
 Function OnTurnBegin()
     activeDice = 6
     roundScore = 0

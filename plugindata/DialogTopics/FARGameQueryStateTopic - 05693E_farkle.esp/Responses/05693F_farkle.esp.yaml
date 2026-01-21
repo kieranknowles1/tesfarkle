@@ -1,0 +1,16 @@
+FormKey: 05693F:farkle.esp
+VersionControl: 13365
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FAR_TIF__0505693F
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: FAR_TIF__0505693F
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: FAR_TIF__0505693F
+      FragmentName: Fragment_0
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+ResponseData: 0DBA27:Skyrim.esm
