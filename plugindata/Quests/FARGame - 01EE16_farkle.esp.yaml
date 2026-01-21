@@ -89,6 +89,16 @@ Stages:
   LogEntries:
   - Flags:
     - FailQuest
+    Entry:
+      TargetLanguage: English
+      Value: I lost
+- Index: 210
+  LogEntries:
+  - Flags:
+    - CompleteQuest
+    Entry:
+      TargetLanguage: English
+      Value: I won
 - Index: 255
   Flags:
   - ShutDownStage

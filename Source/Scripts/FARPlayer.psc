@@ -11,6 +11,7 @@ Function OnTurnBegin()
 EndFunction
 
 Function EndTurn(int score)
+    TotalScore += score
     (GetOwningQuest() as FARGameScript).EndRound(score)
 EndFunction
 

@@ -79,11 +79,16 @@ Function EndRound(int score)
         FARPlayerBust.Show()
     endif
 
+    if currentPlayer.TotalScore > TargetScore
+        EndGame(currentPlayer)
+        return
+    endif
+
     FARPlayer tmp = currentPlayer
     currentPlayer = nextPlayer
     nextPlayer = currentPlayer
 
-    ; TODO: Check for win
+    ; Swap players, and run another round
     BeginRound()
 EndFunction
 
@@ -103,6 +108,14 @@ Function EndGame(FARPlayer winner)
 
     (Table.GetReference() as FARTableScript).Cleanup()
     gameActive = false
+
+    ; Mark quest as complete or failed
+    if winner == Player
+        SetStage(210)
+    else
+        SetStage(200)
+    endif
+    Stop()
 EndFunction
 
 Function DisplayScores()
@@ -131,10 +144,6 @@ Function Resign()
     endif
 
     EndGame(Opponent)
-
-    ; Mark quest as failed
-    SetStage(200)
-    Stop()
 EndFunction
 
 Function ShowRolls(int[] rolls)
