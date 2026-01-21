@@ -86,7 +86,7 @@ Function EndRound(int score)
 
     FARPlayer tmp = currentPlayer
     currentPlayer = nextPlayer
-    nextPlayer = currentPlayer
+    nextPlayer = tmp
 
     ; Swap players, and run another round
     BeginRound()
