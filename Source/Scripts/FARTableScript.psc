@@ -61,6 +61,19 @@ Function DisableAndDelete(ObjectReference ref)
     ref.Delete()
 EndFunction
 
+int[] Function GetSelection()
+    int[] out = new int[6]
+    int i = 0
+    while i < diceRefs.Length
+        Debug.Trace("roll " + diceRefs[i].Value + " " + diceRefs[i].Selected)
+        if diceRefs[i].Selected
+            out[i] = diceRefs[i].Value
+        endif
+        i += 1
+    endwhile
+    return out
+EndFunction
+
 Function ClearRolls()
     int i = 0
     while diceRefs && i < diceRefs.Length

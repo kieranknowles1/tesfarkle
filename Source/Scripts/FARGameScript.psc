@@ -113,10 +113,3 @@ EndFunction
 Function ShowRolls(int[] rolls)
     (Table.GetReference() as FARTableScript).ShowDice(rolls)
 EndFunction
-
-; Score a set of dice, anything <= 0 is considered unused
-; Returns 0 if not all dice could be used
-int Function ScoreDice(int[] rolls)
-    ; TODO: Scoring, function to check if bust and AI variables
-    return 100
-EndFunction

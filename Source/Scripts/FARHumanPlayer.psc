@@ -22,12 +22,26 @@ Function OnTurnBegin()
     NextRoll()
 EndFunction
 
-; Score current selection, then reroll
-Function ScoreAndReroll()
+; Score all selected dice, then add to round score
+int Function ScoreSelectedDice()
     FARGameScript gameControl = GetOwningQuest() as FARGameScript
-    int score = gameControl.ScoreDice(none)
+    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+
+    FARTableScript table = gameControl.Table.GetReference() as FARTableScript
+    int[] selection = table.GetSelection()
+    int score = scoring.ScoreSelection(selection)
+
     if score > 0
         roundScore += score
+        activeDice -= scoring.BestDice
+    endif
+    return score
+EndFunction
+
+; Score current selection, then reroll
+Function ScoreAndReroll()
+    int score = ScoreSelectedDice()
+    if score > 0
         NextRoll()
     else
         FARSelectionInvalid.Show()
@@ -37,10 +51,8 @@ EndFunction
 
 ; Score current selection, then pass
 Function ScoreAndPass()
-    FARGameScript gameControl = GetOwningQuest() as FARGameScript
-    int score = gameControl.ScoreDice(none)
+    int score = ScoreSelectedDice()
     if score > 0
-        roundScore += score
         EndTurn(roundScore)
     else
         FARSelectionInvalid.Show()

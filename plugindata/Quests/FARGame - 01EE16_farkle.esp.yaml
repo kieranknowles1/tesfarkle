@@ -41,6 +41,7 @@ VirtualMachineAdapter:
       Name: Table
       Object: 01EE16:farkle.esp
       Alias: 2
+  - Name: FARScoringKCD
   FileName: ''
   Aliases:
   - Property:
