@@ -60,7 +60,15 @@ Function ScoreAndPass()
 EndFunction
 
 Function NextRoll()
+    if activeDice <= 0
+        activeDice = 6
+    endif
     FARGameScript gameControl = GetOwningQuest() as FARGameScript
     int[] rolls = RollDice(activeDice)
     gameControl.ShowRolls(rolls)
+    
+    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    if scoring.IsBust(rolls)
+        EndTurn(0)
+    endif
 EndFunction
