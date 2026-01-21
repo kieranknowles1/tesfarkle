@@ -14,6 +14,8 @@ FARDieScript[] diceRefs
 ObjectReference coinRef
 ObjectReference betRef
 
+Sound Property FARDiceRoll Auto
+
 Event OnCellDetach()
     Cleanup()
 EndEvent
@@ -31,6 +33,7 @@ EndFunction
 
 ; Show rolled dice, anything <= 0 is considered unused
 Function ShowDice(int[] rolls)
+    FARDiceRoll.Play(self)
     ClearRolls()
 
     diceRefs = new FARDieScript[6]

@@ -28,6 +28,9 @@ VirtualMachineAdapter:
     - MutagenObjectType: ScriptObjectProperty
       Name: FARCoin
       Object: 04251B:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARDiceRoll
+      Object: 060B4A:farkle.esp
 ObjectBounds:
   First: -14, -32, -3
   Second: 0, 35, 1
