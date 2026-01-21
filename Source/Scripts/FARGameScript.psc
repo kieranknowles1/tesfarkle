@@ -18,6 +18,7 @@ Message Property FARPlayerScored Auto
 bool Property PlayerTurnActive = false Auto Conditional
 
 ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
+bool gameActive = false
 FARPlayer currentPlayer ; Tracking who's turn it is
 FARPlayer nextPlayer
 
@@ -29,6 +30,10 @@ Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRe
 EndEvent
 
 Function PlayerReady()
+    if gameActive
+        return
+    endif
+
     if Player.GetReference().GetItemCount(Gold001) < bet
         ; TODO: If player no longer has gold, NPC should complain and refuse to continue
         return
@@ -40,6 +45,7 @@ Function PlayerReady()
 EndFunction
 
 Function StartGame()
+    gameActive = true
     SetObjectiveCompleted(0, true)
     Player.GetReference().RemoveItem(Gold001, bet)
     
@@ -89,6 +95,7 @@ Function EndGame(FARPlayer winner)
     winner.GetReference().AddItem(Gold001, Bet * 2)
 
     (Table.GetReference() as FARTableScript).Cleanup()
+    gameActive = false
 EndFunction
 
 Function Resign()
