@@ -15,6 +15,7 @@ Event OnActivate(ObjectReference akActionRef)
     SetPosition(GetPositionX(), GetPositionY(), GetPositionZ() + adjust)
 EndEvent
 
+; Set rotation such that the face worth "Value" points is on top
 Function Align()
     float yaw = Utility.RandomFloat(0, 360)
 

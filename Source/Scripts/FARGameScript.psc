@@ -25,6 +25,9 @@ bool gameActive = false
 FARPlayer currentPlayer ; Tracking who's turn it is
 FARPlayer nextPlayer
 
+; Story event usage:
+; - akRef1: Opponent
+; - aiValue1: Bet amount
 Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRef1, ObjectReference akRef2, int aiValue1, int aiValue2)
     bet = aiValue1
 

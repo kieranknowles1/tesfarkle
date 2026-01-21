@@ -1,5 +1,7 @@
 Scriptname FARArrayUtil
 
+; Global utility functions for working with arrays
+
 ; Get the number of instances of `value` in `arr`
 ; Runs in O(n) time
 int function Count(int[] arr, int value) global

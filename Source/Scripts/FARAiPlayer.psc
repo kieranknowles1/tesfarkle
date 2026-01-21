@@ -1,5 +1,7 @@
 Scriptname FARAiPlayer extends FARPlayer
 
+; NPC player implementation. Ported from `farkle.py/AiPlayer`
+
 ; AI parameters - determines what kind of risks we'll take
 float Property RerollRiskBase = 500.0 Auto
 float Property RerollRiskExponent = 0.75 Auto

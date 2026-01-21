@@ -60,12 +60,16 @@ int Function ScoreSelection(int[] selected)
     endif
 EndFunction
 
+; Populate output variables based on what the roll scores, can used directly for AI
+; logic, or indirectly via IsBust and ScoreSelection
 Function ScoreStats(int[] rolls)
     BestScore = 0
     BestDice = 0
     FewestScore = 0
     FewestDice = 9999 ; We want to minimise this
 
+    ; Try to score a run, which will be worth more, removing its dice
+    ; from consideration if it's found
     ScoreRun(rolls, 1, 6, 1500, 100) \
       || ScoreRun(rolls, 2, 6, 750, 50) \
       || ScoreRun(rolls, 1, 5, 500, 100)

@@ -8,6 +8,8 @@ int Property BetAmount Auto
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
+; Shared TIF for "start game with X bet"
+; should be added via xEdit
 (GetOwningQuest() as FARControlScript).StartGame(akSpeaker, BetAmount)
 ;END CODE
 EndFunction

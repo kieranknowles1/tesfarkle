@@ -9,12 +9,13 @@ Event OnSit(ObjectReference akFurniture)
     endif
 EndEvent
 
+; Abort game if player walks away
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     (GetOwningQuest() as FARGameScript).Resign()
 EndEvent
 
 int activeDice
-Function OnTurnBegin()
+Function OnTurnBegin() ; Override
     activeDice = 6
     roundScore = 0
     Debug.Trace("Player turn begin")

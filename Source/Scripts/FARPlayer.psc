@@ -3,13 +3,20 @@ Scriptname FARPlayer extends ReferenceAlias
 ; Interface for both human and AI players
 ; See FARHumanPlayer and FARAiPlayer for implementation
 
+; How many points has this player scored in the current round?
+; Reset before turn begins
 int Property RoundScore Auto
+; How many points has this player banked in total?
+; Reset at game begin
 int Property TotalScore Auto
 
+; Abstract event, called by FARGameScript when the other player ends their turn
 Function OnTurnBegin()
     Debug.Trace("Abstract function called")
 EndFunction
 
+; Finish this player's turn and bank points, if we didn't go bust
+; A score of 0 is considered bust
 Function EndTurn(int score)
     TotalScore += score
     (GetOwningQuest() as FARGameScript).EndRound(score)
