@@ -99,5 +99,15 @@ class FarkleTestMethods(unittest.TestCase):
       fewest_dice=3
     ))
 
+  def test_ai_one_and_five(self):
+    rolls = [5, 1]
+    scoring = farkle.KcdScoreSystem()
+    self.assertEqual(scoring.score_stats(rolls), farkle.ScoreStats(
+      best_score=150,
+      best_dice=2,
+      fewest_score=100, # Prefer scoring the one, as it gives more points for the same die
+      fewest_dice=1
+    ))
+
 if __name__ == "__main__":
   _ = unittest.main()
