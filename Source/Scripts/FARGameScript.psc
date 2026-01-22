@@ -83,7 +83,7 @@ Function EndRound(int score)
         FARPlayerBust.Show()
     endif
 
-    if currentPlayer.TotalScore > TargetScore
+    if currentPlayer.TotalScore >= TargetScore
         EndGame(currentPlayer)
         return
     endif
