@@ -53,11 +53,13 @@ Function OnTurnBegin()
             activeDice -= scoring.FewestDice
             Debug.Trace("Take as little as possible " + handScore)
         endif
+        ; Let the player see the AI's selection
+        Utility.Wait(Utility.RandomFloat(1.25, 1.5))
         RoundScore += handScore
     endwhile
 
-     Debug.Trace("Bank")
-     EndTurn(RoundScore)
+    Debug.Trace("Bank")
+    EndTurn(RoundScore)
 EndFunction
 
 ; Do we want to roll again, considering our current position and latest roll?
