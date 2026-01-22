@@ -5,4 +5,5 @@ Description:
   Value: <Alias=CurrentPlayer> scored %.0f points.
 INAM: 0x00000000
 Quest: 01EE16:farkle.esp
-DisplayTime: 2
+Flags:
+- MessageBox
