@@ -1,18 +1,19 @@
 Scriptname FARDieScript extends ObjectReference  
 
 int Property Value Auto
+EffectShader Property FARSelectedDieGlowFXS Auto
+
 FARTableScript Property Table Auto
 bool Property Selected = false Auto
 
-float Property RaiseAmount = 1.5 AutoReadOnly Hidden
 
 Event OnActivate(ObjectReference akActionRef)
     Selected = !Selected
-    float adjust = RaiseAmount
-    if !Selected
-        adjust = -adjust
+    if Selected
+        FARSelectedDieGlowFXS.Play(self)
+    else
+        FARSelectedDieGlowFXS.Stop(self)
     endif
-    SetPosition(GetPositionX(), GetPositionY(), GetPositionZ() + adjust)
 EndEvent
 
 ; Set rotation such that the face worth "Value" points is on top

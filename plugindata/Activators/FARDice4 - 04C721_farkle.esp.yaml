@@ -4,6 +4,9 @@ VirtualMachineAdapter:
   Scripts:
   - Name: FARDieScript
     Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARSelectedDieGlowFXS
+      Object: 065C4B:farkle.esp
     - MutagenObjectType: ScriptIntProperty
       Name: value
       Data: 4

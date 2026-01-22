@@ -1,12 +1,11 @@
 FormKey: 060B49:farkle.esp
-VersionControl: 13365
 EditorID: FARDiceRollSD
 Type: Standard
 Category: 0172A1:Skyrim.esm
 SoundFiles:
-- Data\Sound\FX\farkle\diceroll01.wav
-- Data\Sound\FX\farkle\diceroll02.wav
-- Data\Sound\FX\farkle\diceroll03.wav
+- data\Sound\FX\farkle\diceroll01.wav
+- data\Sound\FX\farkle\diceroll02.wav
+- data\Sound\FX\farkle\diceroll03.wav
 OutputModel: 0E322C:Skyrim.esm
 LoopAndRumble: {}
 Priority: 128
