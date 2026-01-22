@@ -16,10 +16,12 @@ VirtualMachineAdapter:
       FragmentName: Fragment_0
 Flags:
   Flags:
-  - Goodbye
+  - InvisibleContinue
 PreviousDialog: Null
 FavorLevel: None
-ResponseData: 0DBA22:Skyrim.esm
+LinkTo:
+- 065C4E:farkle.esp
+ResponseData: 065C53:farkle.esp
 Conditions:
 - MutagenObjectType: ConditionFloat
   Data:

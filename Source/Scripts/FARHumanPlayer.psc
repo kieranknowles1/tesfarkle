@@ -35,6 +35,7 @@ int Function ScoreSelectedDice()
         roundScore += score
         activeDice -= scoring.BestDice
     endif
+    gameControl.SelectionValid = score > 0
     return score
 EndFunction
 

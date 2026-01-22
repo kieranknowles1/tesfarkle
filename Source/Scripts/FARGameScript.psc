@@ -19,9 +19,10 @@ Message Property FARGameState Auto
 
 ; Used to condition dialogue based on whos turn it is
 bool Property PlayerTurnActive = false Auto Conditional
+bool Property GameActive = false Auto Conditional
+bool Property SelectionValid = false Auto Conditional
 
 ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
-bool gameActive = false
 FARPlayer currentPlayer ; Tracking who's turn it is
 FARPlayer nextPlayer
 
@@ -36,7 +37,7 @@ Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRe
 EndEvent
 
 Function PlayerReady()
-    if gameActive
+    if GameActive
         return
     endif
 
@@ -51,7 +52,7 @@ Function PlayerReady()
 EndFunction
 
 Function StartGame()
-    gameActive = true
+    GameActive = true
     SetObjectiveCompleted(0, true)
     Player.GetReference().RemoveItem(Gold001, bet)
     
@@ -111,7 +112,7 @@ Function EndGame(FARPlayer winner)
     winner.GetReference().AddItem(Gold001, Bet * 2)
 
     (Table.GetReference() as FARTableScript).Cleanup()
-    gameActive = false
+    GameActive = false
 
     ; Mark quest as complete or failed
     if winner == Player
@@ -119,6 +120,8 @@ Function EndGame(FARPlayer winner)
     else
         SetStage(200)
     endif
+    ; Wait a moment for dialogue to finish
+    Utility.Wait(5.0)
     Stop()
 EndFunction
 

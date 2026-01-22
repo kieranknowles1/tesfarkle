@@ -1,0 +1,14 @@
+FormKey: 065C50:farkle.esp
+VersionControl: 13366
+Flags:
+  Flags:
+  - Goodbye
+PreviousDialog: 065C4F:farkle.esp
+FavorLevel: None
+ResponseData: 065C52:farkle.esp
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 01EE16:farkle.esp
+    VariableName: ::SelectionValid_var

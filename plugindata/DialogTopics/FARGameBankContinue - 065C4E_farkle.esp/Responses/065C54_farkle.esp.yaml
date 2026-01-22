@@ -1,12 +1,10 @@
-FormKey: 05BA47:farkle.esp
-Flags: {}
-PreviousDialog: Null
+FormKey: 065C54:farkle.esp
+VersionControl: 13366
+Flags:
+  Flags:
+  - Goodbye
+PreviousDialog: 065C50:farkle.esp
 FavorLevel: None
-LinkTo:
-- 051836:farkle.esp
-- 051839:farkle.esp
-- 05693E:farkle.esp
-- 05182D:farkle.esp
 ResponseData: 065C53:farkle.esp
 Conditions:
 - MutagenObjectType: ConditionFloat
