@@ -38,7 +38,7 @@ int Function ReplaceFirst(int[] arr, int value, int replace) global
     int i = 0
     while i < arr.Length
         if arr[i] == value
-            arr[i] = value
+            arr[i] = replace
             return i
         endif
         i += 1
@@ -57,5 +57,6 @@ int Function CountGreaterThan(int[] arr, int value) global
         endif
         i += 1
     endwhile
+    ; Debug.Trace(arr.Length + " len arr contains " + greater)
     return greater
 EndFunction

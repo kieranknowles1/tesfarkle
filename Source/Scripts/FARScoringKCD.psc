@@ -151,22 +151,22 @@ EndFunction
 ; the relavent dice
 bool Function ScoreRun(int[] rolls, int start, int end, int value, int loneFace, int loneValue)
     int i = start
+    ; Debug.Trace("Check run " + start + " " + end)
     while i <= end
         if FARArrayUtil.Count(rolls, i) == 0
             ; We don't have a run
-            ; Debug.Trace("No run " + start + " " + end)
+            ; Debug.Trace("No run " + start + " " + end + " missing " + i)
             return false
         endif
         i += 1
     endwhile
 
     ; Remove the used dice so that face scoring ignores them
+    ; while still counting them as selected by assinging them > 6
+    FARArrayUtil.SetMaskBits(rolls, FewestSelection, loneFace, 1)
     i = start
     while i <= end
-        if rolls[i] == loneFace
-            FewestSelection[i] = true
-        endif
-        int idx = FARArrayUtil.ReplaceFirst(rolls, i, -i)
+        int idx = FARArrayUtil.ReplaceFirst(rolls, i, i + 10)
         BestSelection[idx] = true
         i += 1
     endwhile
@@ -177,5 +177,6 @@ bool Function ScoreRun(int[] rolls, int start, int end, int value, int loneFace,
     ; A run always contains either a one or a five, so we can score that on its own
     FewestDice = 1
     FewestScore = loneValue
+    ; Debug.Trace("Found run of len " + BestDice + " worth " + BestScore)
     return true
 EndFunction
