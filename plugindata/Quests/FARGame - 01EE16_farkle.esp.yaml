@@ -37,9 +37,17 @@ VirtualMachineAdapter:
       Object: 01EE16:farkle.esp
       Alias: 1
     - MutagenObjectType: ScriptObjectProperty
+      Name: OpponentChair
+      Object: 01EE16:farkle.esp
+      Alias: 4
+    - MutagenObjectType: ScriptObjectProperty
       Name: Player
       Object: 01EE16:farkle.esp
       Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerChair
+      Object: 01EE16:farkle.esp
+      Alias: 3
     - MutagenObjectType: ScriptObjectProperty
       Name: Table
       Object: 01EE16:farkle.esp

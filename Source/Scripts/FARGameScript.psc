@@ -7,6 +7,8 @@ MiscObject Property Gold001 Auto
 ReferenceAlias Property Table Auto
 FARPlayer Property Player Auto
 FARPlayer Property Opponent Auto
+ReferenceAlias Property PlayerChair Auto
+ReferenceAlias Property OpponentChair Auto
 
 Message Property FARHeadsPlayerFirst Auto
 Message Property FARTailsOpponentFirst Auto
@@ -26,14 +28,39 @@ ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
 FARPlayer currentPlayer ; Tracking who's turn it is
 FARPlayer nextPlayer
 
+bool Function IsSitting(Actor akActor, ObjectReference chair, float epsilon = 32.0)
+    float distance = akActor.GetDistance(chair)
+    return distance < epsilon
+EndFunction
+
+Function SwapAliases(ReferenceAlias a, ReferenceAlias b)
+    ObjectReference tmp = a.GetReference()
+    a.ForceRefTo(b.GetReference())
+    b.ForceRefTo(tmp)
+EndFunction
+
 ; Story event usage:
 ; - akRef1: Opponent
 ; - aiValue1: Bet amount
 Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRef1, ObjectReference akRef2, int aiValue1, int aiValue2)
     bet = aiValue1
 
-    ; "Sit down"
-    SetObjectiveDisplayed(0, true)
+    Actor playerRef = Player.GetReference() as Actor
+
+    ; Swap seats if someone is already sitting in the other player's assigned chair
+    ; to avoid an impromptu game of musical chairs
+    if IsSitting(playerRef, OpponentChair.GetReference()) || IsSitting(Opponent.GetReference() as Actor, PlayerChair.GetReference())
+        SwapAliases(PlayerChair, OpponentChair)
+    endif
+
+
+    ; Is the player already sitting in their chair (which may have been swapped)? If so, start game immediatly
+    if IsSitting(playerRef, PlayerChair.GetReference())
+        PlayerReady()
+    else
+        ; Ask player to sit
+        SetObjectiveDisplayed(0, true)
+    endif
 EndEvent
 
 Function PlayerReady()
@@ -98,7 +125,7 @@ Function EndRound(int score)
 EndFunction
 
 Function BeginRound()
-    currentPlayerAlias.ForceRefTo(currentPlayer.GetReference())
+    CurrentPlayerAlias.ForceRefTo(currentPlayer.GetReference())
     FARTurnStart.Show()
     Debug.Trace("Begin round for " + currentPlayer)
     PlayerTurnActive = currentPlayer as FARHumanPlayer != none
@@ -107,9 +134,11 @@ Function BeginRound()
 EndFunction
 
 Function EndGame(FARPlayer winner)
-    currentPlayer.ForceRefTo(winner.GetReference())
-    FARGameWon.Show()
-    winner.GetReference().AddItem(Gold001, Bet * 2)
+    if GameActive
+        CurrentPlayerAlias.ForceRefTo(winner.GetReference())
+        FARGameWon.Show()
+        winner.GetReference().AddItem(Gold001, Bet * 2)
+    endif
 
     (Table.GetReference() as FARTableScript).Cleanup()
     GameActive = false
@@ -121,7 +150,7 @@ Function EndGame(FARPlayer winner)
         SetStage(200)
     endif
     ; Wait a moment for dialogue to finish
-    Utility.Wait(5.0)
+    Utility.Wait(2.0)
     Stop()
 EndFunction
 
