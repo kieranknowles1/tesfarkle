@@ -23,7 +23,6 @@ Function OnTurnBegin()
         if activeDice == 0 ; Start again with a full hand after a full house
             activeDice = 6
         endif
-        ; TODO: Display rolls
         int[] rolls = RollDice(activeDice)
         table.ShowDice(rolls)
         if scoring.IsBust(rolls)
@@ -36,6 +35,9 @@ Function OnTurnBegin()
         scoring.ScoreStats(rolls)
 
         rolling = WillRoll(activeDice)
+
+        ; Think for a moment before selecting
+        Utility.Wait(Utility.RandomFloat(1.0, 2.0))
 
         ; If we have a full house, are going to stop rolling, or "choose to", take
         ; everything we can

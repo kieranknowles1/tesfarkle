@@ -31,11 +31,12 @@ Function SpawnDecor(bool flipHeads)
     endIf
 EndFunction
 
-Function ShowSelection(bool[] mask)
+Function ShowSelection(bool[] mask, float delayMin = 0.2, float delayMax = 0.3)
     int i = 0
     while i < diceRefs.Length
         if mask[i]
             diceRefs[i].Selected = true
+            Utility.Wait(Utility.RandomFloat(delayMin, delayMax))
         endif
         i += 1
     endwhile

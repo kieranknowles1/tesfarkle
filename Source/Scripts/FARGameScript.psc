@@ -92,6 +92,7 @@ Function EndRound(int score)
     nextPlayer = tmp
 
     ; Swap players, and run another round
+    Utility.Wait(1.5)
     BeginRound()
 EndFunction
 
