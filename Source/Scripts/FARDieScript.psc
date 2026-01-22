@@ -4,16 +4,24 @@ int Property Value Auto
 EffectShader Property FARSelectedDieGlowFXS Auto
 
 FARTableScript Property Table Auto
-bool Property Selected = false Auto
 
+bool __selected = false
+bool Property Selected
+    bool function get()
+        return __selected
+    endfunction
+    function set(bool newVal)
+        __selected = newVal
+        if __selected
+            FARSelectedDieGlowFXS.Play(self)
+        else
+            FARSelectedDieGlowFXS.Stop(self)
+        endif
+    endfunction
+endproperty
 
 Event OnActivate(ObjectReference akActionRef)
     Selected = !Selected
-    if Selected
-        FARSelectedDieGlowFXS.Play(self)
-    else
-        FARSelectedDieGlowFXS.Stop(self)
-    endif
 EndEvent
 
 ; Set rotation such that the face worth "Value" points is on top
