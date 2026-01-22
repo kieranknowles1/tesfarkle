@@ -20,6 +20,7 @@ EndFunction
 Function EndTurn(int score)
     TotalScore += score
     (GetOwningQuest() as FARGameScript).EndRound(score)
+    RoundScore = 0
 EndFunction
 
 int[] Function RollDice(int count)
