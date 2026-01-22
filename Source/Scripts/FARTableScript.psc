@@ -31,6 +31,16 @@ Function SpawnDecor(bool flipHeads)
     endIf
 EndFunction
 
+Function ShowSelection(bool[] mask)
+    int i = 0
+    while i < diceRefs.Length
+        if mask[i]
+            diceRefs[i].Selected = true
+        endif
+        i += 1
+    endwhile
+EndFunction
+
 ; Show rolled dice, anything <= 0 is considered unused
 Function ShowDice(int[] rolls)
     FARDiceRoll.Play(self)

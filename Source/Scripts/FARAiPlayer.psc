@@ -13,6 +13,7 @@ float Property TakeAllExponent = 2.0 Auto
 Function OnTurnBegin()
     FARGameScript gameState = GetOwningQuest() as FARGameScript
     FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    FARTableScript table = gameState.Table.GetReference() as FARTableScript
 
     int activeDice = 6
     RoundScore = 0
@@ -24,6 +25,7 @@ Function OnTurnBegin()
         endif
         ; TODO: Display rolls
         int[] rolls = RollDice(activeDice)
+        table.ShowDice(rolls)
         if scoring.IsBust(rolls)
             Debug.Trace("Bust!")
             EndTurn(0)
@@ -37,13 +39,14 @@ Function OnTurnBegin()
 
         ; If we have a full house, are going to stop rolling, or "choose to", take
         ; everything we can
-        ; TODO: Display selection
         int handScore
         if !rolling || WillTakeAll(activeDice)
+            table.ShowSelection(scoring.BestSelection)
             handScore = scoring.BestScore
             activeDice -= scoring.BestDice
             Debug.Trace("Take it all " + handScore)
         else
+            table.ShowSelection(scoring.FewestSelection)
             handScore = scoring.FewestScore
             activeDice -= scoring.FewestDice
             Debug.Trace("Take as little as possible " + handScore)

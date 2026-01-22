@@ -10,11 +10,14 @@ Scriptname FARScoringKCD extends Quest
 ; What's the highest amount we can score, and with how many dice?
 int Property BestScore Auto
 int Property BestDice Auto
+; Mask of which dice are selected, used to give feedback on AI behaviour
+bool[] Property BestSelection Auto
 
 ; What's the best we can score, while using as few dice as possible?
 ; I.e., prioritise one -> five -> three of a kind
 int Property FewestScore Auto
 int Property FewestDice Auto
+bool[] Property FewestSelection Auto
 
 ; What is the chance of busting given a specific number of dice are rolled
 ; in the range 0..1. Used by AI to calculate risk of rerolling
@@ -65,14 +68,16 @@ EndFunction
 Function ScoreStats(int[] rolls)
     BestScore = 0
     BestDice = 0
+    BestSelection = new bool[6]
     FewestScore = 0
     FewestDice = 9999 ; We want to minimise this
+    FewestSelection = new bool[6]
 
     ; Try to score a run, which will be worth more, removing its dice
     ; from consideration if it's found
-    ScoreRun(rolls, 1, 6, 1500, 100) \
-      || ScoreRun(rolls, 2, 6, 750, 50) \
-      || ScoreRun(rolls, 1, 5, 500, 100)
+    ScoreRun(rolls, 1, 6, 1500, 1, 100) \
+      || ScoreRun(rolls, 2, 6, 750, 5, 50) \
+      || ScoreRun(rolls, 1, 5, 500, 1, 100)
 
     ; Score three of kind, ones, and fives
     ; Any dice participating in a run are already blanked out
@@ -94,10 +99,12 @@ Function ScoreStats(int[] rolls)
             if needed < FewestDice || (needed == FewestDice && (FaceValue(face, needed) > FewestScore))
                 FewestDice = needed
                 FewestScore = FaceValue(face, needed)
+                FARArrayUtil.SetMaskBits(rolls, FewestSelection, face, needed)
             endif
 
             BestScore += value
             BestDice += count
+            FARArrayUtil.SetMaskBits(rolls, BestSelection, face, count)
         endif
 
         face += 1
@@ -142,7 +149,7 @@ EndFunction
 
 ; Score a run of start..end, if it is present, and remove
 ; the relavent dice
-bool Function ScoreRun(int[] rolls, int start, int end, int value, int loneValue)
+bool Function ScoreRun(int[] rolls, int start, int end, int value, int loneFace, int loneValue)
     int i = start
     while i <= end
         if FARArrayUtil.Count(rolls, i) == 0
@@ -156,7 +163,11 @@ bool Function ScoreRun(int[] rolls, int start, int end, int value, int loneValue
     ; Remove the used dice so that face scoring ignores them
     i = start
     while i <= end
-        FARArrayUtil.ReplaceFirst(rolls, i, -i)
+        if rolls[i] == loneFace
+            FewestSelection[i] = true
+        endif
+        int idx = FARArrayUtil.ReplaceFirst(rolls, i, -i)
+        BestSelection[idx] = true
         i += 1
     endwhile
 
