@@ -1,14 +1,14 @@
-FormKey: 00AA06:farkle.esp
+FormKey: 074F64:farkle.esp
 VirtualMachineAdapter:
   Scripts:
   - Name: FARStartGameFragment
     Properties:
     - MutagenObjectType: ScriptIntProperty
       Name: BetAmount
-      Data: 10
+      Data: 25
     - MutagenObjectType: ScriptIntProperty
       Name: TargetScore
-      Data: 1500
+      Data: 2000
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: FARStartGameFragment
@@ -29,4 +29,4 @@ Conditions:
     MutagenObjectType: GetItemCountConditionData
     RunOnType: Target
     ItemOrList: 00000F:Skyrim.esm
-  ComparisonValue: 10
+  ComparisonValue: 25

@@ -3,7 +3,11 @@ Flags: {}
 PreviousDialog: Null
 FavorLevel: None
 LinkTo:
+- 074F61:farkle.esp
 - 00AA05:farkle.esp
+- 074F5E:farkle.esp
+- 074F5F:farkle.esp
+- 074F60:farkle.esp
 ResponseData: 0DBA23:Skyrim.esm
 Conditions:
 - MutagenObjectType: ConditionFloat

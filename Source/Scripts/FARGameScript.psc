@@ -52,8 +52,10 @@ EndFunction
 ; Story event usage:
 ; - akRef1: Opponent
 ; - aiValue1: Bet amount
+; - aiValue2: Target score
 Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRef1, ObjectReference akRef2, int aiValue1, int aiValue2)
-    bet = aiValue1
+    Bet = aiValue1
+    TargetScore = aiValue2
 
     Actor playerRef = Player.GetReference() as Actor
 
