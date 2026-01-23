@@ -71,7 +71,8 @@ always either:
 
 The "take everything" behavior is triggered when one of the following conditions is met:
 1. Doing so would win the game for the AI
-2. The AI does not plan to reroll
+2. A "full house" using all rolled dice is available
+3. The AI does not plan to reroll
 3. Randomly, weighted towards higher chances based on the value of taking all.
 
 The AI considers whether to reroll as follows:

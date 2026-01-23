@@ -8,40 +8,23 @@ ScheduleHour: -1
 ScheduleMinute: -1
 Unknown3: 0x000000
 OwnerQuest: 01EE16:farkle.esp
-PackageTemplate: 019715:Skyrim.esm
-DataInputVersion: 5
+PackageTemplate: 0A9277:Skyrim.esm
+DataInputVersion: 2
 Data:
-- Key: 0
-  Value:
-    MutagenObjectType: PackageDataLocation
-    Location:
-      Target:
-        MutagenObjectType: LocationFallback
-        Type: AliasForReference
-        Data: 4
-- Key: 1
+- Key: 16
   Value:
     MutagenObjectType: PackageDataTarget
+    Type: SingleRef
     Target:
-      MutagenObjectType: PackageTargetObjectType
-      Type: Flora
-- Key: 2
-  Value:
-    MutagenObjectType: PackageDataObjectList
-    Data: 0
+      MutagenObjectType: PackageTargetAlias
+      Alias: 4
 - Key: 3
   Value:
     MutagenObjectType: PackageDataFloat
 - Key: 4
   Value:
     MutagenObjectType: PackageDataBool
-- Key: 6
-  Value:
-    MutagenObjectType: PackageDataBool
-- Key: 8
-  Value:
-    MutagenObjectType: PackageDataBool
-XnamMarker: 0x0E
+XnamMarker: 0x11
 OnBegin:
   Topics:
   - MutagenObjectType: TopicReference
