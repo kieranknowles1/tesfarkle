@@ -1,0 +1,8 @@
+FormKey: 000003:farkle.esp
+EditorID: FARControlStartTopic
+Name:
+  TargetLanguage: English
+  Value: Fancy a round of dice?
+Branch: 000002:farkle.esp
+Quest: 000001:farkle.esp
+SubtypeName: CUST

@@ -1,0 +1,8 @@
+FormKey: 000021:farkle.esp
+EditorID: FARTailsOpponentFirst
+Description:
+  TargetLanguage: English
+  Value: Tails - <Alias=Opponent> goes first.
+INAM: 0x00000000
+Quest: 000015:farkle.esp
+DisplayTime: 2

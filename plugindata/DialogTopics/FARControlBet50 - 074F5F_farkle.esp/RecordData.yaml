@@ -1,8 +1,0 @@
-FormKey: 074F5F:farkle.esp
-EditorID: FARControlBet50
-Name:
-  TargetLanguage: English
-  Value: 50 gold, 3000 points.
-Branch: 00AA02:farkle.esp
-Quest: 00AA01:farkle.esp
-SubtypeName: CUST

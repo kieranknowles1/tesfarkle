@@ -1,9 +1,0 @@
-FormKey: 05182F:farkle.esp
-EditorID: FARPlayerBust
-Description:
-  TargetLanguage: English
-  Value: <Alias=CurrentPlayer> went bust!
-INAM: 0x00000000
-Quest: 01EE16:farkle.esp
-Flags:
-- MessageBox

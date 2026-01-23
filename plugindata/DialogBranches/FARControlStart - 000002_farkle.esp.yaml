@@ -1,0 +1,7 @@
+FormKey: 000002:farkle.esp
+EditorID: FARControlStart
+Quest: 000001:farkle.esp
+Category: Player
+Flags:
+- TopLevel
+StartingTopic: 000003:farkle.esp

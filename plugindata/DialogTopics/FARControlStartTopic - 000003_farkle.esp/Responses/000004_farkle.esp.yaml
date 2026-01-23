@@ -1,0 +1,21 @@
+FormKey: 000004:farkle.esp
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+LinkTo:
+- 000040:farkle.esp
+- 000005:farkle.esp
+- 00003D:farkle.esp
+- 00003E:farkle.esp
+- 00003F:farkle.esp
+ResponseData: 0DBA23:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: GreaterThan
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 00003A:farkle.esp
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetQuestRunningConditionData
+    Quest: 000015:farkle.esp

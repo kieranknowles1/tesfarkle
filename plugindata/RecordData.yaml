@@ -4,6 +4,8 @@ SpriggitSource:
 ModKey: farkle.esp
 GameRelease: SkyrimSE
 ModHeader:
+  Flags:
+  - Small
   Author: Kieran
   Description: Fancy a round of dice?
   MasterReferences:

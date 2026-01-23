@@ -1,0 +1,8 @@
+FormKey: 000022:farkle.esp
+EditorID: FARGameResignTopic
+Name:
+  TargetLanguage: English
+  Value: I resign.
+Branch: 00002E:farkle.esp
+Quest: 000015:farkle.esp
+SubtypeName: CUST

@@ -1,0 +1,7 @@
+FormKey: 00002E:farkle.esp
+EditorID: FARGameActive
+Quest: 000015:farkle.esp
+Category: Player
+Flags:
+- Blocking
+StartingTopic: 00002F:farkle.esp

@@ -56,7 +56,7 @@ Music: 017035:Skyrim.esm
 ImageSpace: 0ABDB4:Skyrim.esm
 Persistent:
 - MutagenObjectType: PlacedObject
-  FormKey: 07F192:farkle.esp
+  FormKey: 00005E:farkle.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
@@ -64,13 +64,13 @@ Persistent:
   Placement:
     Position: 294.1041, -319.86185, 125.249954
 - MutagenObjectType: PlacedObject
-  FormKey: 07F193:farkle.esp
+  FormKey: 00005F:farkle.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
-  Base: 01EE14:farkle.esp
+  Base: 000013:farkle.esp
   LinkedReferences:
-  - Reference: 07F192:farkle.esp
+  - Reference: 00005E:farkle.esp
   Placement:
     Position: 299.35062, -310.56046, 63.635544
 Temporary:
@@ -80,7 +80,7 @@ Temporary:
   Base: 0B9E01:Skyrim.esm
   LocationReference: 0200A5:Skyrim.esm
   LinkedReferences:
-  - Reference: 07F193:farkle.esp
+  - Reference: 00005F:farkle.esp
   Placement:
     Position: 231.10265, -346.64612, 0
     Rotation: 0, -0, 0.98320735
@@ -90,7 +90,7 @@ Temporary:
   Base: 0B9E00:Skyrim.esm
   LocationReference: 0200A5:Skyrim.esm
   LinkedReferences:
-  - Reference: 07F193:farkle.esp
+  - Reference: 00005F:farkle.esp
   Placement:
     Position: 363.20145, -329.57944, 0
     Rotation: 0, -0, 4.9831963
@@ -99,7 +99,7 @@ Temporary:
   Base: 00000F:Skyrim.esm
   LocationReference: 0200A5:Skyrim.esm
   EnableParent:
-    Reference: 07F192:farkle.esp
+    Reference: 00005E:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: 287.13867, -306.37866, 62.874744
@@ -109,7 +109,7 @@ Temporary:
   Base: 0319E3:Skyrim.esm
   LocationReference: 0200A5:Skyrim.esm
   EnableParent:
-    Reference: 07F192:farkle.esp
+    Reference: 00005E:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: 315.16257, -326.8544, 62.47461
@@ -119,7 +119,7 @@ Temporary:
   Base: 00000F:Skyrim.esm
   LocationReference: 0200A5:Skyrim.esm
   EnableParent:
-    Reference: 07F192:farkle.esp
+    Reference: 00005E:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: 288.78488, -301.8258, 62.648674
@@ -129,7 +129,7 @@ Temporary:
   Base: 0F2013:Skyrim.esm
   LocationReference: 0200A5:Skyrim.esm
   EnableParent:
-    Reference: 07F192:farkle.esp
+    Reference: 00005E:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: 299.33835, -316.00977, 62.248314

@@ -1,8 +1,0 @@
-FormKey: 051831:farkle.esp
-EditorID: FARTurnStart
-Description:
-  TargetLanguage: English
-  Value: <Alias=CurrentPlayer>'s turn.
-INAM: 0x00000000
-Quest: 01EE16:farkle.esp
-DisplayTime: 2

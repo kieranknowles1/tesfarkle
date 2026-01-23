@@ -1,0 +1,8 @@
+FormKey: 00002C:farkle.esp
+EditorID: FARGameQueryStateTopic
+Name:
+  TargetLanguage: English
+  Value: What are our scores?
+Branch: 00002E:farkle.esp
+Quest: 000015:farkle.esp
+SubtypeName: CUST

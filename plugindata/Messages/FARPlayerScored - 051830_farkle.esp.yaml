@@ -1,9 +1,0 @@
-FormKey: 051830:farkle.esp
-EditorID: FARPlayerScored
-Description:
-  TargetLanguage: English
-  Value: <Alias=CurrentPlayer> scored %.0f points.
-INAM: 0x00000000
-Quest: 01EE16:farkle.esp
-Flags:
-- MessageBox

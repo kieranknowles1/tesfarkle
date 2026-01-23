@@ -1,0 +1,34 @@
+FormKey: 00003C:farkle.esp
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARScoreRerollFragment
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Player
+      Object: 000015:farkle.esp
+      Alias: 0
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: FARScoreRerollFragment
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: FARScoreRerollFragment
+      FragmentName: Fragment_0
+Flags:
+  Flags:
+  - Goodbye
+PreviousDialog: 00003B:farkle.esp
+FavorLevel: None
+ResponseData: 000038:farkle.esp
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::SelectionValid_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
+  ComparisonValue: 1

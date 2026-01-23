@@ -1,0 +1,7 @@
+FormKey: 000019:farkle.esp
+EditorID: FARBet
+Model:
+  File: Plants\CoinBagSmall.nif
+  Data: 0x020000000000000000000000
+MaxAngle: 90
+Unused: 0x000000

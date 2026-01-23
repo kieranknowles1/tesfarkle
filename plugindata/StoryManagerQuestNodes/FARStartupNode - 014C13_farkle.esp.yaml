@@ -1,7 +1,0 @@
-FormKey: 014C13:farkle.esp
-EditorID: FARStartupNode
-Parent: 01379A:Skyrim.esm
-PreviousSibling: 0896A8:Skyrim.esm
-MaxConcurrentQuests: 0
-Quests:
-- Quest: 01EE16:farkle.esp

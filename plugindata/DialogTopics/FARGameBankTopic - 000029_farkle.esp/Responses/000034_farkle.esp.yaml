@@ -1,0 +1,35 @@
+FormKey: 000034:farkle.esp
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARScorePassFragment
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Player
+      Object: 000015:farkle.esp
+      Alias: 0
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: FARScorePassFragment
+    OnBegin:
+      ExtraBindDataVersion: 1
+      ScriptName: FARScorePassFragment
+      FragmentName: Fragment_0
+Flags:
+  Flags:
+  - Goodbye
+PreviousDialog: 000035:farkle.esp
+FavorLevel: None
+ResponseData: 0DBA28:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::SelectionWillWin_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::SelectionValid_var
+  ComparisonValue: 1

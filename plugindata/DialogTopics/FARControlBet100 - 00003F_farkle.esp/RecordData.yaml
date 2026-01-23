@@ -1,0 +1,8 @@
+FormKey: 00003F:farkle.esp
+EditorID: FARControlBet100
+Name:
+  TargetLanguage: English
+  Value: 100 gold, 4000 points.
+Branch: 000002:farkle.esp
+Quest: 000001:farkle.esp
+SubtypeName: CUST

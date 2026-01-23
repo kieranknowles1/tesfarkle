@@ -1,0 +1,8 @@
+FormKey: 000028:farkle.esp
+EditorID: FARGameRerollTopic
+Name:
+  TargetLanguage: English
+  Value: Reroll
+Branch: 00002E:farkle.esp
+Quest: 000015:farkle.esp
+SubtypeName: CUST

@@ -1,0 +1,9 @@
+FormKey: 000027:farkle.esp
+EditorID: FARGameWon
+Description:
+  TargetLanguage: English
+  Value: <Alias=CurrentPlayer> wins!
+INAM: 0x00000000
+Quest: 000015:farkle.esp
+Flags:
+- MessageBox

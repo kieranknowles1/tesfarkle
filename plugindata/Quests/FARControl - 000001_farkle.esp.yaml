@@ -1,0 +1,21 @@
+FormKey: 000001:farkle.esp
+EditorID: FARControl
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARControlScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARStartup
+      Object: 000011:farkle.esp
+  Versioning:
+  - Break0
+  ExtraBindDataVersion: 0
+  FileName: ''
+Name:
+  TargetLanguage: English
+  Value: Farkle Startup
+Flags:
+- StartGameEnabled
+- 0x10
+- RunOnce
+NextAliasID: 0

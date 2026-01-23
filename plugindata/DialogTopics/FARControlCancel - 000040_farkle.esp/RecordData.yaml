@@ -1,0 +1,8 @@
+FormKey: 000040:farkle.esp
+EditorID: FARControlCancel
+Name:
+  TargetLanguage: English
+  Value: Nevermind
+Branch: 000002:farkle.esp
+Quest: 000001:farkle.esp
+SubtypeName: CUST

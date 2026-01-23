@@ -1,0 +1,26 @@
+FormKey: 000017:farkle.esp
+EditorID: FARDice1
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARDieScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARSelectedDieGlowFXS
+      Object: 000033:farkle.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: value
+      Data: 1
+ObjectBounds:
+  First: -1, -1, -1
+  Second: 1, 1, 1
+Name:
+  TargetLanguage: English
+  Value: Die (1)
+Model:
+  File: farkle\dice.nif
+  Data: 0x020000000000000000000000
+MarkerColor: '#00CC4C33'
+ActivateTextOverride:
+  TargetLanguage: English
+  Value: Select
+Flags: []

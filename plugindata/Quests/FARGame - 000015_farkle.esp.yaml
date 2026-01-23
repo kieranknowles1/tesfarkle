@@ -1,0 +1,168 @@
+FormKey: 000015:farkle.esp
+EditorID: FARGame
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARGameScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: CurrentPlayerAlias
+      Object: 000015:farkle.esp
+      Alias: 5
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARGameState
+      Object: 00002B:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARGameWon
+      Object: 000027:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARHeadsPlayerFirst
+      Object: 000020:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARPlayerBust
+      Object: 000024:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARPlayerScored
+      Object: 000025:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARTailsOpponentFirst
+      Object: 000021:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARTurnStart
+      Object: 000026:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Opponent
+      Object: 000015:farkle.esp
+      Alias: 1
+    - MutagenObjectType: ScriptObjectProperty
+      Name: OpponentChair
+      Object: 000015:farkle.esp
+      Alias: 4
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Player
+      Object: 000015:farkle.esp
+      Alias: 0
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerChair
+      Object: 000015:farkle.esp
+      Alias: 3
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Table
+      Object: 000015:farkle.esp
+      Alias: 2
+    - MutagenObjectType: ScriptIntProperty
+      Name: TargetScore
+      Data: 2000
+  - Name: FARScoringKCD
+  FileName: ''
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 000015:farkle.esp
+      Alias: 0
+    Scripts:
+    - Name: FARHumanPlayer
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: FARSelectionInvalid
+        Object: 00002A:farkle.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: PlayerChair
+        Object: 000015:farkle.esp
+        Alias: 3
+  - Property:
+      Name: ''
+      Object: 000015:farkle.esp
+      Alias: 1
+    Scripts:
+    - Name: FARAiPlayer
+Name:
+  TargetLanguage: English
+  Value: Farkle
+Type: Misc
+Event: SCPT
+EventConditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetEventDataConditionData
+    Member: Keyword
+    Record: 000011:farkle.esp
+  ComparisonValue: 1
+Stages:
+- Flags:
+  - StartUpStage
+- Index: 200
+  LogEntries:
+  - Flags:
+    - FailQuest
+    Entry:
+      TargetLanguage: English
+      Value: I lost
+- Index: 210
+  LogEntries:
+  - Flags:
+    - CompleteQuest
+    Entry:
+      TargetLanguage: English
+      Value: I won
+- Index: 255
+  Flags:
+  - ShutDownStage
+Objectives:
+- Flags: []
+  DisplayText:
+    TargetLanguage: English
+    Value: Sit down
+  Targets:
+  - AliasID: 3
+NextAliasID: 6
+Aliases:
+- Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 1
+  Name: Opponent
+  Flags:
+  - StoresText
+  FindMatchingRefFromEvent:
+    FromEvent: SCPT
+    EventData: 0x52310000
+  PackageData:
+  - 000016:farkle.esp
+  VoiceTypes: Null
+- ID: 2
+  Name: Table
+  Flags:
+  - ReservesLocationOrReference
+  - MatchingRefInLoadedArea
+  - MatchingRefClosest
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsIDConditionData
+      Object: 000013:farkle.esp
+    ComparisonValue: 1
+  VoiceTypes: Null
+- ID: 3
+  Name: PlayerChair
+  Flags: []
+  FindMatchingRefNearAlias:
+    AliasID: 2
+    Type: LinkedRefChild
+  VoiceTypes: Null
+- ID: 4
+  Name: OpponentChair
+  Flags: []
+  FindMatchingRefNearAlias:
+    AliasID: 2
+    Type: LinkedRefChild
+  VoiceTypes: Null
+- ID: 5
+  Name: CurrentPlayer
+  Flags:
+  - Optional
+  - StoresText
+  VoiceTypes: Null

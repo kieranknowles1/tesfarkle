@@ -1,7 +1,0 @@
-FormKey: 00AA02:farkle.esp
-EditorID: FARControlStart
-Quest: 00AA01:farkle.esp
-Category: Player
-Flags:
-- TopLevel
-StartingTopic: 00AA03:farkle.esp

@@ -1,8 +1,0 @@
-FormKey: 051839:farkle.esp
-EditorID: FARGameBankTopic
-Name:
-  TargetLanguage: English
-  Value: Bank
-Branch: 05BA40:farkle.esp
-Quest: 01EE16:farkle.esp
-SubtypeName: CUST

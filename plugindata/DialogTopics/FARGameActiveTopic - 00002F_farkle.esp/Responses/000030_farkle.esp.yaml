@@ -1,0 +1,16 @@
+FormKey: 000030:farkle.esp
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+LinkTo:
+- 000028:farkle.esp
+- 000029:farkle.esp
+- 00002C:farkle.esp
+- 000022:farkle.esp
+ResponseData: 000038:farkle.esp
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
+  ComparisonValue: 1

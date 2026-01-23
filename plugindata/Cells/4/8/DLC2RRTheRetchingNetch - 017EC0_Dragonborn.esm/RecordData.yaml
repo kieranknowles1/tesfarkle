@@ -44,7 +44,7 @@ Music: 017035:Skyrim.esm
 ImageSpace: 059B60:Skyrim.esm
 Persistent:
 - MutagenObjectType: PlacedObject
-  FormKey: 07F18B:farkle.esp
+  FormKey: 000058:farkle.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
@@ -52,13 +52,13 @@ Persistent:
   Placement:
     Position: -1578.772, 161.34323, -262.2855
 - MutagenObjectType: PlacedObject
-  FormKey: 07F18C:farkle.esp
+  FormKey: 000059:farkle.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
-  Base: 01EE14:farkle.esp
+  Base: 000013:farkle.esp
   LinkedReferences:
-  - Reference: 07F18B:farkle.esp
+  - Reference: 000058:farkle.esp
   Placement:
     Position: -1562.4922, 161.58472, -320.49835
     Rotation: 0, -0, 5.6831884
@@ -69,7 +69,7 @@ Temporary:
   Base: 036794:Dragonborn.esm
   LocationReference: 019A24:Dragonborn.esm
   LinkedReferences:
-  - Reference: 07F18C:farkle.esp
+  - Reference: 000059:farkle.esp
   Placement:
     Position: -1614.4025, 102.83717, -384
     Rotation: 0, -0, 0.73320955
@@ -79,7 +79,7 @@ Temporary:
   Base: 036793:Dragonborn.esm
   LocationReference: 019A24:Dragonborn.esm
   LinkedReferences:
-  - Reference: 07F18C:farkle.esp
+  - Reference: 000059:farkle.esp
   Placement:
     Position: -1507.6215, 193.54562, -384
     Rotation: 0, -0, 4.2082086
@@ -88,7 +88,7 @@ Temporary:
   Base: 0319E3:Skyrim.esm
   LocationReference: 019A24:Dragonborn.esm
   EnableParent:
-    Reference: 07F18B:farkle.esp
+    Reference: 000058:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -1551.7833, 165.15327, -321.96353
@@ -98,7 +98,7 @@ Temporary:
   Base: 0319E3:Skyrim.esm
   LocationReference: 019A24:Dragonborn.esm
   EnableParent:
-    Reference: 07F18B:farkle.esp
+    Reference: 000058:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -1589.7827, 136.8592, -321.64844
@@ -108,7 +108,7 @@ Temporary:
   Base: 0248CC:Dragonborn.esm
   LocationReference: 019A24:Dragonborn.esm
   EnableParent:
-    Reference: 07F18B:farkle.esp
+    Reference: 000058:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -1565.741, 140.35666, -321.46457
@@ -120,17 +120,17 @@ Temporary:
   Scale: 0.6
   LocationReference: 019A24:Dragonborn.esm
   EnableParent:
-    Reference: 07F18B:farkle.esp
+    Reference: 000058:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -1578.4657, 172.75018, -284.90576
     Rotation: 0, -0, 6.083187
 - MutagenObjectType: PlacedObject
-  FormKey: 07F18D:farkle.esp
+  FormKey: 00005A:farkle.esp
   Base: 039BBA:Dragonborn.esm
   Scale: 0.6
   EnableParent:
-    Reference: 07F18B:farkle.esp
+    Reference: 000058:farkle.esp
     Flags:
     - SetEnableStateToOppositeOfParent
     Unknown: 0x000000

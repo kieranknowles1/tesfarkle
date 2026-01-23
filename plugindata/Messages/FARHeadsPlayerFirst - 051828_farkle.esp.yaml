@@ -1,8 +1,0 @@
-FormKey: 051828:farkle.esp
-EditorID: FARHeadsPlayerFirst
-Description:
-  TargetLanguage: English
-  Value: Heads - You go first.
-INAM: 0x00000000
-Quest: 01EE16:farkle.esp
-DisplayTime: 2

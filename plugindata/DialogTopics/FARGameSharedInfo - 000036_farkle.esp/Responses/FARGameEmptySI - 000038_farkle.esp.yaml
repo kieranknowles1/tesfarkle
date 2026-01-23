@@ -1,0 +1,17 @@
+FormKey: 000038:farkle.esp
+EditorID: FARGameEmptySI
+Flags: {}
+PreviousDialog: 000037:farkle.esp
+FavorLevel: None
+Responses:
+- EmotionValue: 50
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: ' '
+  ScriptNotes: empty line
+  Edits: ''

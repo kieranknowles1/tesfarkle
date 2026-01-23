@@ -48,18 +48,18 @@ Music: 017035:Skyrim.esm
 ImageSpace: 036ED2:Skyrim.esm
 Persistent:
 - MutagenObjectType: PlacedObject
-  FormKey: 07F194:farkle.esp
+  FormKey: 000060:farkle.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
-  Base: 01EE14:farkle.esp
+  Base: 000013:farkle.esp
   LinkedReferences:
-  - Reference: 07F195:farkle.esp
+  - Reference: 000061:farkle.esp
   Placement:
     Position: -566.4932, -829.54834, 133.4158
     Rotation: 0, -0, 4.6831903
 - MutagenObjectType: PlacedObject
-  FormKey: 07F195:farkle.esp
+  FormKey: 000061:farkle.esp
   MajorRecordFlagsRaw: 1024
   SkyrimMajorRecordFlags:
   - 0x400
@@ -72,7 +72,7 @@ Temporary:
   Base: 0B9E00:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   LinkedReferences:
-  - Reference: 07F194:farkle.esp
+  - Reference: 000060:farkle.esp
   Placement:
     Position: -573.5508, -757.3031, 68
     Rotation: 0, -0, 2.3561945
@@ -81,7 +81,7 @@ Temporary:
   Base: 0B9E01:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   LinkedReferences:
-  - Reference: 07F194:farkle.esp
+  - Reference: 000060:farkle.esp
   Placement:
     Position: -574.1768, -920.90704, 68
     Rotation: 0, -0, 0.7853982
@@ -91,7 +91,7 @@ Temporary:
   Base: 0C841C:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -578.7884, -831.1779, 130.00656
@@ -100,7 +100,7 @@ Temporary:
   Base: 0B9BDC:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -569.9899, -815.4668, 130.00656
@@ -109,7 +109,7 @@ Temporary:
   Base: 0B9BDC:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -578.07996, -854.93756, 130.00656
@@ -118,7 +118,7 @@ Temporary:
   Base: 0B9BD0:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -544.06824, -815.8038, 130.00656
@@ -127,7 +127,7 @@ Temporary:
   Base: 0B9BD0:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -550.1452, -861.311, 130.00656
@@ -137,7 +137,7 @@ Temporary:
   Base: 03133C:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -599.2374, -816.2383, 130.00656
@@ -147,7 +147,7 @@ Temporary:
   Base: 064B3B:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -546.1566, -861.2964, 133.20554
@@ -156,7 +156,7 @@ Temporary:
   Base: 034C5D:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -570.2194, -844.2366, 130.00656
@@ -166,7 +166,7 @@ Temporary:
   Base: 064B43:Skyrim.esm
   LocationReference: 01F872:Skyrim.esm
   EnableParent:
-    Reference: 07F195:farkle.esp
+    Reference: 000061:farkle.esp
     Unknown: 0x000000
   Placement:
     Position: -542.7446, -815.35516, 134.95323
