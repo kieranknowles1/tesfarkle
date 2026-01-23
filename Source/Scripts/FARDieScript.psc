@@ -17,6 +17,7 @@ bool Property Selected
         else
             FARSelectedDieGlowFXS.Stop(self)
         endif
+        Table.OnDieSelected()
     endfunction
 endproperty
 

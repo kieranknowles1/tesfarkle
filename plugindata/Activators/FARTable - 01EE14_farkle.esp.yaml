@@ -32,6 +32,9 @@ VirtualMachineAdapter:
       Name: FARDiceRoll
       Object: 060B4A:farkle.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: FARGame
+      Object: 01EE16:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: FARLoadedTables
       Object: 06AD5A:farkle.esp
 ObjectBounds:

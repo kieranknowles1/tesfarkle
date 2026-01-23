@@ -22,7 +22,10 @@ Message Property FARGameState Auto
 ; Used to condition dialogue based on whos turn it is
 bool Property PlayerTurnActive = false Auto Conditional
 bool Property GameActive = false Auto Conditional
+; The current player's selection will score
 bool Property SelectionValid = false Auto Conditional
+; The current player's selection will win the game for them
+bool Property SelectionWillWin = false Auto Conditional
 
 ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
 FARPlayer currentPlayer ; Tracking who's turn it is
@@ -37,6 +40,13 @@ Function SwapAliases(ReferenceAlias a, ReferenceAlias b)
     ObjectReference tmp = a.GetReference()
     a.ForceRefTo(b.GetReference())
     b.ForceRefTo(tmp)
+EndFunction
+
+Function OnSelectionChanged(int[] newSelection)
+    FARScoringKCD scoring = (self as Quest) as FARScoringKCD
+    int score = scoring.ScoreSelection(newSelection)
+    SelectionValid = score > 0
+    SelectionWillWin = (score + currentPlayer.RoundScore + currentPlayer.TotalScore) > TargetScore
 EndFunction
 
 ; Story event usage:
@@ -149,8 +159,6 @@ Function EndGame(FARPlayer winner)
     else
         SetStage(200)
     endif
-    ; Wait a moment for dialogue to finish
-    Utility.Wait(2.0)
     Stop()
 EndFunction
 

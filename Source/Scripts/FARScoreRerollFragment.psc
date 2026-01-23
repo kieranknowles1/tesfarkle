@@ -1,6 +1,6 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
 ;NEXT FRAGMENT INDEX 1
-Scriptname FAR_TIF__0505183A Extends TopicInfo Hidden
+Scriptname FARScoreRerollFragment Extends TopicInfo Hidden
 
 FARHumanPlayer Property Player Auto
 
@@ -8,7 +8,7 @@ FARHumanPlayer Property Player Auto
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Player.ScoreAndPass()
+Player.ScoreAndReroll()
 ;END CODE
 EndFunction
 ;END FRAGMENT

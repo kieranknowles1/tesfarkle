@@ -1,7 +1,7 @@
-FormKey: 051837:farkle.esp
+FormKey: 06FE5D:farkle.esp
 VirtualMachineAdapter:
   Scripts:
-  - Name: FAR_TIF__05051837
+  - Name: FARScoreRerollFragment
     Properties:
     - MutagenObjectType: ScriptObjectProperty
       Name: Player
@@ -9,28 +9,26 @@ VirtualMachineAdapter:
       Alias: 0
   ScriptFragments:
     MutagenObjectType: ScriptFragments
-    FileName: FAR_TIF__05051837
+    FileName: FARScoreRerollFragment
     OnBegin:
       ExtraBindDataVersion: 1
-      ScriptName: FAR_TIF__05051837
+      ScriptName: FARScoreRerollFragment
       FragmentName: Fragment_0
 Flags:
   Flags:
-  - InvisibleContinue
+  - Goodbye
 PreviousDialog: Null
 FavorLevel: None
-LinkTo:
-- 065C4E:farkle.esp
 ResponseData: 065C53:farkle.esp
 Conditions:
 - MutagenObjectType: ConditionFloat
   Data:
-    MutagenObjectType: GetIsAliasRefConditionData
-    ReferenceAliasIndex: 1
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 01EE16:farkle.esp
+    VariableName: ::SelectionValid_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   Data:
-    MutagenObjectType: GetVMQuestVariableConditionData
-    Quest: 01EE16:farkle.esp
-    VariableName: ::PlayerTurnActive_var
+    MutagenObjectType: GetIsAliasRefConditionData
+    ReferenceAliasIndex: 1
   ComparisonValue: 1

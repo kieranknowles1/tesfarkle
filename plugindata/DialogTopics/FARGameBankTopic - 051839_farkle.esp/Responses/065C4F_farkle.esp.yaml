@@ -1,7 +1,7 @@
-FormKey: 05183A:farkle.esp
+FormKey: 065C4F:farkle.esp
 VirtualMachineAdapter:
   Scripts:
-  - Name: FAR_TIF__0505183A
+  - Name: FARScorePassFragment
     Properties:
     - MutagenObjectType: ScriptObjectProperty
       Name: Player
@@ -9,28 +9,27 @@ VirtualMachineAdapter:
       Alias: 0
   ScriptFragments:
     MutagenObjectType: ScriptFragments
-    FileName: FAR_TIF__0505183A
+    FileName: FARScorePassFragment
     OnBegin:
       ExtraBindDataVersion: 1
-      ScriptName: FAR_TIF__0505183A
+      ScriptName: FARScorePassFragment
       FragmentName: Fragment_0
 Flags:
   Flags:
-  - InvisibleContinue
+  - Goodbye
 PreviousDialog: Null
 FavorLevel: None
-LinkTo:
-- 065C4E:farkle.esp
-ResponseData: 0DBA22:Skyrim.esm
+ResponseData: 0DBA28:Skyrim.esm
 Conditions:
 - MutagenObjectType: ConditionFloat
   Data:
-    MutagenObjectType: GetIsAliasRefConditionData
-    ReferenceAliasIndex: 1
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 01EE16:farkle.esp
+    VariableName: ::SelectionWillWin_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 01EE16:farkle.esp
-    VariableName: ::PlayerTurnActive_var
+    VariableName: ::SelectionValid_var
   ComparisonValue: 1

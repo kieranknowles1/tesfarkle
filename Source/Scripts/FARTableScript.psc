@@ -18,6 +18,8 @@ Sound Property FARDiceRoll Auto
 
 GlobalVariable Property FARLoadedTables Auto
 
+FARGameScript Property FARGame Auto
+
 Event OnCellAttach()
     FARLoadedTables.SetValue(FARLoadedTables.GetValue() + 1)
 EndEvent
@@ -30,6 +32,10 @@ Event OnCellDetach()
     endif
     FARLoadedTables.SetValue(newVal)
 EndEvent
+
+Function OnDieSelected()
+    FARGame.OnSelectionChanged(GetSelection())
+EndFunction
 
 Function SpawnDecor(bool flipHeads)
     Cleanup()
