@@ -37,8 +37,22 @@ Function OnDieSelected()
     FARGame.OnSelectionChanged(GetSelection())
 EndFunction
 
+Function SetClutterEnabled(bool enable)
+    ObjectReference clutterParent = GetLinkedRef()
+    if clutterParent == none
+        return
+    endif
+
+    if enable
+        clutterParent.Enable()
+    else
+        clutterParent.Disable()
+    endif
+EndFunction
+
 Function SpawnDecor(bool flipHeads)
     Cleanup()
+    SetClutterEnabled(false)
 
     betRef = SpawnAtNode(FARBet, "Bet")
 
@@ -118,6 +132,7 @@ Function Cleanup()
     coinRef = none
     DisableAndDelete(betRef)
     betRef = none   
-
+    
     ClearRolls()
+    SetClutterEnabled(true)
 EndFunction

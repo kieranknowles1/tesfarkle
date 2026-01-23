@@ -7,7 +7,13 @@ Implementation of Farkle in Skyrim, using Kingdom Come Deliverance rules
 This is primarily a Papyrus project, but also has elements of quest and asset implementation.
 A game of Farkle is controlled via a quest which is started using the story manager system.
 
-## Implementation
+## Adding New Tables
+
+Place a `FARTable` and link two chairs to it (Chair -> `FARTable`), these will be used by the players when a game is active.
+To clear the table before a game starts, place an `XMarker` as an enable parent for the clutter to disable,
+and link `FARTable` to the marker (`FARTable` -> `XMarker`).
+
+## Game Implementation
 
 ```mermaid
 classDiagram

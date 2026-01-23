@@ -230,8 +230,19 @@ Persistent:
   SkyrimMajorRecordFlags:
   - 0x400
   Base: 01EE14:farkle.esp
+  LinkedReferences:
+  - Reference: 07F177:farkle.esp
   Placement:
     Position: -258.0636, -157.54669, 63.76344
+- MutagenObjectType: PlacedObject
+  FormKey: 07F177:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  VersionControl: 13367
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00003B:Skyrim.esm
+  Placement:
+    Position: -267.45755, -164.03519, 86.850426
 Temporary:
 - MutagenObjectType: PlacedObject
   FormKey: 00AA17:farkle.esp
@@ -280,5 +291,125 @@ Temporary:
   Base: 1034E4:Skyrim.esm
   Placement:
     Position: -70.81226, 61.0218, 0
+- MutagenObjectType: PlacedObject
+  FormKey: 07F168:farkle.esp
+  VersionControl: 13367
+  Base: 0E2617:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -247.0744, -158.27533, 60.950108
+    Rotation: -0.003529954, 0.026999164, 0.0021509533
+- MutagenObjectType: PlacedObject
+  FormKey: 07F169:farkle.esp
+  VersionControl: 13367
+  Base: 104B3F:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -239.4398, -140.90672, 63.3331
+    Rotation: 0, 0, -1.5707964
+- MutagenObjectType: PlacedObject
+  FormKey: 07F16A:farkle.esp
+  VersionControl: 13367
+  Base: 104B40:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -240.11823, -176.13086, 64.10816
+    Rotation: 0, 0, 4.712389
+- MutagenObjectType: PlacedObject
+  FormKey: 07F16B:farkle.esp
+  VersionControl: 13367
+  Base: 034C5E:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -252.62039, -128.25974, 62.208767
+    Rotation: 0.00085732294, 0.0011136266, 0.0010775451
+- MutagenObjectType: PlacedObject
+  FormKey: 07F16E:farkle.esp
+  VersionControl: 13367
+  Base: 0721E8:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -252.12698, -159.1983, 64.929726
+    Rotation: -0.02339172, 0.055182356, -0.005263319
+- MutagenObjectType: PlacedObject
+  FormKey: 07F170:farkle.esp
+  VersionControl: 13367
+  Base: 065C98:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -240.1162, -163.3939, 65.18596
+    Rotation: -0.002645433, 0.031297658, -0.01158863
+- MutagenObjectType: PlacedObject
+  FormKey: 07F171:farkle.esp
+  VersionControl: 13367
+  Base: 034C5E:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -295.33698, -183.74945, 62.208767
+    Rotation: -0.00085732277, -0.0011136265, -3.1415927
+- MutagenObjectType: PlacedObject
+  FormKey: 07F172:farkle.esp
+  VersionControl: 13367
+  Base: 104B3F:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -308.51755, -171.10246, 63.3331
+    Rotation: 0, -0, 1.5707964
+- MutagenObjectType: PlacedObject
+  FormKey: 07F173:farkle.esp
+  VersionControl: 13367
+  Base: 104B40:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -307.8391, -135.87831, 64.10816
+    Rotation: 0, -0, 1.5707964
+- MutagenObjectType: PlacedObject
+  FormKey: 07F174:farkle.esp
+  VersionControl: 13367
+  Base: 0E2617:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -300.88297, -153.73386, 60.950108
+    Rotation: 0.003529954, -0.026999159, -3.1415927
+- MutagenObjectType: PlacedObject
+  FormKey: 07F175:farkle.esp
+  VersionControl: 13367
+  Base: 065C98:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -307.84116, -148.61526, 65.18596
+    Rotation: 0.002645434, -0.031297658, 3.1241393
+- MutagenObjectType: PlacedObject
+  FormKey: 07F176:farkle.esp
+  VersionControl: 13367
+  Base: 0721E8:Skyrim.esm
+  EnableParent:
+    Reference: 07F177:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -295.83038, -152.81088, 64.929726
+    Rotation: 0.02339172, -0.05518235, 3.1415927
 MajorFlags:
 - 0x40000
