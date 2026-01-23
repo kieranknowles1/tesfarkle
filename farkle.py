@@ -69,7 +69,7 @@ class ScoreSystem(ABC):
     return result.best_score if result.best_dice == len(rolls) else 0
 
 class KcdScoreSystem(ScoreSystem):
-  def bust_chance(self, i) -> float:
+  def bust_chance(self, i: int) -> float:
     return [
       0.667,
       0.444,
