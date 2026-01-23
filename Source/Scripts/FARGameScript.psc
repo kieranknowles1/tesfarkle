@@ -43,7 +43,7 @@ Function SwapAliases(ReferenceAlias a, ReferenceAlias b)
 EndFunction
 
 Function OnSelectionChanged(int[] newSelection)
-    FARScoringKCD scoring = (self as Quest) as FARScoringKCD
+    FARScoring scoring = (self as Quest) as FARScoring
     int score = scoring.ScoreSelection(newSelection)
     SelectionValid = score > 0
     SelectionWillWin = (score + currentPlayer.RoundScore + currentPlayer.TotalScore) >= TargetScore
@@ -177,7 +177,7 @@ Function DisplayScores()
     ; Round: %.0f
     ; Selection: %.0f
     ; Banked: %.0f
-    FARScoringKCD scoring = (self as form) as FARScoringKCD
+    FARScoring scoring = (self as form) as FARScoring
     FARTableScript tableRef = Table.GetReference() as FARTableScript
     FARGameState.Show(Bet, TargetScore, \
         Player.RoundScore, scoring.ScoreSelection(tableRef.GetSelection()), Player.TotalScore,\

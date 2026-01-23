@@ -12,7 +12,7 @@ float Property TakeAllExponent = 2.0 Auto
 
 Function OnTurnBegin()
     FARGameScript gameState = GetOwningQuest() as FARGameScript
-    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    FARScoring scoring = GetOwningQuest() as FARScoring
     FARTableScript table = gameState.Table.GetReference() as FARTableScript
 
     int activeDice = 6
@@ -65,7 +65,7 @@ EndFunction
 ; Do we want to roll again, considering our current position and latest roll?
 bool Function WillRoll(int activeDice)
     FARGameScript gameState = GetOwningQuest() as FARGameScript
-    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    FARScoring scoring = GetOwningQuest() as FARScoring
     
     ; Always roll at least once
     if RoundScore == 0
@@ -97,7 +97,7 @@ EndFunction
 
 bool Function WillTakeAll(int activeDice)
     FARGameScript gameState = GetOwningQuest() as FARGameScript
-    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    FARScoring scoring = GetOwningQuest() as FARScoring
     
     int scoreIfTaken = TotalScore + RoundScore + scoring.BestScore
     ; If we'd win, take it

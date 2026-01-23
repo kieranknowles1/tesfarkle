@@ -25,7 +25,7 @@ EndFunction
 ; Score all selected dice, then add to round score
 int Function ScoreSelectedDice()
     FARGameScript gameControl = GetOwningQuest() as FARGameScript
-    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    FARScoring scoring = GetOwningQuest() as FARScoring
 
     FARTableScript table = gameControl.Table.GetReference() as FARTableScript
     int[] selection = table.GetSelection()
@@ -68,7 +68,7 @@ Function NextRoll()
     int[] rolls = RollDice(activeDice)
     gameControl.ShowRolls(rolls)
     
-    FARScoringKCD scoring = GetOwningQuest() as FARScoringKCD
+    FARScoring scoring = GetOwningQuest() as FARScoring
     if scoring.IsBust(rolls)
         EndTurn(0)
     endif
