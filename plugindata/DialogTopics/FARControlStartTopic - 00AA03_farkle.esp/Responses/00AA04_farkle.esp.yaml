@@ -11,11 +11,6 @@ LinkTo:
 ResponseData: 0DBA23:Skyrim.esm
 Conditions:
 - MutagenObjectType: ConditionFloat
-  Data:
-    MutagenObjectType: GetIsVoiceTypeConditionData
-    VoiceTypeOrList: 03B4A5:Skyrim.esm
-  ComparisonValue: 1
-- MutagenObjectType: ConditionFloat
   CompareOperator: GreaterThan
   Data:
     MutagenObjectType: GetGlobalValueConditionData
