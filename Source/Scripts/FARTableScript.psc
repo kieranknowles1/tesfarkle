@@ -16,8 +16,19 @@ ObjectReference betRef
 
 Sound Property FARDiceRoll Auto
 
+GlobalVariable Property FARLoadedTables Auto
+
+Event OnCellAttach()
+    FARLoadedTables.SetValue(FARLoadedTables.GetValue() + 1)
+EndEvent
+
 Event OnCellDetach()
     Cleanup()
+    int newVal = (FARLoadedTables.GetValue() - 1) as int
+    if newVal < 0
+        newVal = 0
+    endif
+    FARLoadedTables.SetValue(newVal)
 EndEvent
 
 Function SpawnDecor(bool flipHeads)
