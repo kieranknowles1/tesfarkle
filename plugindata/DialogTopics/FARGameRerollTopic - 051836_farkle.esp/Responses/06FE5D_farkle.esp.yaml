@@ -17,7 +17,7 @@ VirtualMachineAdapter:
 Flags:
   Flags:
   - Goodbye
-PreviousDialog: Null
+PreviousDialog: 06FE5C:farkle.esp
 FavorLevel: None
 ResponseData: 065C53:farkle.esp
 Conditions:

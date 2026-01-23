@@ -13,6 +13,9 @@ Place a `FARTable` and link two chairs to it (Chair -> `FARTable`), these will b
 To clear the table before a game starts, place an `XMarker` as an enable parent for the clutter to disable,
 and link `FARTable` to the marker (`FARTable` -> `XMarker`).
 
+A table can have more than two chairs linked to it, so long as exactly two are enabled at any given time. This is the case for
+the table in the Ragged Flagon where chairs change variants depending on quest progress.
+
 ## Game Implementation
 
 ```mermaid

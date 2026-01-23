@@ -2,7 +2,7 @@ FormKey: 065C50:farkle.esp
 Flags:
   Flags:
   - Goodbye
-PreviousDialog: 065C54:farkle.esp
+PreviousDialog: Null
 FavorLevel: None
 ResponseData: 065C52:farkle.esp
 Conditions:
