@@ -1,0 +1,141 @@
+FormKey: 017EC0:Dragonborn.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: DLC2RRTheRetchingNetch
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: The Retching Netch
+Flags:
+- IsInteriorCell
+- PublicArea
+Lighting:
+  AmbientColor: '#00232626'
+  DirectionalColor: '#00000000'
+  FogNearColor: '#00172116'
+  FogFar: 4500
+  FogPower: 0.6
+  AmbientColors:
+    DirectionalXPlus: '#00262627'
+    DirectionalXMinus: '#001F2624'
+    DirectionalYPlus: '#00232726'
+    DirectionalYMinus: '#00232426'
+    DirectionalZPlus: '#00101211'
+    DirectionalZMinus: '#0035393A'
+    Specular: '#00000000'
+    Scale: 1
+  FogFarColor: '#00172116'
+  FogMax: 1
+  Inherits:
+  - DirectionalColor
+  - FogColor
+  - FogNear
+  - FogFar
+  - ClipDistance
+  - FogPower
+  - FogMax
+LightingTemplate: 0A1196:Skyrim.esm
+WaterHeight: -2.1474836E+09
+Location: 019A24:Dragonborn.esm
+Owner: 018421:Dragonborn.esm
+AcousticSpace: 0C5B6D:Skyrim.esm
+Music: 017035:Skyrim.esm
+ImageSpace: 059B60:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedObject
+  FormKey: 07F18B:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00003B:Skyrim.esm
+  Placement:
+    Position: -1578.772, 161.34323, -262.2855
+- MutagenObjectType: PlacedObject
+  FormKey: 07F18C:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 01EE14:farkle.esp
+  LinkedReferences:
+  - Reference: 07F18B:farkle.esp
+  Placement:
+    Position: -1562.4922, 161.58472, -320.49835
+    Rotation: 0, -0, 5.6831884
+Temporary:
+- MutagenObjectType: PlacedObject
+  FormKey: 0349BE:Dragonborn.esm
+  Version2: 1
+  Base: 036794:Dragonborn.esm
+  LocationReference: 019A24:Dragonborn.esm
+  LinkedReferences:
+  - Reference: 07F18C:farkle.esp
+  Placement:
+    Position: -1614.4025, 102.83717, -384
+    Rotation: 0, -0, 0.73320955
+- MutagenObjectType: PlacedObject
+  FormKey: 0349BF:Dragonborn.esm
+  Version2: 2
+  Base: 036793:Dragonborn.esm
+  LocationReference: 019A24:Dragonborn.esm
+  LinkedReferences:
+  - Reference: 07F18C:farkle.esp
+  Placement:
+    Position: -1507.6215, 193.54562, -384
+    Rotation: 0, -0, 4.2082086
+- MutagenObjectType: PlacedObject
+  FormKey: 0358ED:Dragonborn.esm
+  Base: 0319E3:Skyrim.esm
+  LocationReference: 019A24:Dragonborn.esm
+  EnableParent:
+    Reference: 07F18B:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -1551.7833, 165.15327, -321.96353
+    Rotation: 0.021603568, -0.0002796217, 2.8726737
+- MutagenObjectType: PlacedObject
+  FormKey: 0358EE:Dragonborn.esm
+  Base: 0319E3:Skyrim.esm
+  LocationReference: 019A24:Dragonborn.esm
+  EnableParent:
+    Reference: 07F18B:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -1589.7827, 136.8592, -321.64844
+    Rotation: 0.008269601, -0.006013322, 3.0149457
+- MutagenObjectType: PlacedObject
+  FormKey: 0358F9:Dragonborn.esm
+  Base: 0248CC:Dragonborn.esm
+  LocationReference: 019A24:Dragonborn.esm
+  EnableParent:
+    Reference: 07F18B:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -1565.741, 140.35666, -321.46457
+    Rotation: -0.005529307, 0.0015340816, 4.883358
+- MutagenObjectType: PlacedObject
+  FormKey: 03AB88:Dragonborn.esm
+  Version2: 1
+  Base: 039BBA:Dragonborn.esm
+  Scale: 0.6
+  LocationReference: 019A24:Dragonborn.esm
+  EnableParent:
+    Reference: 07F18B:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -1578.4657, 172.75018, -284.90576
+    Rotation: 0, -0, 6.083187
+- MutagenObjectType: PlacedObject
+  FormKey: 07F18D:farkle.esp
+  Base: 039BBA:Dragonborn.esm
+  Scale: 0.6
+  EnableParent:
+    Reference: 07F18B:farkle.esp
+    Flags:
+    - SetEnableStateToOppositeOfParent
+    Unknown: 0x000000
+  Placement:
+    Position: -1562.2262, 188.27496, -346.96127
+    Rotation: 0, -0, 6.083187
+MajorFlags:
+- 0x40000

@@ -1,0 +1,160 @@
+FormKey: 01677F:Skyrim.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: WindhelmNewGnisisCornerclub
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: New Gnisis Cornerclub
+Flags:
+- IsInteriorCell
+- PublicArea
+Lighting:
+  AmbientColor: '#003D5857'
+  DirectionalColor: '#0063704B'
+  FogNearColor: '#004E6E6A'
+  FogFar: 2000
+  DirectionalRotationZ: 90
+  FogPower: 1
+  AmbientColors:
+    DirectionalXPlus: '#00000000'
+    DirectionalXMinus: '#00000000'
+    DirectionalYPlus: '#00000000'
+    DirectionalYMinus: '#00000000'
+    DirectionalZPlus: '#001D2927'
+    DirectionalZMinus: '#00BDD2D2'
+    Specular: '#009F8055'
+    Scale: 1
+  FogFarColor: '#009F8055'
+  FogMax: 1
+LightingTemplate: 0C3D39:Skyrim.esm
+WaterHeight: -2.1474836E+09
+Location: 0209F0:Skyrim.esm
+Owner: 045F63:Skyrim.esm
+AcousticSpace: 0C5B6B:Skyrim.esm
+Music: 017035:Skyrim.esm
+ImageSpace: 0A2687:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedObject
+  FormKey: 07F18E:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 01EE14:farkle.esp
+  LinkedReferences:
+  - Reference: 07F18F:farkle.esp
+  Placement:
+    Position: 3091.4456, -2536.3357, -448.36447
+    Rotation: 0, -0, 0.80000246
+- MutagenObjectType: PlacedObject
+  FormKey: 07F18F:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00003B:Skyrim.esm
+  Placement:
+    Position: 3110.455, -2529.716, -400.22394
+- MutagenObjectType: PlacedObject
+  FormKey: 0D2690:Skyrim.esm
+  MajorRecordFlagsRaw: 1024
+  EditorID: WindhelmCornerClubPatronSeat4
+  Version2: 1
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 03B072:Skyrim.esm
+  Owner: 0E73C9:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  LinkedReferences:
+  - Reference: 07F18E:farkle.esp
+  Placement:
+    Position: 3136, -2576, -512
+    Rotation: 0, -0, 5.4977875
+- MutagenObjectType: PlacedObject
+  FormKey: 0D2691:Skyrim.esm
+  MajorRecordFlagsRaw: 1024
+  EditorID: WindhelmCornerClubPatronSeat3
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 03B072:Skyrim.esm
+  Owner: 0E73C9:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  LinkedReferences:
+  - Reference: 07F18E:farkle.esp
+  Placement:
+    Position: 3040, -2480, -512
+    Rotation: 0, 0, 2.3561945
+Temporary:
+- MutagenObjectType: PlacedObject
+  FormKey: 07F190:farkle.esp
+  Base: 02D847:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Flags:
+    - SetEnableStateToOppositeOfParent
+    Unknown: 0x000000
+  Placement:
+    Position: 3100.0918, -2518.9707, -512
+    Rotation: 0, 0, 4.55318
+- MutagenObjectType: PlacedObject
+  FormKey: 0D26C8:Skyrim.esm
+  Base: 02D847:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 3100.0918, -2518.9707, -448.0915
+    Rotation: 0, 0, 4.55318
+- MutagenObjectType: PlacedObject
+  FormKey: 0D2710:Skyrim.esm
+  Base: 034C5D:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 3072.6533, -2532.7278, -449.6035
+    Rotation: 0.0031714365, -0.0020446342, 2.2940264
+- MutagenObjectType: PlacedObject
+  FormKey: 0D2721:Skyrim.esm
+  Base: 031941:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 3086.7363, -2551.0447, -449.75177
+    Rotation: 0, 0, 0.015680922
+- MutagenObjectType: PlacedObject
+  FormKey: 0D276D:Skyrim.esm
+  Base: 064B2F:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 3082.2336, -2523.1697, -447.18094
+    Rotation: 5.5702567, 5.6281476, 0.19192164
+- MutagenObjectType: PlacedObject
+  FormKey: 0D276E:Skyrim.esm
+  Base: 064B2E:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 3082.5752, -2554.3887, -446.17264
+    Rotation: 0.77458584, 0.78294945, 0.30176044
+- MutagenObjectType: PlacedObject
+  FormKey: 0D276F:Skyrim.esm
+  Base: 064B31:Skyrim.esm
+  LocationReference: 0209F0:Skyrim.esm
+  EnableParent:
+    Reference: 07F18F:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 3095.17, -2550.2512, -445.73834
+    Rotation: 6.282784, 0.0002932153, 6.2566056
+MajorFlags:
+- 0x40000

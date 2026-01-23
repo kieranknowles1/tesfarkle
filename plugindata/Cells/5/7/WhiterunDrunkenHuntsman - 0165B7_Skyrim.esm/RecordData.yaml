@@ -1,0 +1,175 @@
+FormKey: 0165B7:Skyrim.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: WhiterunDrunkenHuntsman
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: The Drunken Huntsman
+Flags:
+- IsInteriorCell
+- PublicArea
+- ShowSky
+Lighting:
+  AmbientColor: '#000E0D0C'
+  DirectionalColor: '#0040494A'
+  FogNearColor: '#00585347'
+  FogNear: 128
+  FogFar: 2000
+  DirectionalRotationXY: 180
+  FogClipDistance: 2000
+  FogPower: 1
+  AmbientColors:
+    DirectionalXPlus: '#000F0D0C'
+    DirectionalXMinus: '#000C0D0B'
+    DirectionalYPlus: '#000E0D0C'
+    DirectionalYMinus: '#000E0C0C'
+    DirectionalZPlus: '#00060605'
+    DirectionalZMinus: '#00151312'
+    Specular: '#00585347'
+    Scale: 1
+  FogFarColor: '#00585347'
+  FogMax: 1
+  Inherits:
+  - AmbientColor
+  - DirectionalColor
+  - FogColor
+  - FogNear
+  - FogFar
+  - ClipDistance
+LightingTemplate: 06175D:Skyrim.esm
+WaterHeight: 0
+Location: 01F872:Skyrim.esm
+Owner: 0CD069:Skyrim.esm
+SkyAndWeatherFromRegion: 070408:Skyrim.esm
+AcousticSpace: 0C5B6B:Skyrim.esm
+Music: 017035:Skyrim.esm
+ImageSpace: 036ED2:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedObject
+  FormKey: 07F194:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 01EE14:farkle.esp
+  LinkedReferences:
+  - Reference: 07F195:farkle.esp
+  Placement:
+    Position: -566.4932, -829.54834, 133.4158
+    Rotation: 0, -0, 4.6831903
+- MutagenObjectType: PlacedObject
+  FormKey: 07F195:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00003B:Skyrim.esm
+  Placement:
+    Position: -575.80066, -840.9962, 176.40971
+Temporary:
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7A97:Skyrim.esm
+  Base: 0B9E00:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  LinkedReferences:
+  - Reference: 07F194:farkle.esp
+  Placement:
+    Position: -573.5508, -757.3031, 68
+    Rotation: 0, -0, 2.3561945
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7A98:Skyrim.esm
+  Base: 0B9E01:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  LinkedReferences:
+  - Reference: 07F194:farkle.esp
+  Placement:
+    Position: -574.1768, -920.90704, 68
+    Rotation: 0, -0, 0.7853982
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AB7:Skyrim.esm
+  Version2: 1
+  Base: 0C841C:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -578.7884, -831.1779, 130.00656
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AC1:Skyrim.esm
+  Base: 0B9BDC:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -569.9899, -815.4668, 130.00656
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AC2:Skyrim.esm
+  Base: 0B9BDC:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -578.07996, -854.93756, 130.00656
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AC3:Skyrim.esm
+  Base: 0B9BD0:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -544.06824, -815.8038, 130.00656
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AC4:Skyrim.esm
+  Base: 0B9BD0:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -550.1452, -861.311, 130.00656
+    Rotation: 0, -0, 5.4831877
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AD8:Skyrim.esm
+  Base: 03133C:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -599.2374, -816.2383, 130.00656
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7AD9:Skyrim.esm
+  Version2: 1
+  Base: 064B3B:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -546.1566, -861.2964, 133.20554
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7ADA:Skyrim.esm
+  Base: 034C5D:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -570.2194, -844.2366, 130.00656
+- MutagenObjectType: PlacedObject
+  FormKey: 0C7ADB:Skyrim.esm
+  Version2: 1
+  Base: 064B43:Skyrim.esm
+  LocationReference: 01F872:Skyrim.esm
+  EnableParent:
+    Reference: 07F195:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -542.7446, -815.35516, 134.95323
+    Rotation: 0.011020196, -0.015146234, 0.00023556997
+MajorFlags:
+- 0x40000

@@ -7,6 +7,16 @@ Implementation of Farkle in Skyrim, using Kingdom Come Deliverance rules
 This is primarily a Papyrus project, but also has elements of quest and asset implementation.
 A game of Farkle is controlled via a quest which is started using the story manager system.
 
+## Table Locations
+
+- Bannered Mare
+- Bee and Barb
+- Drunken Huntsman
+- New Gnisis Cornerclub
+- Ragged Flagon
+- Retching Netch
+- Winking Skeever
+
 ## Adding New Tables
 
 Place a `FARTable` and link two chairs to it (Chair -> `FARTable`), these will be used by the players when a game is active.

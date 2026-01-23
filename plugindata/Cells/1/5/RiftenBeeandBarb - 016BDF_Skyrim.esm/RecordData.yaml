@@ -1,0 +1,210 @@
+FormKey: 016BDF:Skyrim.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: RiftenBeeandBarb
+Version2: 6
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: The Bee and Barb
+Flags:
+- IsInteriorCell
+- PublicArea
+Lighting:
+  AmbientColor: '#004F4131'
+  DirectionalColor: '#00000000'
+  FogNearColor: '#00A9A796'
+  FogClipDistance: 4000
+  FogPower: 1
+  AmbientColors:
+    DirectionalXPlus: '#00574133'
+    DirectionalXMinus: '#0046412E'
+    DirectionalYPlus: '#004F4431'
+    DirectionalYMinus: '#004F3D31'
+    DirectionalZPlus: '#00251E16'
+    DirectionalZMinus: '#0055556F'
+    Specular: '#009F998A'
+    Scale: 1
+  FogFarColor: '#009F998A'
+  FogMax: 1
+  Inherits:
+  - DirectionalColor
+  - FogNear
+  - FogFar
+LightingTemplate: 0B2157:Skyrim.esm
+WaterHeight: -2.1474836E+09
+Location: 02247E:Skyrim.esm
+Owner: 0A2528:Skyrim.esm
+AcousticSpace: 0C5B6B:Skyrim.esm
+Music: 017035:Skyrim.esm
+ImageSpace: 0B215C:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedObject
+  FormKey: 07F189:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 01EE14:farkle.esp
+  LinkedReferences:
+  - Reference: 07F18A:farkle.esp
+  Placement:
+    Position: 205.14456, -513.0527, 129.92865
+- MutagenObjectType: PlacedObject
+  FormKey: 07F18A:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00003B:Skyrim.esm
+  Placement:
+    Position: 198.74358, -509.9776, 172.53038
+Temporary:
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEAF8:Skyrim.esm
+  Base: 06D911:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  LinkedReferences:
+  - Reference: 07F189:farkle.esp
+  Placement:
+    Position: 117.47352, -519.42505, 64
+    Rotation: 0, -0, 1.4682007
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEAF9:Skyrim.esm
+  Base: 06D90F:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  LinkedReferences:
+  - Reference: 07F189:farkle.esp
+  Placement:
+    Position: 277.3488, -521.4298, 64
+    Rotation: 0, -0, 4.812392
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBAD:Skyrim.esm
+  Version2: 1
+  Base: 065C98:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 201.80098, -490.98346, 126.35826
+    Rotation: 0.00075206195, -0.0010185522, 3.9373517
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBAF:Skyrim.esm
+  Base: 031941:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 221.99623, -514.9113, 126.196396
+    Rotation: -0.004118167, -0.0003301968, 1.5380901
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB0:Skyrim.esm
+  Base: 031941:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 171.11969, -515.096, 126.270096
+    Rotation: -0.0034837602, 0.0016191149, 4.748149
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB1:Skyrim.esm
+  Version2: 1
+  Base: 104B40:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 168.41548, -544.15186, 127.331924
+    Rotation: 0.0694106, 0.0010921399, 1.4744158
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB2:Skyrim.esm
+  Version2: 1
+  Base: 104B40:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 220.46388, -484.30115, 127.335556
+    Rotation: -0.07080785, 0.02033413, 4.946115
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB3:Skyrim.esm
+  Version2: 1
+  Base: 104B3F:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 220.9901, -544.50806, 126.8808
+    Rotation: -0.000984699, 0.04142993, 4.6549487
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB4:Skyrim.esm
+  Version2: 1
+  Base: 104B3F:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 156.65839, -480.416, 127.913055
+    Rotation: -0.008135617, -0.08400611, 1.7651522
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB5:Skyrim.esm
+  Base: 0319E3:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 187.43027, -492.44873, 126.367256
+    Rotation: 0.0030698867, 0.002568369, 6.1638794
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB6:Skyrim.esm
+  Base: 0319E3:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 201.82887, -535.13885, 126.37377
+    Rotation: 0.0019546538, -0.005577871, 1.8459392
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB7:Skyrim.esm
+  Version2: 1
+  Base: 064B3B:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 223.17302, -515.2112, 127.01076
+    Rotation: -0.011839686, 0.0003007486, 6.2740164
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB8:Skyrim.esm
+  Version2: 7
+  Base: 064B3A:Skyrim.esm
+  RagdollData: 0x002100000000003800000038000000005D6C5ABB0463E03B9F32C43F0000000020B140C10024BC3E40E81340B3A44DBE4F22A53EFD04C13E
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 171.37625, -508.67072, 129.34505
+    Rotation: 0, -0, 4.8931885
+- MutagenObjectType: PlacedObject
+  FormKey: 0BEBB9:Skyrim.esm
+  Version2: 1
+  Base: 064B3D:Skyrim.esm
+  LocationReference: 02247E:Skyrim.esm
+  EnableParent:
+    Reference: 07F18A:farkle.esp
+    Unknown: 0x000000
+  Placement:
+    Position: 195.33008, -515.4628, 125.856
+    Rotation: -0.010497945, -0.011253051, 6.2559843
+MajorFlags:
+- 0x40000
