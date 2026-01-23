@@ -46,7 +46,7 @@ Function OnSelectionChanged(int[] newSelection)
     FARScoringKCD scoring = (self as Quest) as FARScoringKCD
     int score = scoring.ScoreSelection(newSelection)
     SelectionValid = score > 0
-    SelectionWillWin = (score + currentPlayer.RoundScore + currentPlayer.TotalScore) > TargetScore
+    SelectionWillWin = (score + currentPlayer.RoundScore + currentPlayer.TotalScore) >= TargetScore
 EndFunction
 
 ; Story event usage:
@@ -117,6 +117,8 @@ Function EndRound(int score)
     if score > 0
         FARPlayerScored.Show(score)
     else
+        ; Let the player see their rolls first
+        Utility.Wait(1.25)
         FARPlayerBust.Show()
     endif
 
@@ -146,8 +148,8 @@ EndFunction
 Function EndGame(FARPlayer winner)
     if GameActive
         CurrentPlayerAlias.ForceRefTo(winner.GetReference())
-        FARGameWon.Show()
         winner.GetReference().AddItem(Gold001, Bet * 2)
+        FARGameWon.Show()
     endif
 
     (Table.GetReference() as FARTableScript).Cleanup()
