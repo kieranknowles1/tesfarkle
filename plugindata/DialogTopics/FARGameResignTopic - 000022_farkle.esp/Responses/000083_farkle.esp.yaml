@@ -1,4 +1,5 @@
-FormKey: 000023:farkle.esp
+FormKey: 000083:farkle.esp
+VersionControl: 13368
 VirtualMachineAdapter:
   Scripts:
   - Name: FARResignFragment
@@ -12,12 +13,15 @@ VirtualMachineAdapter:
 Flags:
   Flags:
   - Goodbye
-PreviousDialog: 000083:farkle.esp
+PreviousDialog: Null
 FavorLevel: None
-ResponseData: 0E0CBB:Skyrim.esm
+ResponseData: 0DBA21:Skyrim.esm
 Conditions:
 - MutagenObjectType: ConditionFloat
   Data:
-    MutagenObjectType: GetIsAliasRefConditionData
-    ReferenceAliasIndex: 1
-  ComparisonValue: 1
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::GameActive_var
+Prompt:
+  TargetLanguage: English
+  Value: I've changed my mind.
