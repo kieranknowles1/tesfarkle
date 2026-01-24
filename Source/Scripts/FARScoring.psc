@@ -21,11 +21,11 @@ int Property FewestDice Auto
 bool[] Property FewestSelection Auto
 
 Function ScoreStats(int[] rolls)
-    Debug.Trace("Abstract function called")
+    Debug.TraceStack("Abstract function called")
 EndFunction
 
 float Function GetBustChance(int dice)
-    Debug.Trace("Abstract function called")
+    Debug.TraceStack("Abstract function called")
 EndFunction
 
 bool Function IsBust(int[] rolls)

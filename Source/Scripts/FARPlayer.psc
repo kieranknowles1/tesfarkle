@@ -12,7 +12,7 @@ int Property TotalScore Auto
 
 ; Abstract event, called by FARGameScript when the other player ends their turn
 Function OnTurnBegin()
-    Debug.Trace("Abstract function called")
+    Debug.TraceStack("Abstract function called")
 EndFunction
 
 ; Finish this player's turn and bank points, if we didn't go bust
