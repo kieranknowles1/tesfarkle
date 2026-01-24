@@ -2,6 +2,20 @@ Scriptname FARArrayUtil
 
 ; Global utility functions for working with arrays
 
+; Copy the contents of `src` into `dest`
+; Arrays should have the same size
+Function Copy(int[] src, int[] dest) global
+    if src.Length != dest.Length
+        Debug.TraceStack("Array size mismatch!")
+    endif
+
+    int i = 0
+    while i < src.Length
+        dest[i] = src[i]
+        i += 1
+    endwhile
+EndFunction
+
 ; Get the number of instances of `value` in `arr`
 ; Runs in O(n) time
 int function Count(int[] arr, int value) global

@@ -26,7 +26,10 @@ EndFunction
 
 ; Populate output variables based on what the roll scores, can used directly for AI
 ; logic, or indirectly via IsBust and ScoreSelection
-Function ScoreStats(int[] rolls) ; override
+Function ScoreStats(int[] rollsIn) ; override
+    ; We mutate rolls in ScoreRun, create a copy to avoid touching the original
+    int[] rolls = new int[6]
+    FARArrayUtil.Copy(rollsIn, rolls)
     BestScore = 0
     BestDice = 0
     BestSelection = new bool[6]
