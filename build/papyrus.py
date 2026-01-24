@@ -15,4 +15,4 @@ def build_dir(settings: CompilerSettings):
         settings.compiler, settings.src_dir, "-all",
         f"-import={imports}", f"-flags={settings.flagsfile}",
         f"-output={settings.dst_dir}"
-    ], check=True)
+    ], check=True, stdout=subprocess.DEVNULL)
