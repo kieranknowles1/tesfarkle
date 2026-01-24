@@ -2,7 +2,8 @@ FormKey: 000068:farkle.esp
 Flags:
   Flags:
   - Random
-PreviousDialog: 000067:farkle.esp
+Topic: 00006E:farkle.esp
+PreviousDialog: Null
 FavorLevel: None
 ResponseData: 0E0CC1:Skyrim.esm
 Conditions:
@@ -10,10 +11,4 @@ Conditions:
   Data:
     MutagenObjectType: GetIsVoiceTypeConditionData
     VoiceTypeOrList: 03B4A5:Skyrim.esm
-  ComparisonValue: 1
-- MutagenObjectType: ConditionFloat
-  Data:
-    MutagenObjectType: GetStageDoneConditionData
-    Quest: 000015:farkle.esp
-    Stage: 200
   ComparisonValue: 1

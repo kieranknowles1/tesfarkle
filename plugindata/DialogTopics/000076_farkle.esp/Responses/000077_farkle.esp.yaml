@@ -19,6 +19,11 @@ Responses:
 Conditions:
 - MutagenObjectType: ConditionFloat
   Data:
+    MutagenObjectType: GetIsVoiceTypeConditionData
+    VoiceTypeOrList: 03B4A5:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 000015:farkle.esp
     VariableName: ::Bust_var

@@ -2,7 +2,7 @@ FormKey: 00006B:farkle.esp
 Flags:
   Flags:
   - Random
-PreviousDialog: 000069:farkle.esp
+PreviousDialog: Null
 FavorLevel: None
 Responses:
 - Emotion: Happy

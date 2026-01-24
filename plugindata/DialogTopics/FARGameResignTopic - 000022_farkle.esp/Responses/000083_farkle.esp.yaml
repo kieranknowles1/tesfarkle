@@ -1,5 +1,4 @@
 FormKey: 000083:farkle.esp
-VersionControl: 13368
 VirtualMachineAdapter:
   Scripts:
   - Name: FARResignFragment
