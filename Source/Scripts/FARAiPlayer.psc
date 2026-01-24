@@ -74,7 +74,7 @@ bool Function WillRoll(int activeDice)
     endif
 
     ; We've won, no need to roll again
-    if RoundScore + TotalScore >= gameState.TargetScore
+    if RoundScore + TotalScore + scoring.BestScore >= gameState.TargetScore
         Debug.Trace("I won!")
         return false
     endif
