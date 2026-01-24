@@ -47,7 +47,7 @@ Actions:
   Index: 2
   StartPhase: 1
   EndPhase: 1
-  Topic: 00AA00:farkle.esp
+  Topic: 000067:farkle.esp
   HeadtrackActorID: -1
   LoopingMax: 10
   LoopingMin: 1

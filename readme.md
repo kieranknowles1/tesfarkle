@@ -78,11 +78,12 @@ classDiagram
 
 An AI player will follows the following strategy each roll, and will
 always either:
-1. Score as few dice as possible, preferring combinations that give more points if they use
-   an equal number of dice.
+1. Score as few dice as possible, preferring combinations that give more points
+   if they use an equal number of dice.
 2. Score everything it can
 
-The "take everything" behavior is triggered when one of the following conditions is met:
+The "take everything" behavior is triggered when one of the following conditions
+is met:
 1. Doing so would win the game for the AI
 2. A "full house" using all rolled dice is available
 3. The AI does not plan to reroll
@@ -90,5 +91,15 @@ The "take everything" behavior is triggered when one of the following conditions
 
 The AI considers whether to reroll as follows:
 1. Never reroll if we have already won
-2. Randomly, less likely based on risk of going bust if they take everything beforehand
-   multiplied based on current unbanked score.
+2. Randomly, less likely based on risk of going bust if they take everything
+   beforehand multiplied based on current unbanked score.
+
+## Dialogue Generation
+
+Dialogue is generated using xVASynth. Starting with the creation kit's dialogue
+export, run the below query using the Rainbow CSV extension for VSCode
+
+```
+select "skyrim" as game_id, "sk_" + a['VOICE TYPE'].toLowerCase() as voice_id,
+a['RESPONSE TEXT'] as text, a['FULL PATH'].replace('.xwm', '.wav') as out_path
+```
