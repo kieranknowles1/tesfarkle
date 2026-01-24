@@ -119,5 +119,21 @@ class FarkleTestMethods(unittest.TestCase):
       fewest_dice=3
     ))
 
+class AiTestMethods(unittest.TestCase):
+  def test_reroll_when_won_first_roll(self):
+    scoring = farkle.KcdScoreSystem()
+    ai = farkle.AiPlayer("Bob")
+    game = farkle.Game(scoring, ai, ai, target_score=1000)
+    active_dice = 6
+    round_score = 0
+    scorestats = farkle.ScoreStats(
+      best_score=1000, best_dice=3,
+      fewest_score=100, fewest_dice=50
+    )
+
+    will_reroll = ai.will_reroll(game, active_dice, round_score, scorestats)
+    # We shouldn't want to reroll if our first roll won us the game
+    self.assertFalse(will_reroll)
+
 if __name__ == "__main__":
   _ = unittest.main()

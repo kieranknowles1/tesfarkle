@@ -3,6 +3,8 @@
 # Implementation of Farkle, using KCD rules, in Python. Done to get a baseline
 # before porting to Papyrus
 
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from random import randint
@@ -229,14 +231,9 @@ class AiPlayer(Player):
   def name(self) -> str:
     return self._name
 
-  def will_roll(self, game: Game, active_dice: int, round_score: int, roll_score: ScoreStats) -> bool:
-    # Always roll at least once
-    if round_score == 0:
-      print("Haven't rolled yet")
-      return True
+  def will_reroll(self, game: Game, active_dice: int, round_score: int, roll_score: ScoreStats) -> bool:
     # If we've won, then stop rolling
-    if round_score + self.score >= game.target_score:
-      print("I won!")
+    if round_score + self.score + roll_score.best_score >= game.target_score:
       return False
 
     potential = round_score + roll_score.fewest_score
@@ -274,7 +271,7 @@ class AiPlayer(Player):
 
       # Do we want to reroll?
       roll_score = game.scoring.score_stats(rolls)
-      wants_reroll = self.will_roll(game, active_dice, round_score, roll_score)
+      wants_reroll = self.will_reroll(game, active_dice, round_score, roll_score)
 
       # If we have a full house, are going to stop rolling, or "choose to", take
       # everything we can

@@ -34,7 +34,7 @@ Function OnTurnBegin()
         ; Populate vars for deciding what to do
         scoring.ScoreStats(rolls)
 
-        rolling = WillRoll(activeDice)
+        rolling = WillReroll(activeDice)
 
         ; Think for a moment before selecting
         Utility.Wait(Utility.RandomFloat(1.0, 2.0))
@@ -63,15 +63,9 @@ Function OnTurnBegin()
 EndFunction
 
 ; Do we want to roll again, considering our current position and latest roll?
-bool Function WillRoll(int activeDice)
+bool Function WillReroll(int activeDice)
     FARGameScript gameState = GetOwningQuest() as FARGameScript
     FARScoring scoring = GetOwningQuest() as FARScoring
-    
-    ; Always roll at least once
-    if RoundScore == 0
-        Debug.Trace("Haven't rolled yet")
-        return true
-    endif
 
     ; We've won, no need to roll again
     if RoundScore + TotalScore + scoring.BestScore >= gameState.TargetScore
