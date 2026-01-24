@@ -141,7 +141,7 @@ EndFunction
 Function BeginRound()
     CurrentPlayerAlias.ForceRefTo(currentPlayer.GetReference())
     FARTurnStart.Show()
-    Debug.Trace("Begin round for " + currentPlayer)
+    ; Debug.Trace("Begin round for " + currentPlayer)
     PlayerTurnActive = currentPlayer as FARHumanPlayer != none
     currentPlayer.RoundScore = 0
     currentPlayer.OnTurnBegin()

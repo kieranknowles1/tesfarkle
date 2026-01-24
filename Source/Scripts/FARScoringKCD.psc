@@ -20,7 +20,7 @@ float Function GetBustChance(int dice)
     elseif dice == 6
         return 0.031
     else
-        Debug.Trace("More than 6 dice is not supported")
+        Debug.TraceStack("Invalid dice count")
     endif
 EndFunction
 

@@ -26,7 +26,7 @@ Function OnTurnBegin()
         int[] rolls = RollDice(activeDice)
         table.ShowDice(rolls)
         if scoring.IsBust(rolls)
-            Debug.Trace("Bust!")
+            ; Debug.Trace("Bust!")
             EndTurn(0)
             return
         endif
@@ -46,19 +46,19 @@ Function OnTurnBegin()
             table.ShowSelection(scoring.BestSelection)
             handScore = scoring.BestScore
             activeDice -= scoring.BestDice
-            Debug.Trace("Take it all " + handScore)
+            ; Debug.Trace("Take it all " + handScore)
         else
             table.ShowSelection(scoring.FewestSelection)
             handScore = scoring.FewestScore
             activeDice -= scoring.FewestDice
-            Debug.Trace("Take as little as possible " + handScore)
+            ; Debug.Trace("Take as little as possible " + handScore)
         endif
         ; Let the player see the AI's selection
         Utility.Wait(Utility.RandomFloat(1.25, 1.5))
         RoundScore += handScore
     endwhile
 
-    Debug.Trace("Bank")
+    ; Debug.Trace("Bank")
     EndTurn(RoundScore)
 EndFunction
 
@@ -69,7 +69,7 @@ bool Function WillReroll(int activeDice)
 
     ; We've won, no need to roll again
     if RoundScore + TotalScore + scoring.BestScore >= gameState.TargetScore
-        Debug.Trace("I won!")
+        ; Debug.Trace("I won!")
         return false
     endif
 
@@ -85,7 +85,7 @@ bool Function WillReroll(int activeDice)
     float risk = scoring.GetBustChance(nextRollDice)
 
     float rerollChance = Math.pow(1.0 - (riskMult * risk), RerollRiskExponent)
-    Debug.Trace("Thinking about reroll " + rerollChance)
+    ; Debug.Trace("Thinking about reroll " + rerollChance)
     return Utility.RandomFloat(0.0, 1.0) < rerollChance
 EndFunction
 

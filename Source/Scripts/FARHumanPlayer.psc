@@ -18,7 +18,7 @@ int activeDice
 Function OnTurnBegin() ; Override
     activeDice = 6
     roundScore = 0
-    Debug.Trace("Player turn begin")
+    ; Debug.Trace("Player turn begin")
     NextRoll()
 EndFunction
 
