@@ -1,0 +1,24 @@
+FormKey: 00007E:farkle.esp
+Flags:
+  Flags:
+  - Random
+PreviousDialog: 000074:farkle.esp
+FavorLevel: None
+Responses:
+- EmotionValue: 50
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: Let's see.
+  ScriptNotes: ''
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionGlobal
+  CompareOperator: LessThanOrEqualTo
+  Data:
+    MutagenObjectType: GetRandomPercentConditionData
+  ComparisonValue: 00007F:farkle.esp

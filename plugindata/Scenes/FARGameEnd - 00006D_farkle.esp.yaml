@@ -1,0 +1,30 @@
+FormKey: 00006D:farkle.esp
+EditorID: FARGameEnd
+Flags:
+- StopQuestOnEnd
+Phases:
+- Name: ''
+  Unused2: {}
+  EditorWidth: 200
+Actors:
+- ID: 1
+  Flags: []
+  BehaviorFlags:
+  - DeathEnd
+  - CombatEnd
+  - DialoguePause
+Actions:
+- Name: ''
+  ActorID: 1
+  Index: 1
+  StartPhase: 0
+  EndPhase: 0
+  Topic: 00006E:farkle.esp
+  HeadtrackActorID: -1
+  LoopingMax: 10
+  LoopingMin: 1
+  Emotion: Neutral
+  EmotionValue: 0
+Quest: 000015:farkle.esp
+LastActionIndex: 1
+VNAM: 0x03000000030000000300000003000000

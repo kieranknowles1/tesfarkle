@@ -30,6 +30,7 @@ Function OnTurnBegin()
             EndTurn(0)
             return
         endif
+        FARGameRollDice.Start()
 
         ; Populate vars for deciding what to do
         scoring.ScoreStats(rolls)
@@ -56,6 +57,7 @@ Function OnTurnBegin()
         ; Let the player see the AI's selection
         Utility.Wait(Utility.RandomFloat(1.25, 1.5))
         RoundScore += handScore
+        gameState.LastRollScore = handScore
     endwhile
 
     ; Debug.Trace("Bank")

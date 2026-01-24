@@ -1,0 +1,7 @@
+FormKey: 00006C:farkle.esp
+Flags:
+  Flags:
+  - Random
+PreviousDialog: 000068:farkle.esp
+FavorLevel: None
+ResponseData: 0E0CC0:Skyrim.esm

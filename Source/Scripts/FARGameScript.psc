@@ -26,6 +26,12 @@ bool Property GameActive = false Auto Conditional
 bool Property SelectionValid = false Auto Conditional
 ; The current player's selection will win the game for them
 bool Property SelectionWillWin = false Auto Conditional
+; Last player went bust
+bool Property Bust = false Auto Conditional
+int Property LastRollScore Auto Conditional
+
+Scene Property FARGameEndTurn Auto
+Scene Property FARGameEnd Auto
 
 ReferenceAlias Property CurrentPlayerAlias Auto ; Used for messages
 FARPlayer currentPlayer ; Tracking who's turn it is
@@ -117,8 +123,10 @@ EndFunction
 
 Function EndRound(int score)
     if score > 0
+        Bust = false
         FARPlayerScored.Show(score)
     else
+        Bust = true
         ; Let the player see their rolls first
         Utility.Wait(1.25)
         FARPlayerBust.Show()
@@ -127,14 +135,19 @@ Function EndRound(int score)
     if currentPlayer.TotalScore >= TargetScore
         EndGame(currentPlayer)
         return
+    else
+        ; Wait until the end turn scene finishes, then continue
+        FARGameEndTurn.Start()
+        while FARGameEndTurn.IsPlaying()
+            Utility.Wait(0.25)
+        endwhile
     endif
 
+    ; Swap players, and run another round
     FARPlayer tmp = currentPlayer
     currentPlayer = nextPlayer
     nextPlayer = tmp
 
-    ; Swap players, and run another round
-    Utility.Wait(1.5)
     BeginRound()
 EndFunction
 
@@ -155,6 +168,7 @@ Function EndGame(FARPlayer winner)
     endif
 
     (Table.GetReference() as FARTableScript).Cleanup()
+    bool gameWasStarted = GameActive
     GameActive = false
 
     ; Mark quest as complete or failed
@@ -163,7 +177,14 @@ Function EndGame(FARPlayer winner)
     else
         SetStage(200)
     endif
-    Stop()
+    ; Don't stop the quest - the scene playing dialogue will do that for us
+    ; If we resigned before starting, skip any dialogue that would have played and stop the 
+    ; quest immediatly
+    if gameWasStarted
+        FARGameEnd.Start()
+    else
+        Stop()
+    endif
 EndFunction
 
 Function DisplayScores()

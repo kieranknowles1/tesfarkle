@@ -1,0 +1,30 @@
+FormKey: 000066:farkle.esp
+Flags:
+  Flags:
+  - Random
+PreviousDialog: 000065:farkle.esp
+FavorLevel: None
+Responses:
+- Emotion: Happy
+  EmotionValue: 100
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: Audentes fortuna iuvat!
+  ScriptNotes: :)
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsVoiceTypeConditionData
+    VoiceTypeOrList: 03B4A5:Skyrim.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: LessThanOrEqualTo
+  Data:
+    MutagenObjectType: GetRandomPercentConditionData
+  ComparisonValue: 5

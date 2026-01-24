@@ -1,0 +1,27 @@
+FormKey: 000067:farkle.esp
+Flags: {}
+PreviousDialog: 000071:farkle.esp
+FavorLevel: None
+Responses:
+- EmotionValue: 50
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: '--- OPPONENT WON ---'
+  ScriptNotes: ''
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 0216A9:Skyrim.esm
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetStageDoneConditionData
+    Quest: 000015:farkle.esp
+    Stage: 200
+  ComparisonValue: 1

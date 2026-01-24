@@ -1,0 +1,14 @@
+FormKey: 000081:farkle.esp
+Flags:
+  Flags:
+  - Random
+PreviousDialog: 00007D:farkle.esp
+FavorLevel: None
+ResponseData: 000080:farkle.esp
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::Bust_var
+  ComparisonValue: 1

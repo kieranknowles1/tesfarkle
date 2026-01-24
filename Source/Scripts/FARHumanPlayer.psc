@@ -36,6 +36,7 @@ int Function ScoreSelectedDice()
         activeDice -= scoring.BestDice
     endif
     gameControl.SelectionValid = score > 0
+    gameControl.LastRollScore = score
     return score
 EndFunction
 
@@ -44,23 +45,19 @@ EndFunction
 string updateAction
 Event OnUpdate()
     if updateAction == "Roll"
-    int score = ScoreSelectedDice()
-    if score > 0
-        NextRoll()
-    else
-        FARSelectionInvalid.Show()
-    endif
-
-EndFunction
-
-; Score current selection, then pass
-Function ScoreAndPass()
-    int score = ScoreSelectedDice()
-    if score > 0
-        EndTurn(roundScore)
-    else
-        FARSelectionInvalid.Show()
-    endif
+        int score = ScoreSelectedDice()
+        if score > 0
+            NextRoll(playScene = true)
+        else
+            FARSelectionInvalid.Show()
+        endif
+    elseif updateAction == "Pass"
+        int score = ScoreSelectedDice()
+        if score > 0
+            EndTurn(roundScore)
+        else
+            FARSelectionInvalid.Show()
+        endif
     endif
 EndEvent
 
@@ -87,5 +84,9 @@ Function NextRoll(bool playScene = false)
     FARScoring scoring = GetOwningQuest() as FARScoring
     if scoring.IsBust(rolls)
         EndTurn(0)
+        return
+    endif
+    if playScene
+        FARGameRollDice.Start()
     endif
 EndFunction

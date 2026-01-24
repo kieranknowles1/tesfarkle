@@ -9,6 +9,12 @@ VirtualMachineAdapter:
       Object: 000015:farkle.esp
       Alias: 5
     - MutagenObjectType: ScriptObjectProperty
+      Name: FARGameEnd
+      Object: 00006D:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARGameEndTurn
+      Object: 000072:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: FARGameState
       Object: 00002B:farkle.esp
     - MutagenObjectType: ScriptObjectProperty
@@ -66,6 +72,9 @@ VirtualMachineAdapter:
     - Name: FARHumanPlayer
       Properties:
       - MutagenObjectType: ScriptObjectProperty
+        Name: FARGameRollDice
+        Object: 00006F:farkle.esp
+      - MutagenObjectType: ScriptObjectProperty
         Name: FARSelectionInvalid
         Object: 00002A:farkle.esp
       - MutagenObjectType: ScriptObjectProperty
@@ -78,6 +87,10 @@ VirtualMachineAdapter:
       Alias: 1
     Scripts:
     - Name: FARAiPlayer
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: FARGameRollDice
+        Object: 00006F:farkle.esp
 Name:
   TargetLanguage: English
   Value: Farkle

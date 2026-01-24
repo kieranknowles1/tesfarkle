@@ -1,0 +1,26 @@
+FormKey: 00007A:farkle.esp
+Flags:
+  Flags:
+  - Random
+PreviousDialog: 000079:farkle.esp
+FavorLevel: None
+Responses:
+- Emotion: Anger
+  EmotionValue: 20
+  ResponseNumber: 1
+  Unknown2: 0x000000
+  Flags:
+  - UseEmotionAnimation
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: I shouldn't have pushed it!
+  ScriptNotes: ''
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::Bust_var
+  ComparisonValue: 1

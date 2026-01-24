@@ -10,6 +10,8 @@ int Property RoundScore Auto
 ; Reset at game begin
 int Property TotalScore Auto
 
+Scene Property FARGameRollDice Auto
+
 ; Abstract event, called by FARGameScript when the other player ends their turn
 Function OnTurnBegin()
     Debug.TraceStack("Abstract function called")
