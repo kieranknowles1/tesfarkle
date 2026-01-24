@@ -25,6 +25,18 @@ Conditions:
   Data:
     MutagenObjectType: GetVMQuestVariableConditionData
     Quest: 000015:farkle.esp
+    VariableName: ::PlayerTurnActive_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::GameActive_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
     VariableName: ::SelectionWillWin_var
   ComparisonValue: 1
 - MutagenObjectType: ConditionFloat

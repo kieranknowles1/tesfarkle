@@ -18,6 +18,12 @@ ResponseData: 0DBA27:Skyrim.esm
 Conditions:
 - MutagenObjectType: ConditionFloat
   Data:
+    MutagenObjectType: GetVMQuestVariableConditionData
+    Quest: 000015:farkle.esp
+    VariableName: ::GameActive_var
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
     MutagenObjectType: GetIsAliasRefConditionData
     ReferenceAliasIndex: 1
   ComparisonValue: 1
