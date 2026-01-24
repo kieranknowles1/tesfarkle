@@ -5,7 +5,7 @@ VirtualMachineAdapter:
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: FAR_TIF__0505182E
-    OnBegin:
+    OnEnd:
       ExtraBindDataVersion: 1
       ScriptName: FAR_TIF__0505182E
       FragmentName: Fragment_0

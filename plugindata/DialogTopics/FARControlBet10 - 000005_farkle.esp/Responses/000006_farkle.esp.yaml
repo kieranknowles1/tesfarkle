@@ -12,7 +12,7 @@ VirtualMachineAdapter:
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: FARStartGameFragment
-    OnBegin:
+    OnEnd:
       ExtraBindDataVersion: 1
       ScriptName: FARStartGameFragment
       FragmentName: Fragment_1

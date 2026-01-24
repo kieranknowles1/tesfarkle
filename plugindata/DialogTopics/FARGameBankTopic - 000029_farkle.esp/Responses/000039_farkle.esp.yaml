@@ -10,7 +10,7 @@ VirtualMachineAdapter:
   ScriptFragments:
     MutagenObjectType: ScriptFragments
     FileName: FARScorePassFragment
-    OnBegin:
+    OnEnd:
       ExtraBindDataVersion: 1
       ScriptName: FARScorePassFragment
       FragmentName: Fragment_0

@@ -39,8 +39,11 @@ int Function ScoreSelectedDice()
     return score
 EndFunction
 
-; Score current selection, then reroll
-Function ScoreAndReroll()
+; The dialogue menu does not close until OnEnd fragments finish,
+; so use an event to detach from that thread
+string updateAction
+Event OnUpdate()
+    if updateAction == "Roll"
     int score = ScoreSelectedDice()
     if score > 0
         NextRoll()
@@ -58,9 +61,22 @@ Function ScoreAndPass()
     else
         FARSelectionInvalid.Show()
     endif
+    endif
+EndEvent
+
+; Score current selection, then reroll
+Function ScoreAndReroll()
+    updateAction = "Roll"
+    RegisterForSingleUpdate(0.0)
 EndFunction
 
-Function NextRoll()
+; Score current selection, then pass
+Function ScoreAndPass()
+    updateAction = "Pass"
+    RegisterForSingleUpdate(0.0)
+EndFunction
+
+Function NextRoll(bool playScene = false)
     if activeDice <= 0
         activeDice = 6
     endif
