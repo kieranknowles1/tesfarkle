@@ -36,7 +36,7 @@ Lighting:
   - FogPower
   - FogMax
 LightingTemplate: 0A1196:Skyrim.esm
-WaterHeight: -2.1474836E+09
+WaterHeight: 0
 Location: 019A24:Dragonborn.esm
 Owner: 018421:Dragonborn.esm
 AcousticSpace: 0C5B6D:Skyrim.esm

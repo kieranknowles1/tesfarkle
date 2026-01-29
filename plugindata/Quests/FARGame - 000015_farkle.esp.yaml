@@ -130,7 +130,7 @@ Objectives:
     Value: Sit down
   Targets:
   - AliasID: 3
-NextAliasID: 6
+NextAliasID: 8
 Aliases:
 - Name: Player
   Flags: []
@@ -178,4 +178,42 @@ Aliases:
   Flags:
   - Optional
   - StoresText
+  VoiceTypes: Null
+- ID: 6
+  Name: PlayerChairOccupant
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsAliasRefConditionData
+      ReferenceAliasIndex: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsCurrentFurnitureRefConditionData
+      UseAliases: True
+      Target: 3
+    ComparisonValue: 1
+  PackageData:
+  - 000086:farkle.esp
+  VoiceTypes: Null
+- ID: 7
+  Name: OpponentChairOccupant
+  Flags:
+  - Optional
+  - MatchingRefInLoadedArea
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetIsAliasRefConditionData
+      ReferenceAliasIndex: 1
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: IsCurrentFurnitureRefConditionData
+      UseAliases: True
+      Target: 4
+    ComparisonValue: 1
+  PackageData:
+  - 000086:farkle.esp
   VoiceTypes: Null
