@@ -94,6 +94,13 @@ The AI considers whether to reroll as follows:
 2. Randomly, less likely based on risk of going bust if they take everything
    beforehand multiplied based on current unbanked score.
 
+### Edge Cases
+
+1. The player's first roll of the game is guaranteed to never bust. If this
+   would happen, it will be silently rerolled.
+2. An AI is forbidden from winning a game before the player has rolled. If this
+   would happen, the AI's roll will be replaced with a bust.
+
 ## Dialogue Generation
 
 Dialogue is generated using xVASynth. Starting with the creation kit's dialogue
