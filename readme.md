@@ -1,6 +1,28 @@
 # Farkle
 
-Implementation of Farkle in Skyrim, using Kingdom Come Deliverance rules
+Fancy a round of dice? Implementation of Farkle in Skyrim, using Kingdom Come
+Deliverance rules
+
+How to play:
+
+At the beginning of a round, players throw all six dice at once.
+After each throw, you must set aside and score one or more die, then bank or throw the remaining dice.
+If you score all six dice in a round, you may rethrow all six again.
+If you are unable to score from a throw, you are bust and lose all unbanked points.
+The game continues until either player reaches the target score.
+
+Scoring:
+
+One - 100 points.
+Five - 50 points.
+Three ones - 1000 points.
+Three of a kind - 100 * face value.
+Four of a kind - Double of three of a kind.
+Five of a kind - Four times of three of a kind.
+Six of a kind - Eight times of three of a kind.
+Run of 1 to 5 - 500 points.
+Run of 2 to 6 - 750 points.
+Run of 1 to 6 - 1500 points.
 
 ## Covered Areas
 

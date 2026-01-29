@@ -400,13 +400,11 @@ Temporary:
     Rotation: 0.02339172, -0.05518235, 3.1415927
 - MutagenObjectType: PlacedNpc
   FormKey: 000084:farkle.esp
-  VersionControl: 13373
   Base: 1034E4:Skyrim.esm
   Placement:
     Position: -73.32673, 7.1102715, 0
 - MutagenObjectType: PlacedNpc
   FormKey: 000085:farkle.esp
-  VersionControl: 13373
   Base: 1034E4:Skyrim.esm
   Placement:
     Position: -74.50571, -61.78014, 0

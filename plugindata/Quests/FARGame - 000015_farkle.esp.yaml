@@ -36,6 +36,15 @@ VirtualMachineAdapter:
       Name: FARTurnStart
       Object: 000026:farkle.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: FARTutorial1
+      Object: 000069:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARTutorial2
+      Object: 000087:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARTutorialShown
+      Object: 000088:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: Gold001
       Object: 00000F:Skyrim.esm
     - MutagenObjectType: ScriptObjectProperty

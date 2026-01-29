@@ -46,6 +46,16 @@ bool Function IsSitting(Actor akActor, ObjectReference chair, float epsilon = 32
     return distance < epsilon
 EndFunction
 
+GlobalVariable Property FARTutorialShown Auto
+Message Property FARTutorial1 Auto
+Message Property FARTutorial2 Auto
+
+Function ShowTutorial()
+    FARTutorial1.Show()
+    FARTutorial2.Show()
+    FARTutorialShown.SetValue(1.0)
+EndFunction
+
 Function SwapAliases(ReferenceAlias a, ReferenceAlias b)
     ObjectReference tmp = a.GetReference()
     a.ForceRefTo(b.GetReference())
@@ -121,6 +131,10 @@ Function StartGame()
         nextPlayer = Player
     endif
     tableRef.SpawnDecor(heads)
+
+    if FARTutorialShown.GetValue() == 0.0
+        ShowTutorial()
+    endif
 
     BeginRound()
 EndFunction

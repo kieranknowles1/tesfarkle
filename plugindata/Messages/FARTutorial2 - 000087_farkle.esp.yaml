@@ -1,0 +1,30 @@
+FormKey: 000087:farkle.esp
+EditorID: FARTutorial2
+Description:
+  TargetLanguage: English
+  Value: >-
+    Scoring:
+
+
+    One - 100 points.
+
+    Five - 50 points.
+
+    Three ones - 1000 points.
+
+    Three of a kind - 100 * face value.
+
+    Four of a kind - Double of three of a kind.
+
+    Five of a kind - Four times three of a kind.
+
+    Six of a kind - Eight times three of a kind.
+
+    Run of 1 to 5 - 500 points.
+
+    Run of 2 to 6 - 750 points.
+
+    Run of 1 to 6 - 1500 points.
+INAM: 0x00000000
+Flags:
+- MessageBox

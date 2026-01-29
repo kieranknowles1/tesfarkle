@@ -51,7 +51,6 @@ Actions:
   LoopingMin: 1
   Emotion: Neutral
   EmotionValue: 0
-Unused2: {}
 Quest: 000015:farkle.esp
 LastActionIndex: 2
 VNAM: 0x03000000030000000300000003000000
