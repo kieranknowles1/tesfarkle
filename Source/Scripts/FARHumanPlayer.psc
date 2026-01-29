@@ -19,7 +19,9 @@ Function OnTurnBegin() ; Override
     activeDice = 6
     roundScore = 0
     ; Debug.Trace("Player turn begin")
-    NextRoll()
+    FARGameScript gameControl = GetOwningQuest() as FARGameScript
+    ; Prevent us from going bust on the first throw
+    NextRoll(forceNotBust = gameControl.RoundNumber <= 2)
 EndFunction
 
 ; Score all selected dice, then add to round score
@@ -73,12 +75,12 @@ Function ScoreAndPass()
     RegisterForSingleUpdate(0.0)
 EndFunction
 
-Function NextRoll(bool playScene = false)
+Function NextRoll(bool playScene = false, bool forceNotBust = false)
     if activeDice <= 0
         activeDice = 6
     endif
     FARGameScript gameControl = GetOwningQuest() as FARGameScript
-    int[] rolls = RollDice(activeDice)
+    int[] rolls = RollDice(activeDice, forceNotBust = forceNotBust)
     gameControl.ShowRolls(rolls)
     
     FARScoring scoring = GetOwningQuest() as FARScoring

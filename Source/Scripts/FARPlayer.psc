@@ -25,13 +25,23 @@ Function EndTurn(int score)
     RoundScore = 0
 EndFunction
 
-int[] Function RollDice(int count)
-    int[] results = new int[6] ; Array length must be a compile-time constant. WTF
+int[] Function RollDice(int count, bool forceNotBust = false)
+    bool ok = false
 
-    int i = 0
-    while i < count
-        results[i] = Utility.RandomInt(1, 6)
-        i += 1
+    int[] results = new int[6] ; Array length must be a compile-time constant. WTF
+    while !ok
+        int i = 0
+        while i < count
+            results[i] = Utility.RandomInt(1, 6)
+            i += 1
+        endwhile
+
+        if forceNotBust
+            FARScoring scoring = GetOwningQuest() as FARScoring
+            ok = !scoring.IsBust(results)
+        else
+            ok = true
+        endif
     endwhile
     return results
 EndFunction

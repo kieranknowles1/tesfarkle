@@ -30,6 +30,10 @@ bool Property SelectionWillWin = false Auto Conditional
 bool Property Bust = false Auto Conditional
 int Property LastRollScore Auto Conditional
 
+; How many times has either player had a round?
+; Includes the current round
+int Property RoundNumber Auto
+
 Scene Property FARGameEndTurn Auto
 Scene Property FARGameEnd Auto
 
@@ -152,6 +156,7 @@ Function EndRound(int score)
 EndFunction
 
 Function BeginRound()
+    RoundNumber += 1
     CurrentPlayerAlias.ForceRefTo(currentPlayer.GetReference())
     FARTurnStart.Show()
     ; Debug.Trace("Begin round for " + currentPlayer)
