@@ -25,6 +25,18 @@ Function EndTurn(int score)
     RoundScore = 0
 EndFunction
 
+; Get a set of dice that is a forced bust
+int[] Function RollBust(int count)
+    int[] results = new int[6]
+    int i = 0
+    while i < count
+        ; Roll 2, 2, 3, 3, 4, 4
+        results[i] = Math.Floor(i / 2.0) + 2
+        i += 1
+    endwhile
+    return results
+EndFunction
+
 int[] Function RollDice(int count, bool forceNotBust = false)
     bool ok = false
 

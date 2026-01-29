@@ -24,6 +24,15 @@ Function OnTurnBegin()
             activeDice = 6
         endif
         int[] rolls = RollDice(activeDice)
+        ; Populate vars for deciding what to do
+        scoring.ScoreStats(rolls)
+        
+        ; Forbid the AI from winning on the first round of the game if the player
+        ; hasn't rolled yet by forcing a bust
+        if gameState.RoundNumber == 1 && HasWon()
+            rolls = RollBust(activeDice)
+        endif
+        
         table.ShowDice(rolls)
         if scoring.IsBust(rolls)
             ; Debug.Trace("Bust!")
@@ -32,8 +41,6 @@ Function OnTurnBegin()
         endif
         FARGameRollDice.Start()
 
-        ; Populate vars for deciding what to do
-        scoring.ScoreStats(rolls)
 
         rolling = WillReroll(activeDice)
 
@@ -64,13 +71,21 @@ Function OnTurnBegin()
     EndTurn(RoundScore)
 EndFunction
 
+; Will we win immediatly with our latest roll?
+bool Function HasWon()
+    FARGameScript gameState = GetOwningQuest() as FARGameScript
+    FARScoring scoring = GetOwningQuest() as FARScoring
+
+    return RoundScore + TotalScore + scoring.BestScore >= gameState.TargetScore
+EndFunction
+
 ; Do we want to roll again, considering our current position and latest roll?
 bool Function WillReroll(int activeDice)
     FARGameScript gameState = GetOwningQuest() as FARGameScript
     FARScoring scoring = GetOwningQuest() as FARScoring
 
     ; We've won, no need to roll again
-    if RoundScore + TotalScore + scoring.BestScore >= gameState.TargetScore
+    if HasWon()
         ; Debug.Trace("I won!")
         return false
     endif
@@ -95,9 +110,8 @@ bool Function WillTakeAll(int activeDice)
     FARGameScript gameState = GetOwningQuest() as FARGameScript
     FARScoring scoring = GetOwningQuest() as FARScoring
     
-    int scoreIfTaken = TotalScore + RoundScore + scoring.BestScore
     ; If we'd win, take it
-    if scoreIfTaken >= gameState.TargetScore
+    if HasWon()
         return true
     endif
 
