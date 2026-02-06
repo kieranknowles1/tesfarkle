@@ -103,6 +103,7 @@ VirtualMachineAdapter:
 Name:
   TargetLanguage: English
   Value: Farkle
+Priority: 100
 Type: Misc
 Event: SCPT
 EventConditions:
