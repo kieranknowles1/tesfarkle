@@ -1,6 +1,7 @@
 # 1.1
 
 - #5 - Replace dice textures with higher quality versions from [Dice Bag](https://www.nexusmods.com/skyrimspecialedition/mods/90972)
+- #6 - Support game end callbacks, allowing extension and integration with other quests
 - Fix game not starting if opponent is reserved
 - Increase priority of quest to take precedence over `WITavern` (fixes games against servers)
 
