@@ -8,6 +8,7 @@ LinkTo:
 - 00003D:farkle.esp
 - 00003E:farkle.esp
 - 00003F:farkle.esp
+- 00008D:farkle.esp
 ResponseData: 0DBA23:Skyrim.esm
 Conditions:
 - MutagenObjectType: ConditionFloat

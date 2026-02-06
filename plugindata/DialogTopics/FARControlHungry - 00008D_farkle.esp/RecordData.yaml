@@ -1,0 +1,8 @@
+FormKey: 00008D:farkle.esp
+EditorID: FARControlHungry
+Name:
+  TargetLanguage: English
+  Value: I feel quite hungry!
+Branch: 000002:farkle.esp
+Quest: 000001:farkle.esp
+SubtypeName: CUST

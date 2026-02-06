@@ -1,0 +1,23 @@
+FormKey: 00001A:farkle.esp
+EditorID: FARHangryHandler
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARHangryEndHandler
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: FARHangrySnacks
+      Object: 00008B:farkle.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerRef
+      Object: 000014:Skyrim.esm
+ObjectBounds:
+  First: -18, -20, 0
+  Second: 18, 18, 16
+Name:
+  TargetLanguage: English
+  Value: I feel quite hungry!
+Model:
+  File: MarkerX.nif
+  Data: 0x020000000000000000000000
+MarkerColor: '#00CC4C33'
+Flags: []

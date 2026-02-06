@@ -9,6 +9,10 @@ VirtualMachineAdapter:
       Object: 000015:farkle.esp
       Alias: 5
     - MutagenObjectType: ScriptObjectProperty
+      Name: EndCallback
+      Object: 000015:farkle.esp
+      Alias: 8
+    - MutagenObjectType: ScriptObjectProperty
       Name: FARGameEnd
       Object: 00006D:farkle.esp
     - MutagenObjectType: ScriptObjectProperty
@@ -140,7 +144,7 @@ Objectives:
     Value: Sit down
   Targets:
   - AliasID: 3
-NextAliasID: 8
+NextAliasID: 9
 Aliases:
 - Name: Player
   Flags: []
@@ -156,6 +160,14 @@ Aliases:
     EventData: 0x52310000
   PackageData:
   - 000016:farkle.esp
+  VoiceTypes: Null
+- ID: 8
+  Name: EndCallback
+  Flags:
+  - Optional
+  FindMatchingRefFromEvent:
+    FromEvent: SCPT
+    EventData: 0x52320000
   VoiceTypes: Null
 - ID: 2
   Name: Table

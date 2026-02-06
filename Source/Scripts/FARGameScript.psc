@@ -9,6 +9,7 @@ FARPlayer Property Player Auto
 FARPlayer Property Opponent Auto
 ReferenceAlias Property PlayerChair Auto
 ReferenceAlias Property OpponentChair Auto
+ReferenceAlias Property EndCallback Auto
 
 Message Property FARHeadsPlayerFirst Auto
 Message Property FARTailsOpponentFirst Auto
@@ -71,6 +72,7 @@ EndFunction
 
 ; Story event usage:
 ; - akRef1: Opponent
+; - akRef2: End callback
 ; - aiValue1: Bet amount
 ; - aiValue2: Target score
 Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRef1, ObjectReference akRef2, int aiValue1, int aiValue2)
@@ -196,6 +198,12 @@ Function EndGame(FARPlayer winner)
     else
         SetStage(200)
     endif
+
+    FAREndGameHandler callback = EndCallback.GetReference() as FAREndGameHandler
+    if callback
+        callback.OnGameEnd(winner)
+    endif
+
     ; Don't stop the quest - the scene playing dialogue will do that for us
     ; If we resigned before starting, skip any dialogue that would have played and stop the 
     ; quest immediatly

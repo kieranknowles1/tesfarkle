@@ -1,0 +1,36 @@
+FormKey: 00008E:farkle.esp
+VirtualMachineAdapter:
+  Scripts:
+  - Name: FARStartGameFragment
+    Properties:
+    - MutagenObjectType: ScriptIntProperty
+      Name: BetAmount
+    - MutagenObjectType: ScriptObjectProperty
+      Name: EndCallback
+      Object: 00008C:farkle.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: TargetScore
+      Data: 2000
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: FARStartGameFragment
+    OnEnd:
+      ExtraBindDataVersion: 1
+      ScriptName: FARStartGameFragment
+      FragmentName: Fragment_1
+Flags: {}
+PreviousDialog: Null
+FavorLevel: None
+ResponseData: 0E0CBE:Skyrim.esm
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 00314A:Update.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  CompareOperator: GreaterThanOrEqualTo
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 002EDF:Update.esm
+  ComparisonValue: 10

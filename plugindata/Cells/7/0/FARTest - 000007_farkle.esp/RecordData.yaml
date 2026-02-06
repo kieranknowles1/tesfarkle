@@ -242,6 +242,14 @@ Persistent:
   Base: 00003B:Skyrim.esm
   Placement:
     Position: -267.45755, -164.03519, 86.850426
+- MutagenObjectType: PlacedObject
+  FormKey: 00008C:farkle.esp
+  MajorRecordFlagsRaw: 1024
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00001A:farkle.esp
+  Placement:
+    Position: -41.88211, -161.53804, 84.96591
 Temporary:
 - MutagenObjectType: PlacedObject
   FormKey: 000008:farkle.esp
@@ -410,42 +418,36 @@ Temporary:
     Position: -74.50571, -61.78014, 0
 - MutagenObjectType: PlacedObject
   FormKey: 00008F:farkle.esp
-  VersionControl: 13382
   Base: 000017:farkle.esp
   Placement:
     Position: -487.61337, -32.270462, 86.56897
     Rotation: 0, -0, 1.6000043
 - MutagenObjectType: PlacedObject
   FormKey: 000090:farkle.esp
-  VersionControl: 13382
   Base: 00001B:farkle.esp
   Placement:
     Position: -488.30344, -25.13475, 86.568954
     Rotation: 0, -0, 1.6000043
 - MutagenObjectType: PlacedObject
   FormKey: 000091:farkle.esp
-  VersionControl: 13382
   Base: 00001C:farkle.esp
   Placement:
     Position: -488.86237, -17.092545, 86.568954
     Rotation: 0, -0, 1.6000043
 - MutagenObjectType: PlacedObject
   FormKey: 000092:farkle.esp
-  VersionControl: 13382
   Base: 00001D:farkle.esp
   Placement:
     Position: -488.21518, -8.384674, 86.568954
     Rotation: 0, -0, 1.6000043
 - MutagenObjectType: PlacedObject
   FormKey: 000093:farkle.esp
-  VersionControl: 13382
   Base: 00001E:farkle.esp
   Placement:
     Position: -488.19238, -2.6302185, 86.568954
     Rotation: 0, -0, 1.6000043
 - MutagenObjectType: PlacedObject
   FormKey: 000094:farkle.esp
-  VersionControl: 13382
   Base: 00001F:farkle.esp
   Placement:
     Position: -488.31552, 3.7587738, 86.568954

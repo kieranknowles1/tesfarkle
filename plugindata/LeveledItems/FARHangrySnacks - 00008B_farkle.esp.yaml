@@ -1,0 +1,7 @@
+FormKey: 00008B:farkle.esp
+EditorID: FARHangrySnacks
+Entries:
+- Data:
+    Level: 1
+    Reference: 098E5F:Skyrim.esm
+    Count: 3
