@@ -1,6 +1,7 @@
 # 1.1
 
 - #5 - Replace dice textures with higher quality versions from [Dice Bag](https://www.nexusmods.com/skyrimspecialedition/mods/90972)
+- Fix game not starting if opponent is reserved
 
 # 1.0.1
 

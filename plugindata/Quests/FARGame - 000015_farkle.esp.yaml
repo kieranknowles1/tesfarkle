@@ -149,6 +149,7 @@ Aliases:
   Name: Opponent
   Flags:
   - StoresText
+  - AllowReserved
   FindMatchingRefFromEvent:
     FromEvent: SCPT
     EventData: 0x52310000
