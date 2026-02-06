@@ -5,6 +5,10 @@ VirtualMachineAdapter:
   - Name: FARControlScript
     Properties:
     - MutagenObjectType: ScriptObjectProperty
+      Name: EndGameCallback
+      Object: 000015:farkle.esp
+      Alias: 8
+    - MutagenObjectType: ScriptObjectProperty
       Name: FARStartup
       Object: 000011:farkle.esp
   Versioning:

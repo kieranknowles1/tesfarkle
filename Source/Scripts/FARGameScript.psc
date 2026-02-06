@@ -72,9 +72,10 @@ EndFunction
 
 ; Story event usage:
 ; - akRef1: Opponent
-; - akRef2: End callback
 ; - aiValue1: Bet amount
 ; - aiValue2: Target score
+; Manual setup:
+; EndCallback: Object to receive events at the end of a game, extends FAREndGameHandler
 Event OnStoryScript(Keyword akKeyword, Location akLocation, ObjectReference akRef1, ObjectReference akRef2, int aiValue1, int aiValue2)
     Bet = aiValue1
     TargetScore = aiValue2

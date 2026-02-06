@@ -165,9 +165,6 @@ Aliases:
   Name: EndCallback
   Flags:
   - Optional
-  FindMatchingRefFromEvent:
-    FromEvent: SCPT
-    EventData: 0x52320000
   VoiceTypes: Null
 - ID: 2
   Name: Table
