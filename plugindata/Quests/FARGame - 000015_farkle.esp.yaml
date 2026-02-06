@@ -196,6 +196,9 @@ Aliases:
   Conditions:
   - MutagenObjectType: ConditionFloat
     Data:
+      MutagenObjectType: GetDisabledConditionData
+  - MutagenObjectType: ConditionFloat
+    Data:
       MutagenObjectType: GetIsAliasRefConditionData
       ReferenceAliasIndex: 1
   - MutagenObjectType: ConditionFloat
@@ -213,6 +216,9 @@ Aliases:
   - Optional
   - MatchingRefInLoadedArea
   Conditions:
+  - MutagenObjectType: ConditionFloat
+    Data:
+      MutagenObjectType: GetDisabledConditionData
   - MutagenObjectType: ConditionFloat
     Data:
       MutagenObjectType: GetIsAliasRefConditionData
