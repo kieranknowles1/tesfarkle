@@ -4,20 +4,6 @@
         <Compression Setting="dieface" Enabled="False">
             <Source>C:/Users/justl/AppData/Local/ModOrganizer/Skyrim Special Edition/mods/tesfarkle/meshsrc/dieface.png</Source>
             <Destination>C:/Users/justl/AppData/Local/ModOrganizer/Skyrim Special Edition/mods/tesfarkle/textures/farkle/dieface.DDS</Destination>
-            <fd>BC1</fd>
-            <Quality>1</Quality>
-            <WeightR>0.3086</WeightR>
-            <WeightG>0.6094</WeightG>
-            <WeightB>0.082</WeightB>
-            <AlphaThreshold>0</AlphaThreshold>
-            <RefineSteps>0</RefineSteps>
-            <BlockRate>8.00</BlockRate>
-        </Compression>
-    </Image>
-    <Image File="C:/Users/justl/AppData/Local/ModOrganizer/Skyrim Special Edition/mods/tesfarkle/meshsrc/diefaceThreeFour.png">
-        <Compression Setting="diefaceThreeFour" Enabled="False">
-            <Source>C:/Users/justl/AppData/Local/ModOrganizer/Skyrim Special Edition/mods/tesfarkle/meshsrc/diefaceThreeFour.png</Source>
-            <Destination>C:/Users/justl/AppData/Local/ModOrganizer/Skyrim Special Edition/mods/tesfarkle/textures/farkle/diefaceThreeFour.DDS</Destination>
             <fd>BC7</fd>
             <Quality>0.05</Quality>
             <WeightR>0.3086</WeightR>

@@ -1,11 +1,24 @@
 # Farkle
 
+- [Farkle](#farkle)
+  - [How to Play](#how-to-play)
+    - [Scoring](#scoring)
+  - [Covered Areas](#covered-areas)
+  - [Table Locations](#table-locations)
+  - [Adding New Tables](#adding-new-tables)
+  - [Game Implementation](#game-implementation)
+    - [AI Behavior](#ai-behavior)
+    - [Edge Cases](#edge-cases)
+  - [Dialogue Generation](#dialogue-generation)
+- [Credits](#credits)
+
+
 Fancy a round of dice? Implementation of Farkle in Skyrim, using Kingdom Come
 Deliverance rules
 
 [![Demo video](https://img.youtube.com/vi/ncjWSoXkY9E/0.jpg)](https://youtu.be/ncjWSoXkY9E)
 
-## How to play
+## How to Play
 
 At the beginning of a round, players throw all six dice at once.
 After each throw, you must set aside and score one or more die, then bank or throw the remaining dice.
@@ -134,3 +147,9 @@ export, run the below query using the Rainbow CSV extension for VSCode
 select "skyrim" as game_id, "sk_" + a['VOICE TYPE'].toLowerCase() as voice_id,
 a['RESPONSE TEXT'] as text, a['FULL PATH'].replace('.xwm', '.wav') as out_path
 ```
+
+# Credits
+
+Dice textures sourced from
+[Dice Bag](https://www.nexusmods.com/skyrimspecialedition/mods/90972) by
+MerryMalfunctioning, using textures by Kanjs and meshes by
