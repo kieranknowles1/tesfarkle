@@ -1,0 +1,216 @@
+FormKey: 001114:BSHeartland.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+EditorID: CYRBrumaJerallViewInn
+SkyrimMajorRecordFlags:
+- Compressed
+Name:
+  TargetLanguage: English
+  Value: Jerall View Inn
+Flags:
+- IsInteriorCell
+- PublicArea
+Lighting:
+  AmbientColor: '#00000000'
+  DirectionalColor: '#00000000'
+  FogNearColor: '#00000000'
+  FogFar: 6000
+  FogClipDistance: 2000
+  FogPower: 1
+  AmbientColors:
+    DirectionalXPlus: '#00FFFFFF'
+    DirectionalXMinus: '#00FFFFFF'
+    DirectionalYPlus: '#00FFFFFF'
+    DirectionalYMinus: '#00FFFFFF'
+    DirectionalZPlus: '#00FFFFFF'
+    DirectionalZMinus: '#00FFFFFF'
+    Specular: '#00000000'
+    Scale: 1
+  FogFarColor: '#00000000'
+  FogMax: 1
+  LightFadeBegin: 1
+  LightFadeEnd: 1
+  Inherits:
+  - AmbientColor
+  - DirectionalColor
+  - FogColor
+  - FogNear
+  - LightFadeDistances
+LightingTemplate: 06175D:Skyrim.esm
+WaterHeight: 0
+Location: 003A8C:BSHeartland.esm
+Owner: 0039FE:BSHeartland.esm
+AcousticSpace: 0C5D0A:Skyrim.esm
+Music: 0D2F39:BSHeartland.esm
+ImageSpace: 036ED2:Skyrim.esm
+Persistent:
+- MutagenObjectType: PlacedObject
+  FormKey: 00116F:BSHeartland.esm
+  MajorRecordFlagsRaw: 1024
+  Version2: 2
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 083C97:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  LinkedReferences:
+  - Reference: 000001:farkle-bsheartland.esp
+  Placement:
+    Position: -96.62802, 168.59729, -116.89137
+    Rotation: 0, -0, 8.2701445E-07
+- MutagenObjectType: PlacedObject
+  FormKey: 000001:farkle-bsheartland.esp
+  MajorRecordFlagsRaw: 1024
+  VersionControl: 13382
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 000013:farkle.esp
+  LinkedReferences:
+  - Reference: 000002:farkle-bsheartland.esp
+  Placement:
+    Position: -90.52859, 263.974, -59.749203
+    Rotation: 0, -0, -1.5999963
+- MutagenObjectType: PlacedObject
+  FormKey: 000002:farkle-bsheartland.esp
+  MajorRecordFlagsRaw: 1024
+  VersionControl: 13382
+  SkyrimMajorRecordFlags:
+  - 0x400
+  Base: 00003B:Skyrim.esm
+  Placement:
+    Position: -72.58439, 264.1669, -28.23772
+Temporary:
+- MutagenObjectType: PlacedObject
+  FormKey: 001170:BSHeartland.esm
+  Version2: 2
+  Base: 083C99:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  LinkedReferences:
+  - Reference: 000001:farkle-bsheartland.esp
+  Placement:
+    Position: -78.27599, 345.53006, -116.891396
+    Rotation: 0, 0, 3.4000008
+- MutagenObjectType: PlacedObject
+  FormKey: 001173:BSHeartland.esm
+  Version2: 1
+  Base: 0C56C4:Skyrim.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -78.84733, 254.25516, -61.851444
+    Rotation: 0, 0, 1.1999993
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D1:BSHeartland.esm
+  Version2: 1
+  Base: 05F073:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -85.422035, 243.07501, -62.801296
+    Rotation: 6.2794085, 0.0011274827, 4.014257E-05
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D2:BSHeartland.esm
+  Version2: 1
+  Base: 05F073:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -87.62314, 267.9855, -61.17385
+    Rotation: 6.269036, 0.012756611, 4.818432
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D3:BSHeartland.esm
+  Version2: 1
+  Base: 05F073:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -70.4169, 231.03987, -62.159145
+    Rotation: 6.2804418, 0.001160644, 0.4776774
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D4:BSHeartland.esm
+  Version2: 1
+  Base: 05F073:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -68.35032, 267.81967, -61.952305
+    Rotation: 6.2806563, 0.0018203784, 5.6608725
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D5:BSHeartland.esm
+  Version2: 1
+  Base: 05F073:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -94.35778, 244.89952, -59.82696
+    Rotation: 4.7270656, 0.91275483, 2.409104
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D6:BSHeartland.esm
+  Version2: 1
+  Base: 0319E3:Skyrim.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -119.27112, 282.8768, -61.020615
+    Rotation: 6.2734985, 6.2810698, 5.8029194
+- MutagenObjectType: PlacedObject
+  FormKey: 0011D7:BSHeartland.esm
+  Version2: 1
+  Base: 0319E3:Skyrim.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -84.10231, 225.39478, -61.029728
+    Rotation: 0.003085742, 0.0026092671, 3.598115
+- MutagenObjectType: PlacedObject
+  FormKey: 079F4C:BSHeartland.esm
+  MajorRecordFlagsRaw: 536870912
+  Version2: 1
+  SkyrimMajorRecordFlags:
+  - 0x20000000
+  Base: 0D790C:Skyrim.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -122.0575, 235.81741, -62.59771
+- MutagenObjectType: PlacedObject
+  FormKey: 07A52C:BSHeartland.esm
+  Version2: 1
+  Base: 0DE89F:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -118.77347, 251.34178, -60.061134
+    Rotation: 0, 4.712389, 0
+- MutagenObjectType: PlacedObject
+  FormKey: 07A52D:BSHeartland.esm
+  Version2: 1
+  Base: 0DE89F:BSHeartland.esm
+  LocationReference: 003A8C:BSHeartland.esm
+  EnableParent:
+    Reference: 000002:farkle-bsheartland.esp
+    Unknown: 0x000000
+  Placement:
+    Position: -113.68204, 257.36252, -59.043663
+    Rotation: 0, 3.1415927, 5.5850534
+MajorFlags:
+- 0x40000

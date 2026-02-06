@@ -21,13 +21,14 @@ class Arguments(ArgumentParser):
 @dataclass
 class Settings:
     compiler: papyrus.CompilerSettings | None
-    plugin: plugin.PluginSettings | None
+    plugin: list[plugin.PluginSettings] | None
 
 def main(args: Arguments, settings: Settings):
     if settings.compiler:
         papyrus.build_dir(settings.compiler)
     if settings.plugin:
-        plugin.build_plugin(settings.plugin)
+        for pluginsrc in settings.plugin:
+            plugin.build_plugin(pluginsrc)
 
 if __name__ == "__main__":
     args = Arguments()
@@ -43,9 +44,15 @@ if __name__ == "__main__":
         )
     # Only build the ESP in release versions, devs must manually copy otherwise
     # to avoid risk of overwriting work
-    esp = plugin.PluginSettings(
+    esp = [
+        plugin.PluginSettings(
             source="plugindata",
             destination=join(result, "farkle.esp"),
-        ) if not args.dev else None
+        ),
+        plugin.PluginSettings(
+            source="plugindata-bsheartland",
+            destination=join(result, "farkle-bsheartland.esp"),
+        ),
+        ] if not args.dev else None
 
     main(args, Settings(compiler, esp))
