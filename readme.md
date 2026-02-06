@@ -150,6 +150,5 @@ a['RESPONSE TEXT'] as text, a['FULL PATH'].replace('.xwm', '.wav') as out_path
 
 # Credits
 
-Dice textures sourced from
-[Dice Bag](https://www.nexusmods.com/skyrimspecialedition/mods/90972) by
-MerryMalfunctioning, using textures by Kanjs and meshes by
+Dice textures based on [Dice Bag](https://www.nexusmods.com/skyrimspecialedition/mods/90972)
+by MerryMalfunctioning and Kanjs

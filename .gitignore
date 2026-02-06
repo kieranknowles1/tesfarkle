@@ -19,5 +19,8 @@ __pycache__
 # Intermediate meshes
 *.fbx
 
+# Intermediate textures
+*.png
+
 # Blender backups
 *.blend1
